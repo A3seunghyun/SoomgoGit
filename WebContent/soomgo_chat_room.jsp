@@ -205,6 +205,7 @@
 		$(".sticky-nav-FAQ").click(function () {
 			$(".side-seet-section").scrollTop($(".profile-qna > ul").position().top);
 		})
+		
 	})
 	
 	</script>
@@ -315,10 +316,62 @@
 							</div>
 						</div>
 						<div class="chat-messages">
-							<div class="chat-messages-body">
-								<ul>
-								
-								</ul>
+							<div class="chat-messages-body" style="height: 100%;">
+								<div>
+									<div class="chat-contents-container">
+										<ul>
+											<li class="chat-date">
+												<div class="date">
+													<div>2024년 04월 01일 월요일</div>
+												</div>
+											</li>
+											<li class="is-quote-msg">
+												<div class="message-box">
+													<div class="user-profile-img">
+														<div class="chat-user-profile-picture">
+															<div class="image">
+<!-- 															<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTAgMGg3MnY3MkgweiIvPgogICAgICAgIDxwYXRoIGlkPSJjIiBkPSJNMCAwaDcydjcySDB6Ii8+CiAgICA8L2RlZnM+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxtYXNrIGlkPSJiIiBmaWxsPSIjZmZmIj4KICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjYSIvPgogICAgICAgIDwvbWFzaz4KICAgICAgICA8ZyBtYXNrPSJ1cmwoI2IpIj4KICAgICAgICAgICAgPG1hc2sgaWQ9ImQiIGZpbGw9IiNmZmYiPgogICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjYyIvPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgZmlsbD0iI0YyRjJGMiIgeGxpbms6aHJlZj0iI2MiLz4KICAgICAgICAgICAgPHBhdGggZmlsbD0iI0UxRTFFMSIgZD0iTTcwLjY3NyA2Ny4wMzJjLS45NTEtMi44NDQtMi42NzQtNS43MTItNS4yMTUtNy4zODEtNC44OS0zLjIzNi0xMC41ODctNC45NjItMTYuMDk1LTYuODEtMS4zMjktLjQ2NS0yLjY4LS45Ny0zLjg5My0xLjY5LTEuMDg1LS42NDMtMS40OTItMS45Ni0xLjc0My0zLjExNy0uMTEyLS42MTItLjE4LTEuMjQtLjIxNS0xLjg1NyAzLjk5NC01LjQ0OCA2LjY0NC0xNC4zNCA2LjY0NC0yMS42M0M1MC4xNiAxMy4xNzIgNDMuNzEyIDEwIDM1Ljc2IDEwYy03Ljk1NCAwLTE0LjQgMy4xNjYtMTQuNCAxNC41NDMgMCA3LjU1MSAyLjg0IDE2LjgxNCA3LjA3NSAyMi4xOTUtLjAzOS40MjQtLjA5Ljg1LS4xNjYgMS4yNzItLjI1MiAxLjE1Ny0uNjU5IDIuNDUtMS43NDIgMy4wOTItMS4yMTYuNzItMi41NjYgMS4xNzctMy44OTUgMS42NC01LjUwOSAxLjg0OS0xMS4yMDYgMy40NzgtMTYuMDk0IDYuNzE0LTIuNTQyIDEuNjctNC4yNjQgNC43MzItNS4yMTQgNy41NzZDLjM0NiA2OS45ODItLjA1NCA3My42MzguMDA2IDc2LjZoNzEuOTg4Yy4wNi0yLjk2Mi0uMzQtNi42MTctMS4zMTctOS41Njh6IiBtYXNrPSJ1cmwoI2QpIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"> -->
+		<!-- 													프로필 사진 없으면 기본 이미지 -->
+															</div>
+														</div>
+													</div>
+													<div class="message-body">
+														<div class="quote-message">
+															<div class="quote-message-box">
+																<div class="system-title">
+																	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMzIzMjMyIj4KICAgICAgICA8cmVjdCB3aWR0aD0iMTYuNSIgaGVpZ2h0PSIxNi41IiB4PSIxLjc1IiB5PSIxLjc1IiBzdHJva2Utd2lkdGg9IjEuNSIgcng9IjQiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjMzIzMjMyIiBzdHJva2Utd2lkdGg9Ii41IiBkPSJNMTIuMzY0IDEyLjkzNmwuNjEyLTIuNzIyaC0xLjI3MWwuNjU5IDIuNzIyek05LjUxIDkuMzE2aDEuMDhsLS41My0yLjI1Ni0uNTUgMi4yNTV6bS0xLjcyNyAzLjY1N2wuNjYtMi43NTlINy4xN2wuNjEyIDIuNzZ6TTUuMTA4IDkuMzE1aC44MjhsLS43MzItMy4xNjdjLS4xMi0uNTg3LjktLjc5IDEuMDMyLS4xNjhsLjczMiAzLjMzNWgxLjY5bC43OTItMy4yMjdjLjEzMi0uNjIzIDEuMTE1LS42MzUgMS4yNi4wMTNsLjc3OSAzLjIxNGgxLjY5bC43NjgtMy4zNThjLjEyLS41ODggMS4xMDQtLjM4NC45Ni4xOGwtLjc0MyAzLjE3OGguODAzYy4yNjQgMCAuMzk2LjIwNC4zOTYuNDU1IDAgLjI2NC0uMTMyLjQ0NC0uMzg0LjQ0NGgtMS4wMmwtLjgxNSAzLjQ5Yy0uMjA0LjkzNS0xLjI4My45NDgtMS41LjAxMmwtLjg0LTMuNTAySDkuMjgzbC0uODUyIDMuNTAyYy0uMTkxLjkyMy0xLjI4My45MjMtMS40NzUuMDI1bC0uODE1LTMuNTI3SDUuMTA4Yy0uMjUxIDAtLjQwOC0uMTkyLS40MDgtLjQ1NiAwLS4yNTIuMTQ0LS40NDMuNDA4LS40NDNoMHoiLz4KICAgIDwvZz4KPC9zdmc+Cg==">
+																	<span>견적서</span>
+																</div>
+																<div class="sub-title">최승현 고객님 안녕하세요. 요청서에 따른 예상금액입니다.</div>
+																<hr>
+																<div class="service-info">
+																	<span class="label">서비스</span>
+																	<span class="value">국내 이사</span>
+																</div>
+																<div class="price-info">
+																	<span class="label">예상금액</span>
+																	<span class="value" style="font-size: 16px; font-weight:700;">총 250,000원 부터~</span>
+																</div>
+																<hr>
+																<div class="guide">
+																	<span class="guide-icon">💬</span>
+																	<span class="guide-text">견적금액에 대해 궁금한 점을 채팅으로 물어보세요.</span>
+																</div>
+																<a class="cta">
+																	고수 프로필 보기
+																	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMEgxOFYxOEgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTExLjUgMTNMNy41IDkgMTEuNSA1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMSAwIDAgMSAxOSAwKSIvPgogICAgPC9nPgo8L3N2Zz4K">
+																</a>
+															</div>
+															<p class="message-status">
+																<span>오전 10:05</span>
+															</p>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="chat-message-input">
@@ -371,7 +424,7 @@
 														</div>
 														<div class="thumb">
 															<div class="user-profile-picture">
-																<div class="is-square"></div>
+																<div class="is-square" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/0fba57dc-e585-4af1-9bb4-98ac2b2627c1.jpg?h=320&w=320&webp=1&quot;);"></div>
 															</div>
 														</div>
 														<div class="info">

@@ -5,7 +5,7 @@
 	font-family: "Noto Sans KR", "Malgun Gothic", -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	}
 	
-	body{ font-family: "Noto Sans KR", "Malgun Gothic", -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";  overflow-x: hidden; overflow-y: hidden;}
+	body{ font-family: "Noto Sans KR", "Malgun Gothic", -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";  overflow-x: hidden; overflow-y: hidden; height: 100vh;}
 	
 	.center{ margin: 0 auto; }
 	
@@ -60,9 +60,11 @@
 		font-weight: 400;
 		justify-content: space-between;
 		line-height: 24px;
-		min-height: 100%;
 		text-align: left;
 		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		opacity: 1;
 	}
 	
 	#app > #header {
@@ -297,11 +299,18 @@
 		flex-grow: 1;
 		opacity: 1;
 		position: relative;
+		height: 100%;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		text-align: left;
+		
 	}
 	
 	.chat-room {
 		display: block;
 		font-size: 16px;
+		height: 100%;
 		font-weight: 400;
 		line-height: 24px;
 		text-align: left;
@@ -313,6 +322,7 @@
 		flex-wrap: wrap;
 		overflow: hidden;
 		position: relative;
+		height: 100%;
 	}
 	
 	.chatbody-section {
@@ -321,9 +331,14 @@
 		flex-basis: 0px;
 		flex-direction: column;
 		flex-grow: 1;
-		min-height: 860px;
+		font-size: 16px;
+		font-weight: 400;
+		height: 100%;
+		line-height: 24px;
 		max-width: 100%;
+		min-height: 100%;
 		position: relative;
+		text-align: left;
 		width: 100%;
 	}
 	
@@ -352,7 +367,7 @@
 		flex-basis: auto;
 		flex-grow: 1;
 		flex-shrink: 0;
-		height: 36px;
+		height: auto;
 		width: auto;
 	}
 	
@@ -575,7 +590,6 @@
 	
 /* 	------------------------------------------------------------------ */
 	.chat-messages {
-		display: block;
 		flex-basis: 0%;
 		flex-grow: 1;
 		flex-shrink: 1;
@@ -583,25 +597,48 @@
 		font-weight: 400;
 		line-height: 24px;
 		overflow-x: hidden;
+		overflow-y: auto;
 		position: relative;
 	}
 	
 	.chat-messages-body {
+		display: block;
+		font-size: 16px;
+		font-weight: 400;
+		height: 100%;
+		position: relative;
+		text-align: left;
+		
+	}
+	
+	.chat-messages-body > div {
+		display: block;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+	
+	.chat-contents-container {
+		display: block;
+		bottom: 0px;
 		left: 0px;
 		overflow-x: hidden;
 		overflow-y: auto;
 		padding: 0px 24px;
-		position: absolute;
+		position: relative;
 		right: 0px;
 		scroll-behavior: smooth;
-		text-align: left;
+		top: 0px;
 	}
 
-	.chat-messages-body ul {
+	.chat-contents-container > ul {
+		display: block;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
 		list-style-type: disc;
 		margin-bottom: 16px;
 		width: 100%;
-		height: 1475px; /*채팅 내용이 들어오면 auto*/
 	}
 	
 	.chat-message-input {
@@ -2401,4 +2438,294 @@
 		width: 215px;
 	}
 	
+	.chat-date {
+		display: list-item;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		list-style-type: none;
+	}
 	
+	.date {
+		display: block;
+		line-height: 0px;
+		list-style-type: none;
+		padding: 12px 0px;
+		text-align: center;
+	}
+	
+	.date > div {
+		color: rgb(115, 115, 115);
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: normal;
+		line-height: 18px;
+		list-style-type: none;
+		padding-top: 8px;
+		text-align: center; 
+	}
+	
+	.is-quote-msg {
+		display: list-item;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		list-style-type: none;
+		text-align: left;
+	}
+	
+	.message-box {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		list-style-type: none;
+		padding: 12px 0px;
+	}
+	
+	.message-box.justify-content-start {
+		justify-content: flex-start;
+	}
+	
+	.user-profile-img {
+		cursor: pointer;
+		flex-basis: auto;
+		flex-grow: 0;
+		flex-shrink: 0;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		line-height: 21px;
+		list-style-type: none;
+		margin-right: 8px;
+		max-width: 100%;
+		order: 1;
+		position: relative;
+		vertical-align: top;
+		width: auto;
+	}
+	
+	.chat-user-profile-picture {
+		cursor: pointer;
+		display: block;
+		font-size: 14px;
+		font-weight: 400;
+		height: 32px;
+		letter-spacing: -0.2px;
+		list-style-type: none;
+		position: relative;
+		text-align: left;
+		width: 32px;
+	}
+	
+	.image {
+		background-color: rgb(225, 225, 225);
+		background-position-x: 50%;
+		background-position-y: 50%;
+		border: 1px solid rgb(242, 242, 242);
+		border-radius: 50%;
+		display: block;
+		font-size: 14px;
+		font-weight: 400;
+		height: 100%;
+		letter-spacing: -0.2px;
+		line-height: 21px;
+		list-style-type: none;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		text-align: left;
+		background-size: cover;
+		background-image: url(https://dmmj3ljielax6.cloudfront.net/upload/profile/0fba57dc-e585-4af1-9bb4-98ac2b2627c1.jpg?webp=1);
+	}
+	
+	.image img {
+		border: 0px none;
+		overflow: clip;
+		width: 30px;
+		vertical-align: middle;
+	}
+	
+	.message-body {
+		display: block;
+		flex-basis: 0px;
+		flex-grow: 1;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 0px;
+		list-style-type: none;
+		max-width: 100%;
+		order: 2;
+		position: relative;
+		width: 100%;
+	}
+	
+	.quote-message {
+		display: inline-block;
+		max-width: 100%;
+		position: relative;
+		width: auto;
+	}
+	
+	.quote-message-box {
+		background-color: rgb(255, 255, 255);
+		border-radius: 18px;
+		display: block;
+		padding: 16px;
+		text-align: start;
+		width: 282px;
+		overflow: hidden;
+		max-width: 282px;
+	}
+	
+	.quote-message-box hr {
+		background-color: rgb(242, 242, 242);
+		border: 0px none;
+		display: block;
+		font-size: 16px;
+		font-weight: 400;
+		height: 1px;
+		margin: 12px 0px;
+		overflow: visible;
+		text-align: start;
+	}
+	
+	.system-title {
+		align-items: center;
+		display: flex;
+		margin-bottom: 16px;
+		text-align: start;
+	}
+	
+	.system-title img {
+		margin-right: 6px;
+		overflow: clip;
+		text-align: start;
+		vertical-align: middle;
+	}
+	
+	.system-title span {
+		font-size: 16px;
+		font-weight: 700;
+		text-align: start;
+	}
+	
+	.sub-title {
+		color: rgb(115, 115, 115);
+		display: block;
+		font-size: 14px;
+		font-weight: 400;
+		list-style-type: none;
+		text-align: start;
+		line-height: normal;
+	}
+	
+	.service-info {
+		align-items: flex-start;
+		display: flex;
+		font-size: 16px;
+		font-weight: 400;
+		list-style-type: none;
+		margin-bottom: 6px;
+		text-align: start;
+	}
+	
+	.label {
+		font-size: 14px;
+		font-weight: 400;
+		text-align: start;
+		line-height: normal;
+	}
+	
+	.value {
+		font-size: 14px;
+		font-weight: 400;
+		margin-left: auto;
+		text-align: right;
+		width: 186px;
+		line-height: normal;
+	}
+	
+	.price-info {
+		align-items: flex-start;
+		display: flex;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: normal;
+		text-align: start;
+	}
+	
+	.guide {
+		align-items: baseline;
+		display: flex;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: normal;
+		margin-bottom: 4px;
+		text-align: start;
+	}
+	
+	.guide-icon {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: normal;
+		margin-right: 8px;
+		text-align: start;
+	}
+	
+	.guide-text {
+		color: rgb(115, 115, 115);
+		font-size: 14px;
+		font-weight: 400;
+		line-height: normal;
+		text-align: start;
+	}
+	
+	.cta {
+		background-color: rgb(0, 199, 174);
+		border-radius: 4px;
+		color: rgb(255, 255, 255);
+		cursor: pointer;
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: normal;
+		list-style-type: none;
+		margin-top: 12px;
+		padding: 8px 12px;
+		text-align: left;
+		width: 100%;
+	}
+	
+	.cta img {
+		float: right;
+		line-height: normal;
+		overflow: clip;
+		position: relative;
+		top: 1px;
+		vertical-align: middle;
+	}
+	
+	.message-status {
+		bottom: 0px;
+		display: flex;
+		flex-direction: column;
+		font-size: 10px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		line-height: normal;
+		list-style-type: none;
+		position: absolute;
+		right: -48px;
+		text-align: left;
+	}
+	
+	.message-status span {
+		color: rgb(181, 181, 181);
+		font-size: 10px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		line-height: normal;
+	}
