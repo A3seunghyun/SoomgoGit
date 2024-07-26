@@ -15,7 +15,10 @@ import org.json.simple.JSONObject;
 
 import dao.NoticeDao;
 import dto.NoticeDto;
+<<<<<<< HEAD
+=======
 import dto.ServiceList;
+>>>>>>> branch 'main' of https://github.com/A3seunghyun/SoomgoGit.git
 
 @WebServlet("/AjaxNoticeListServlet")
 public class AjaxNoticeListServlet extends HttpServlet {
