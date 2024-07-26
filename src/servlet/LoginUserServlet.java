@@ -57,7 +57,7 @@ public class LoginUserServlet extends HttpServlet {
 			System.out.println("로그인됨");
 			
 			//RequestDispatcher rd = request.getRequestDispatcher("/GosuzimServlet");
-			RequestDispatcher rd = request.getRequestDispatcher("Seach.profile.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/soomgo_main.jsp");
 			rd.forward(request, response);
 		} else {
 			
