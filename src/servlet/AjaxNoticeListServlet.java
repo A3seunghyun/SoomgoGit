@@ -15,7 +15,6 @@ import org.json.simple.JSONObject;
 
 import dao.NoticeDao;
 import dto.NoticeDto;
-import dto.ServiceList;
 
 @WebServlet("/AjaxNoticeListServlet")
 public class AjaxNoticeListServlet extends HttpServlet {
