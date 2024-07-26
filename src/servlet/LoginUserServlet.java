@@ -63,7 +63,7 @@ public class LoginUserServlet extends HttpServlet {
 			
 			request.setAttribute("error", true);
 			System.out.println("로그인 실패");
-			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/Login.jsp");
 			rd.forward(request, response); // forword() 메서드를 통해 request,response를 전달한다.
 		}
 			

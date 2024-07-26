@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../img/favicon_logo.ico">
-  <link rel="stylesheet" href="../css/Login2.css"/>
-  <link rel="stylesheet" href="../css/clear3.css"/>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Login2.css"/>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/>
   <title>숨고 숨은고수</title>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script>
@@ -202,7 +202,7 @@
                     <span style = "font-weight: 500;">이메일</span>
                 </div>
                 <!--이메일 입력 보더 박스 아웃라인-->
-                <form action = "/Web/LoginUserServlet" method="post">
+                <form action = "<%=request.getContextPath()%>/LoginUserServlet" method="post">
                 <div id = "email-input-box-outter" class = "center">
                     <!--이메일 입력 input 박스-->
                     <div id = "email-input-box-inner" class ="center">
