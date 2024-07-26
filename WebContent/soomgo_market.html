@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숨고 마켓 메인페이지 -승현</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
+	<link rel="stylesheet" href="css/soomgo_market.css">
+	<link rel="stylesheet" href="css/clear.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".filter-dropdown-menu").hide();
+			$(".keyword-box").hide();
+			
+			$(".form-control").focus(function () {
+				$(".keyword-box").show();
+			});
+			
+			$(".form-control").blur(function () {
+				$(".keyword-box").hide();
+			});
+			
+			$("#title-filter ul li").click(function () {
+				if($("#title-filter ul li").hasClass("active") == true){
+					$("#title-filter ul li").removeClass("active");
+				}
+				$(this).addClass("active");
+			})
+			
+			$("#category-filter ul li").click(function () {
+				if($("#category-filter ul li").hasClass("active") == true){
+					$("#category-filter ul li").removeClass("active");
+				}
+				$(this).addClass("active");
+			})
+			$("#product-list-filter > span").click(function () {
+				$(".filter-dropdown-menu").toggle();
+			})
+			
+			$(".dropdown-item").click(function () {
+				if($(".dropdown-item").hasClass("active") == true){
+					$(".dropdown-item").removeClass("active");
+				}
+				$(this).addClass("active");
+				let menuVal = $(this).text();
+				$("#product-list-filter > span").text(menuVal);
+				$(".filter-dropdown-menu").hide();
+			})
+		
+		})
+	</script>
+
+</head>
+<body>
+<div id = "total-header" class="sticky">
+    <!--상단바메인 보더 박스-->
+    <div id="soomgo-header" class = "center">
+        <!--상단바 로고  보더 박스 -->
+        <div id = "soomgo-header1" class = "center">
+            <!--숨고 메인 페이지 이동 URL-->
+            <a href = "https://soomgo.com/">
+                <!--숨고 메인 로고-->
+                <img src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg" width = "79.5px" height = "27px">
+            </a>
+        </div>
+
+        <!--숨고 견적,고수,마켓,커뮤 보더 박스-->
+        <div id = "soomgo-menu1" class = "center">
+            <!--견적요청 보더 박스-->
+            <div id = "soomgo-request" class = "center">
+                <!--견적요청 페이지 이동URL-->
+                <a href = "https://soomgo.com/category-home/?from=web_gnb">
+                    <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">견적요청</span>
+                </a>
+            </div>
+            <!--고수찾기 보더 박스-->
+            <div id = "soomgo-serch" class ="center">
+                <!--고수찾기 페이지 이동URL-->
+                <a href = "https://soomgo.com/search/pro?from=web_gnb">
+                    <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">고수찾기</span>
+                </a>
+            </div>
+            
+            <!--마켓 보더 박스-->
+            <div id = "soomgo-market" class ="center">
+                <!--마켓 페이지 이동 URL-->
+                <a href = "https://soomgo.com/market/%EC%B7%A8%EB%AF%B8-%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9CA">
+                    <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">마켓</span>
+            </div>
+            
+            <!--커뮤니티 보더 박스-->
+            <div id = "soomgo-community" class ="center">
+                <!--커뮤니티 페이지 이동 URL-->
+                <a href = "https://soomgo.com/community/soomgo-life/all?from=web_gnb">
+                    <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">커뮤니티</span>
+                </a>
+            </div>
+        </div>
+
+        <!--상단바 검색 보더 박스-->
+        <div id = "soomgo-header-serch" class ="center">
+            <!--상단바 검색 돋보기 이미지-->
+            <div id = "reading-glasses-img" class ="center">
+                <img src ="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQgNCkiIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLXdpZHRoPSIxLjYiPgogICAgICAgICAgICA8Y2lyY2xlIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGN4PSI2LjUiIGN5PSI2LjUiIHI9IjYuNSIvPgogICAgICAgICAgICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIGQ9Im0xMS41IDExLjUgNSA1Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K" width ="24px" height = "24px">
+            </div>
+            <!--상단바 검색 버튼-->
+            <div id="serch-input-outter" class ="center">
+                <input type="text" class = "serch-input" style = "font-size: .875ream; font-weight:400;"
+                placeholder= "어떤 서비스가 필요하세요?">
+            </div>
+        </div>
+        
+        <!--상단바 우측 로그인,회원가입,고수가입 보더 박스-->
+        <div id = "soomgo-menu2" class ="center">
+            <!--로그인 보더 박스-->
+            <div id = "soomgo-login" class ="center">
+                <!--로그인 페이지 이동URL-->
+                <a href = "https://soomgo.com/login">
+                    <span style = "font-size : 14px; font-weight: 400;">로그인</span>
+                </a>
+            </div>
+            <!--회원가입 보더 박스-->
+            <div id = "soomgo-join" class ="center">
+                <!--회원가입 페이지 이동URL-->
+                <a href = "https://soomgo.com/sign-up?from=gnb&entry_point=signup_cta">
+                    <span style = "font-size : 14px; font-weight: 400; color:rgb(12, 12, 12);" >회원가입</span>
+                </a>
+            </div>
+            <!--고수가입 보더 박스-->
+            <div id = "soomgo-gosu-join" class ="center">
+                <!--고수가입 페이지 이동URL-->
+                <a href = "https://soomgo.com/sign-up?from=gnb&entry_point=signup_cta">
+                    <span style = "font-size : 14px; color:#fff; font-weight: 500">고수가입</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<div id="app-body">
+		<div id="market-title" class="center">
+		<span>마켓</span>
+		</div>
+		<div id="top-section" class="center">
+			<div id="keyword-search">
+				<div id="search-area" class="fl">
+					<div class="input-wrap">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZT0iI0M1QzVDNSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBjeD0iNi42MTEiIGN5PSI2LjYxMSIgcj0iNS44NjEiLz4KICAgICAgICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Im0xNS4yNSAxNS4yNS00LjI0My00LjI0MyIvPgogICAgPC9nPgo8L3N2Zz4K" class="search-icon">
+							</div>
+							<input type="text" class="form-control" placeholder="원하는 상품을 검색해보세요">
+						</div>
+						<div class="keyword-box">
+							<ul>
+								<li class="title">추천 서비스</li>
+								<li class="keyword-title">피트니스</li>
+								<li class="keyword-title">디자인 외주</li>
+								<li class="keyword-title">음악이론/보컬</li>
+								<li class="keyword-title">웨딩</li>
+								<li class="keyword-title">취업 준비</li>
+								<li class="keyword-title">입주/집 청소</li>
+								<li class="keyword-title">가전/가구 청소</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="title-filter" class="center">
+				<ul>
+					<li><a>취미/자기계발</a></li>
+					<li><a>이벤트/뷰티</a></li>
+					<li><a>자동차</a></li>
+					<li><a>이사/청소</a></li>
+					<li><a>설치/수리</a></li>
+					<li><a>외주</a></li>
+					<li><a>과외</a></li>
+					<li><a>취업/직무</a></li>
+					<li><a>법률/금융</a></li>
+					<li><a>인테리어</a></li>
+					<li><a>기타</a></li>
+					<li><a>입주박람회</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main-page" class="center">
+			<div id="category-filter" class="fl">
+				<ul>
+					<li class="active"><a>전체</a></li>
+					<li><a>피트니스</a></li>
+					<li><a>음악이론/보컬</a></li>
+					<li><a>공예</a></li>
+					<li><a>악기</a></li>
+					<li><a>투잡/N잡</a></li>
+					<li><a>계절 스포츠</a></li>
+					<li><a>요리/조리</a></li>
+					<li><a>취미/생활</a></li>
+					<li><a>사진/영상</a></li>
+					<li><a>구기 스포츠</a></li>
+					<li><a>취업 준비 컨설팅</a></li>
+					<li><a>연기/마술</a></li>
+					<li><a>댄스</a></li>
+					<li><a>스포츠</a></li>
+				</ul>
+			</div>
+			<div id="sub-page" class="fl">
+				<div id="filter-controller">
+					<button type="button">
+						<img src="img/지역버튼.svg">지역
+					</button>
+				</div>
+				<div id="product-list-top">
+					<div id="product-total-count">
+						<strong>503</strong><span>개 서비스</span>
+					</div>
+					<div id="product-list-filter">
+						<span>추천순</span>
+					</div>
+					<ul	class="filter-dropdown-menu">
+						<li class="sort-item">
+							<a class="dropdown-item active">추천순</a>
+						</li>
+						<li class="sort-item">
+							<a class="dropdown-item">인기순</a>
+						</li>
+						<li class="sort-item">
+							<a class="dropdown-item">최신순</a>
+						</li>
+						<li class="sort-item">
+							<a class="dropdown-item">평점순</a>
+						</li>
+						<li class="sort-item">
+							<a class="dropdown-item">리뷰 많은순</a>
+						</li>
+					</ul>
+				</div>
+				<div id="product-list-page">
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/7c68af16-6b1c-480b-afdc-43bf1f8ba8c1.jpg?w=480&webp=1"class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>피트니스</span>
+							</div>
+							<div id="item_title">
+								<h3>건강하고 아름다운 몸만들기</h3>
+							</div>
+							<div id="item_price">
+								<strong>300,000원 ~</strong>
+							</div>
+							<div id="provider_review" class="fl">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.5</div>
+								<div id="product_review_count">(1)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/ea698dd0-6867-48ee-becc-c6c36ea0da2d.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>요리/조리</span>
+							</div>
+							<div id="item_title">
+								<h3>직접 만들어보는 카페 디저트! 자격증 보유, 운영 중인 카페에서 수업</h3>
+							</div>
+							<div id="item_price">
+								<strong>10,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+							<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.6</div>
+								<div id="product_review_count">(2)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/65233ead-8101-4c86-ad67-73d880d8388b.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>답례품, 특별한 정성을 담은 캔들방향제</h3>
+							</div>
+							<div id="item_price">
+								<strong>200,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+							<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.7</div>
+								<div id="product_review_count">(3)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/cf55a8a6-35e4-4a13-bc07-51b29753e5c6.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>음악이론/보컬</span>
+							</div>
+							<div id="item_title">
+								<h3>현 엔터테인먼트 작곡가 축가 음원 편집 고퀄리티 보장</h3>
+							</div>
+							<div id="item_price">
+								<strong>50,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.8</div>
+								<div id="product_review_count">(4)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/a6586b9d-b8b0-46ea-95cb-70f88a62d5e9.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>계절 스포츠</span>
+							</div>
+							<div id="item_title">
+								<h3>프리다이빙, 머메이드다이빙 하고 인생샷 찍으로가자</h3>
+							</div>
+							<div id="item_price">
+								<strong>100,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.9</div>
+								<div id="product_review_count">(5)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/7c68af16-6b1c-480b-afdc-43bf1f8ba8c1.jpg?w=480&webp=1"class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>피트니스</span>
+							</div>
+							<div id="item_title">
+								<h3>건강하고 아름다운 몸만들기</h3>
+							</div>
+							<div id="item_price">
+								<strong>300,000원 ~</strong>
+							</div>
+							<div id="provider_review" class="fl">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.5</div>
+								<div id="product_review_count">(1)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/ea698dd0-6867-48ee-becc-c6c36ea0da2d.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>요리/조리</span>
+							</div>
+							<div id="item_title">
+								<h3>직접 만들어보는 카페 디저트! 자격증 보유, 운영 중인 카페에서 수업</h3>
+							</div>
+							<div id="item_price">
+								<strong>10,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+							<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.6</div>
+								<div id="product_review_count">(2)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/65233ead-8101-4c86-ad67-73d880d8388b.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>답례품, 특별한 정성을 담은 캔들방향제</h3>
+							</div>
+							<div id="item_price">
+								<strong>200,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+							<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.7</div>
+								<div id="product_review_count">(3)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/cf55a8a6-35e4-4a13-bc07-51b29753e5c6.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>음악이론/보컬</span>
+							</div>
+							<div id="item_title">
+								<h3>현 엔터테인먼트 작곡가 축가 음원 편집 고퀄리티 보장</h3>
+							</div>
+							<div id="item_price">
+								<strong>50,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.8</div>
+								<div id="product_review_count">(4)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/unknown/a6586b9d-b8b0-46ea-95cb-70f88a62d5e9.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>계절 스포츠</span>
+							</div>
+							<div id="item_title">
+								<h3>프리다이빙, 머메이드다이빙 하고 인생샷 찍으로가자</h3>
+							</div>
+							<div id="item_price">
+								<strong>100,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">4.9</div>
+								<div id="product_review_count">(5)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="fl">
+							<div id="product_img" class="box border_radius">
+								<img src="https://static.cdn.soomgo.com/upload/market/d3cdb60c-4b76-4125-95ce-6ece7f2263e5.jpg?w=480&webp=1" class="border_radius" width="222.42px" height ="148.27px">
+							</div>
+							<div id="service_title">
+								<span>공예</span>
+							</div>
+							<div id="item_title">
+								<h3>왕초보 악필도 OK! 취미/자격증/전시 선택 1대1 개인지도 캘리그라피/피오피 통합과정</h3>
+							</div>
+							<div id="item_price">
+								<strong>35,000원 ~</strong>
+							</div>
+							<div id="provider_review">
+								<div id="product_star"><img src="img/review_star.svg" width="14px" height="14px"></div>
+								<div id="product_avg">5.0</div>
+								<div id="product_review_count">(6)</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style ="clear:both;"></div>
+	<div id="app-footer" class="center">
+				<div id="footer-container" class="center">
+					<div id="col-content">
+						<p id="col-content-text">1599-5319</p>
+						<p id="col-content-text-middle">
+							평일 10:00 - 18:00<br/>
+							(점심시간 13:00 - 14:00 제외 · 주말/공휴일 제외)
+						</p>
+						<a class="footer-download" style="margin-right: 8px;">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-download-appstore.svg" class="footer-download-img">
+							APP STORE 
+						</a>
+						<a class="footer-download">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-download-palystore.svg" class="footer-download-img">
+							PLAY STORE 
+						</a>
+				</div>
+				<div id="col-content-right">
+					<ul id="content-list">
+						<li class="content-list">
+							<span class="content-list-category">숨고소개</span>
+							<div>
+								<a class="content-list-text">회사소개</a>
+								<a class="content-list-text">채용안내</a>
+								<a class="content-list-text">팀블로그</a>
+							</div>
+						</li>
+						<li class="content-list">
+							<span class="content-list-category">고객안내</span>
+							<div>
+								<a class="content-list-text">이용안내</a>
+								<a class="content-list-text">안전정책</a>
+								<a class="content-list-text">예상금액</a>
+								<a class="content-list-text">고수찾기</a>
+								<a class="content-list-text">숨고보증</a>
+								<a class="content-list-text">고수에게묻다</a>
+							</div>
+						</li>
+						<li class="content-list">
+							<span class="content-list-category">고수안내</span>
+							<div>
+								<a class="content-list-text">이용안내</a>
+								<a class="content-list-text">고수가이드</a>
+								<a class="content-list-text">고수가입</a>
+							</div>
+						</li>
+						<li class="content-list">
+							<span class="content-list-category">고객센터</span>
+							<div>
+								<a class="content-list-text">공지사항</a>
+								<a class="content-list-text">자주묻는질문</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="footer-container-row" class="center">
+				<div id="footer-container-row-term">
+					<div class="row-term-content">
+						<div class="row-term-list">
+							<div class="row-term-list-terms-group" style="margin-right: 30px;">
+								<a class="terms-text" style="margin-right: 30px;">이용약관</a>
+								<a class="terms-text">개인정보처리방침</a>
+							</div>
+							<div class="row-term-list-terms-group">
+								<a class="terms-text" style="margin-right: 30px;">위치기반 서비스 이용약관</a>
+								<a class="terms-text">사업자 정보확인</a>
+							</div>
+						</div>
+						<div class="row-term-list">
+							<span class="terms-text-span">(주)브레이브모바일은 통신판매중개자로서 통신판매의 당사자가 아니며 개별 판매자가 제공하는 서비스에 대한 이행, 계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.</span>
+						</div>
+						<ul class="row-term-content-guide">
+							<li class="content-guide-text">상호명:(주)브레이브모바일 · 대표이사:KIM ROBIN H · 개인정보책임관리자:김태우 · 주소:서울특별시 강남구 테헤란로 415, L7 강남타워 5층</li>
+							<li class="content-guide-text">사업자등록번호:120-88-22325 · 통신판매업신고증:제 2021-서울강남-00551 호 · 직업정보제공사업 신고번호:서울청 제 2019-21호</li>
+							<li class="content-guide-text">고객센터:1599-5319 · 이메일:support@soomgo.com</li>
+							<li class="content-guide-text">Copyright ©Brave Mobile Inc. All Rights Reserved.</li>
+						</ul>
+					</div>
+					<div class="row-term-content-badge">
+						<a class="footer-badge">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-facebook.svg" class="footer-badge-img">
+						</a>
+						<a class="footer-badge">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-instagram.svg" class="footer-badge-img">
+						</a>
+						<a class="footer-badge">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-naverblog.svg" class="footer-badge-img">
+						</a>
+						<a class="footer-badge">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-naverpost.svg" class="footer-badge-img">
+						</a>
+						<a class="footer-badge">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-tistory.svg" class="footer-badge-img">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>숨고 받은요청 -승현</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
+	<link rel="stylesheet" href="css/soomgo_quote.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			
+			$(".received-request-filter-modal-outer").hide();
+			$(".received-request-sorting-modal-outer").hide();
+			
+			$(".filter-list-btn").click(function() {
+				$(".received-request-filter-modal-outer").show();
+				$(".received-request-filter-modal").css("background-color","rgba(0, 0, 0, 0.5)");
+				$("body").css("overflow-y","hidden");
+			});
+			
+			$(".filter-modal-btn-close").click(function() {
+				$(".received-request-filter-modal-outer").hide();
+				$(".received-request-sorting-modal-outer").hide();
+				$("body").css("overflow-y","auto");
+				$(".form-item-checkbox-label").removeClass("checked");
+				$(".service-list-btn").removeClass("chk");
+			});
+			
+			$("#sorting-filter-btn").click(function() {
+				$(".received-request-sorting-modal-outer").toggle();
+			});
+			
+			$(".form-item label[for=normal-0]").click(function() {
+				$(".form-item-checkbox-label[for=normal-0]").toggleClass("checked");
+			})
+			$(".form-item label[for=targeted-0]").click(function() {
+				$(".form-item-checkbox-label[for=targeted-0]").toggleClass("checked");
+			})
+			$(".form-item label[for=read-1]").click(function() {
+				$(".form-item-checkbox-label[for=read-1]").toggleClass("checked");
+			})
+			$(".form-item label[for=unread-1]").click(function() {
+				$(".form-item-checkbox-label[for=unread-1]").toggleClass("checked");
+			})
+			$(".form-item label[for=before-2]").click(function() {
+				$(".form-item-checkbox-label[for=before-2]").toggleClass("checked");
+			})
+			$(".form-item label[for=after-2]").click(function() {
+				$(".form-item-checkbox-label[for=after-2]").toggleClass("checked");
+			})
+			
+			$(".form-item label[for=reg_desc-1]").click(function() {
+				$(".form-item-radio-label[for=reg_desc-1]").toggleClass("checked");
+				$(".form-item-radio-label[for=reg_asc-2]").removeClass("checked");
+			})
+			$(".form-item label[for=reg_asc-2]").click(function() {
+				$(".form-item-radio-label[for=reg_asc-2]").toggleClass("checked");
+				$(".form-item-radio-label[for=reg_desc-1]").removeClass("checked");
+			})
+			
+			$(".service-list-btn").click(function(e) {
+				$(this).toggleClass("chk");
+				 e.preventDefault();
+			})
+			
+			$(".reset-btn").click(function() {
+				$(".form-item-checkbox-label").removeClass("checked");
+				$(".service-list-btn").removeClass("chk");
+				$(".form-item-radio-label[for=reg_desc-1]").removeClass("checked");
+				$(".form-item-radio-label[for=reg_asc-2]").removeClass("checked");
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="app" class="center">
+		<div id="header">
+			<div id="app-header" class="center">
+				<div id="global-navigation-bar" class="center">
+					<div id="desktop-header" class="center">
+						<div id="left-section">
+							<div id="logo">
+								<a> <img
+									src="https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
+								</a>
+							</div>
+							<nav>
+								<ul id="nav-left-list">
+									<li class="nav-left-section-item"><span>견적요청</span></li>
+									<li class="nav-left-section-item left-item-margin"><span>고수찾기</span></li>
+									<li class="nav-left-section-item left-item-margin"><span>마켓</span></li>
+									<li class="nav-left-section-item left-item-margin"><span>커뮤니티</span></li>
+								</ul>
+							</nav>
+						</div>
+						<div id="right-section">
+							<nav>
+								<ul id="nav-right-list">
+									<li class="nav-right-section-item"><span>로그인</span></li>
+									<li class="nav-right-section-item right-item-margin"><span>회원가입</span></li>
+								</ul>
+							</nav>
+							<button>
+								<a>고수가입</a>
+						</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- 헤더 -->
+		<div id="app-body" class="center">
+			<div>
+				<div id="received-request-list">
+					<div id="banner-wrapper">
+						<div id="banner-container">
+							<div id="banner-slider">
+								<div id="banner-track">
+									<div id="slick-slide">
+										<div>
+											<div id="banner">
+												<img src="https://static.cdn.soomgo.com/upload/banner/dab035ce-e359-439e-8a8b-daf0a38cbfce.png?webp=1" class="banner-img">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="received-request-header">
+						<div id="received-request-container" class="center">
+							<div id="received-request-title">
+								<h1>받은요청</h1>
+							</div>
+						</div>
+					</div>
+					<div id="filter-group" class="center">
+						<ul id="filter-list">
+							<li>
+								<button class="filter-list-btn" type="button" style="width: 112.89px">
+									<span>전체요청</span>
+								</button>
+							</li>
+							<li>
+								<button class="filter-list-btn" type="button" style="width: 117.38px">
+									<span>읽음 여부</span>
+								</button>
+							</li>
+							<li>
+								<button class="filter-list-btn" type="button" style="width: 117.40px">
+									<span>마감 여부</span>
+								</button>
+							</li>
+							<li>
+								<button class="filter-list-btn" type="button" style="width: 98.17px">
+									<span>서비스</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+					<div id="sorting-group" class="center">
+						<div id="total-count">
+							<strong>1</strong>개 받은 요청
+						</div>
+						<button type="button" id="sorting-filter-btn">최신순</button>
+					</div>
+					<div id="received-request-body">
+						<div id="received-request-body-container" class="center">
+							<ul id="request-list">
+								<li>
+									<div id="request-item">
+										<a>
+											<div id="profile-img">
+												<div id="user-profile-picture">
+													<div>
+														<img src="img/장용준.jpg">
+													</div>
+												</div>
+											</div>
+											<div id="request-info">
+												<div id="request-info-title"><span>장용준</span></div>
+												<div id="request-info-desc">하는게 없음</div>
+												<div id="request-info-address">코리아IT신촌점</div>
+												<div id="request-info-date">1일전</div>
+												<div id="request-info-quote">
+													<span>나 장용준..코리아IT신촌점에서 공부하고 있다.. 하루종일 커뮤니티만 했다..너무 힘들다..살려줘</span><span>삭제</span>
+												</div>
+											</div>
+										</a>
+									</div>
+									<img src="https://assets.cdn.soomgo.com/assets/images/img-autocharge-banner-desktop@3x.png?webp=1" class="auto-charge-banner center">
+									<div id="request-item">
+										<a>
+											<div id="profile-img">
+												<div id="user-profile-picture">
+													<div>
+														<img src="img/김연우.png">
+													</div>
+												</div>
+											</div>
+											<div id="request-info">
+												<div id="request-info-title"><span>중국부자 김연우</span></div>
+												<div id="request-info-desc">호구</div>
+												<div id="request-info-address">코리아IT신촌점</div>
+												<div id="request-info-date">1일전</div>
+												<div id="request-info-quote">
+													<span>중국산 김연우 돈 개많음</span><span>삭제</span>
+												</div>
+											</div>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="app-footer" class="center">
+				<div id="footer-container" class="center">
+					<div id="col-content">
+						<p id="col-content-text">1599-5319</p>
+						<p id="col-content-text-middle">
+							평일 10:00 - 18:00<br/>
+							(점심시간 13:00 - 14:00 제외 · 주말/공휴일 제외)
+						</p>
+						<a class="footer-download" style="margin-right: 8px;">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-download-appstore.svg" class="footer-download-img">
+							APP STORE 
+						</a>
+						<a class="footer-download">
+							<img src="https://assets.cdn.soomgo.com/icons/icon-download-palystore.svg" class="footer-download-img">
+							PLAY STORE 
+						</a>
+					</div>
+					<div id="col-content-right">
+						<ul id="content-list">
+							<li class="content-list">
+								<span class="content-list-category">숨고소개</span>
+								<div>
+									<a class="content-list-text">회사소개</a>
+									<a class="content-list-text">채용안내</a>
+									<a class="content-list-text">팀블로그</a>
+								</div>
+							</li>
+							<li class="content-list">
+								<span class="content-list-category">고객안내</span>
+								<div>
+									<a class="content-list-text">이용안내</a>
+									<a class="content-list-text">안전정책</a>
+									<a class="content-list-text">예상금액</a>
+									<a class="content-list-text">고수찾기</a>
+									<a class="content-list-text">숨고보증</a>
+									<a class="content-list-text">고수에게묻다</a>
+								</div>
+							</li>
+							<li class="content-list">
+								<span class="content-list-category">고수안내</span>
+								<div>
+									<a class="content-list-text">이용안내</a>
+									<a class="content-list-text">고수가이드</a>
+									<a class="content-list-text">고수가입</a>
+								</div>
+							</li>
+							<li class="content-list">
+								<span class="content-list-category">고객센터</span>
+								<div>
+									<a class="content-list-text">공지사항</a>
+									<a class="content-list-text">자주묻는질문</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="footer-container-row" class="center">
+					<div id="footer-container-row-term">
+						<div class="row-term-content">
+							<div class="row-term-list">
+								<div class="row-term-list-terms-group" style="margin-right: 30px;">
+									<a class="terms-text" style="margin-right: 30px;">이용약관</a>
+									<a class="terms-text">개인정보처리방침</a>
+								</div>
+								<div class="row-term-list-terms-group">
+									<a class="terms-text" style="margin-right: 30px;">위치기반 서비스 이용약관</a>
+									<a class="terms-text">사업자 정보확인</a>
+								</div>
+							</div>
+							<div class="row-term-list">
+								<span class="terms-text-span">(주)브레이브모바일은 통신판매중개자로서 통신판매의 당사자가 아니며 개별 판매자가 제공하는 서비스에 대한 이행, 계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.</span>
+							</div>
+							<ul class="row-term-content-guide">
+								<li class="content-guide-text">상호명:(주)브레이브모바일 · 대표이사:KIM ROBIN H · 개인정보책임관리자:김태우 · 주소:서울특별시 강남구 테헤란로 415, L7 강남타워 5층</li>
+								<li class="content-guide-text">사업자등록번호:120-88-22325 · 통신판매업신고증:제 2021-서울강남-00551 호 · 직업정보제공사업 신고번호:서울청 제 2019-21호</li>
+								<li class="content-guide-text">고객센터:1599-5319 · 이메일:support@soomgo.com</li>
+								<li class="content-guide-text">Copyright ©Brave Mobile Inc. All Rights Reserved.</li>
+							</ul>
+						</div>
+						<div class="row-term-content-badge">
+							<a class="footer-badge">
+								<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-facebook.svg" class="footer-badge-img">
+							</a>
+							<a class="footer-badge">
+								<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-instagram.svg" class="footer-badge-img">
+							</a>
+							<a class="footer-badge">
+								<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-naverblog.svg" class="footer-badge-img">
+							</a>
+							<a class="footer-badge">
+								<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-naverpost.svg" class="footer-badge-img">
+							</a>
+							<a class="footer-badge">
+								<img src="https://assets.cdn.soomgo.com/icons/icon-footer-sns-tistory.svg" class="footer-badge-img">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div><!-- app -->
+	<div class="received-request-filter-modal-outer">
+		<div class="received-request-filter-modal">
+			<div class="modal-dialog center">
+				<span tabindex="0"></span>
+				<div class="filter-modal">
+					<header class="filter-modal-header">
+						<h5>필터</h5>
+						<button type="button" class="filter-modal-btn-close">
+							<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTkgNy44NjlMMTYuNDM0LjQzNGwxLjEzMiAxLjEzMkwxMC4xMyA5bDcuNDM1IDcuNDM0LTEuMTMyIDEuMTMyTDkgMTAuMTNsLTcuNDM0IDcuNDM1LTEuMTMyLTEuMTMyTDcuODcgOSAuNDM0IDEuNTY2IDEuNTY2LjQzNCA5IDcuODd6Ii8+CiAgICA8L2RlZnM+CiAgICA8dXNlIGZpbGw9IiMzMjMyMzIiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI2EiLz4KPC9zdmc+Cg==">
+						</button>
+					</header>
+					<div class="filter-modal-body">
+						<form>
+							<fieldset class="form-group" style="padding-bottom: 32px;">
+								<legend tabindex="-1" class="form-label">전체요청</legend>
+								<div>
+									<div class="form-item" style="margin-bottom: 24px;">
+										<label for="normal-0">일반 요청</label>
+										<div class="form-item-checkbox">
+											<input type="checkbox" class="form-item-checkbox-input" id="normal-0" value="normal">
+											<label for="normal-0" class="form-item-checkbox-label"></label>
+										</div>
+									</div>
+									<div class="form-item">
+										<label for="targeted-0">지정 요청
+											<div class="help-text">고객이 나에게만 보낸 요청</div>
+										</label>
+										<div class="form-item-checkbox">
+											<input type="checkbox" class="form-item-checkbox-input" id="targeted-0" value="targeted">
+											<label for="targeted-0" class="form-item-checkbox-label"></label>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group" style="padding-bottom: 32px; margin-top: 32px;">
+								<legend tabindex="-1" class="form-label">읽음 여부</legend>
+								<div>
+									<div class="form-item" style="margin-bottom: 24px;">
+										<label for="read-1">읽은 요청</label>
+										<div class="form-item-checkbox">
+											<input type="checkbox" class="form-item-checkbox-input" id="read-1" value="read">
+											<label for="read-1" class="form-item-checkbox-label"></label>
+										</div>
+									</div>
+									<div class="form-item">
+										<label for="unread-1">안 읽은 요청</label>
+										<div class="form-item-checkbox">
+											<input type="checkbox" class="form-item-checkbox-input" id="unread-1" value="unread">
+											<label for="unread-1" class="form-item-checkbox-label"></label>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group" style="padding-bottom: 32px; margin-top: 32px;">
+								<legend tabindex="-1" class="form-label">마감 여부</legend>
+								<div>
+									<div class="form-item" style="margin-bottom: 24px;">
+										<label for="before-2">마감 전 요청
+											<div class="help-text">고객에게 견적을 보낼 수 있는 상태</div>
+										</label>
+										<div class="form-item-checkbox">
+											<input type="checkbox" class="form-item-checkbox-input" id="before-2" value="before">
+											<label for="before-2" class="form-item-checkbox-label"></label>
+										</div>
+									</div>
+									<div class="form-item">
+										<label for="after-2">마감된 요청
+											<div class="help-text">고객이 최대 견적을 받은 상태</div>
+										</label>
+										<div class="form-item-checkbox">
+											<input type="checkbox" class="form-item-checkbox-input" id="after-2" value="after">
+											<label for="after-2" class="form-item-checkbox-label"></label>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group" style="margin-top: 32px; border-bottom: none;">
+								<legend tabindex="-1" class="form-label">서비스</legend>
+								<div>
+									<ul class="service-list">
+										<li>
+											<button class="service-list-btn">CCTV 설치</button>
+										</li>
+									</ul>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<footer class="modal-footer">
+						<button type="button" class="reset-btn">
+							<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTS00NTEtNjQ3SDcxOVY5ODVILTQ1MXoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNLTY2LTIwaDYwMHY1NEgtNjZ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTcuMjAxIDEuMjVjLjAyMy4wMzcuMDM1LjA4LjAzNS4xMjRWMi40M2MyLjQ2OC4xMyA0LjQzIDIuMjc3IDQuNDMgNC45MDcgMCAyLjcxMy0yLjA4OSA0LjkxMi00LjY2NiA0LjkxMi0yLjU3NyAwLTQuNjY3LTIuMi00LjY2Ny00LjkxMiAwLS4zNC4yNjItLjYxNC41ODQtLjYxNC4zMjIgMCAuNTgzLjI3NS41ODMuNjE0IDAgMi4wMzQgMS41NjcgMy42ODQgMy41IDMuNjg0czMuNS0xLjY1IDMuNS0zLjY4NGMwLTEuOTUyLTEuNDQtMy41NDgtMy4yNjQtMy42NzZ2MS4wMjJhLjI0My4yNDMgMCAwIDEtLjM2OC4yMDlMNC4wODcgMy4yNDJhLjI0My4yNDMgMCAwIDEgMC0uNDE4bDIuNzgxLTEuNjZhLjI0My4yNDMgMCAwIDEgLjMzMy4wODV6IiBmaWxsPSIjMkQyRDJEIi8+CiAgICAgICAgPHBhdGggZD0iTTExLTExLjVjNS4xMDkgMCA5LjczNCAyLjA3IDEzLjA4MSA1LjQxOUExOC40NDIgMTguNDQyIDAgMCAxIDI5LjUgN2MwIDUuMTA5LTIuMDcgOS43MzQtNS40MTkgMTMuMDgxQTE4LjQ0MiAxOC40NDIgMCAwIDEgMTEgMjUuNWgtNTBjLTUuMTA5IDAtOS43MzQtMi4wNy0xMy4wODEtNS40MTlBMTguNDQyIDE4LjQ0MiAwIDAgMS01Ny41IDdjMC01LjEwOSAyLjA3LTkuNzM0IDUuNDE5LTEzLjA4MUExOC40NDIgMTguNDQyIDAgMCAxLTM5LTExLjV6IiBzdHJva2U9IiNFMUUxRTEiLz4KICAgIDwvZz4KPC9zdmc+Cg==" style="width: 20px; height: 20px;">
+							<span style="font-size: 16px; font-weight: 500;">초기화</span>
+						</button>
+						<button type="button" class="apply-btn">적용하기</button>
+					</footer>
+				</div>
+				<span tabindex="0"></span>
+			</div>
+		</div>
+	</div>
+	<div class="received-request-sorting-modal-outer">
+		<div class="received-request-sorting-modal" style="background-color: rgba(0, 0, 0, 0.5);">
+			<div class="modal-dialog center">
+			<span tabindex="0"></span>
+			<div class="filter-modal">
+				<header class="filter-modal-header">
+					<h5>정렬</h5>
+					<button type="button" class="filter-modal-btn-close">
+						<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTkgNy44NjlMMTYuNDM0LjQzNGwxLjEzMiAxLjEzMkwxMC4xMyA5bDcuNDM1IDcuNDM0LTEuMTMyIDEuMTMyTDkgMTAuMTNsLTcuNDM0IDcuNDM1LTEuMTMyLTEuMTMyTDcuODcgOSAuNDM0IDEuNTY2IDEuNTY2LjQzNCA5IDcuODd6Ii8+CiAgICA8L2RlZnM+CiAgICA8dXNlIGZpbGw9IiMzMjMyMzIiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI2EiLz4KPC9zdmc+Cg==">
+					</button>
+				</header>
+				<div class="received-request-sorting-body">
+					<form>
+						<fieldset class="form-group">
+							<div class="form-item" style="margin-bottom: 34px;">
+								<label for="reg_desc-1">최신순</label>
+								<div class="form-item-radio">
+									<input type="radio" class="form-item-checkbox-input" id="reg_desc-1" value="reg_desc">
+									<label for="reg_desc-1" class="form-item-radio-label"></label>
+								</div>
+							</div>	
+						</fieldset>
+						<fieldset class="form-group">
+							<div class="form-item" style="margin-bottom: 34px;">
+								<label for="reg_asc-2">오래된순</label>
+								<div class="form-item-radio">
+									<input type="radio" class="form-item-checkbox-input" id="reg_asc-2" value="reg_asc">
+									<label for="reg_asc-2" class="form-item-radio-label"></label>
+								</div>
+							</div>	
+						</fieldset>
+					</form>
+				</div>
+				<footer class="modal-footer">
+						<button type="button" class="reset-btn">
+							<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTS00NTEtNjQ3SDcxOVY5ODVILTQ1MXoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNLTY2LTIwaDYwMHY1NEgtNjZ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTcuMjAxIDEuMjVjLjAyMy4wMzcuMDM1LjA4LjAzNS4xMjRWMi40M2MyLjQ2OC4xMyA0LjQzIDIuMjc3IDQuNDMgNC45MDcgMCAyLjcxMy0yLjA4OSA0LjkxMi00LjY2NiA0LjkxMi0yLjU3NyAwLTQuNjY3LTIuMi00LjY2Ny00LjkxMiAwLS4zNC4yNjItLjYxNC41ODQtLjYxNC4zMjIgMCAuNTgzLjI3NS41ODMuNjE0IDAgMi4wMzQgMS41NjcgMy42ODQgMy41IDMuNjg0czMuNS0xLjY1IDMuNS0zLjY4NGMwLTEuOTUyLTEuNDQtMy41NDgtMy4yNjQtMy42NzZ2MS4wMjJhLjI0My4yNDMgMCAwIDEtLjM2OC4yMDlMNC4wODcgMy4yNDJhLjI0My4yNDMgMCAwIDEgMC0uNDE4bDIuNzgxLTEuNjZhLjI0My4yNDMgMCAwIDEgLjMzMy4wODV6IiBmaWxsPSIjMkQyRDJEIi8+CiAgICAgICAgPHBhdGggZD0iTTExLTExLjVjNS4xMDkgMCA5LjczNCAyLjA3IDEzLjA4MSA1LjQxOUExOC40NDIgMTguNDQyIDAgMCAxIDI5LjUgN2MwIDUuMTA5LTIuMDcgOS43MzQtNS40MTkgMTMuMDgxQTE4LjQ0MiAxOC40NDIgMCAwIDEgMTEgMjUuNWgtNTBjLTUuMTA5IDAtOS43MzQtMi4wNy0xMy4wODEtNS40MTlBMTguNDQyIDE4LjQ0MiAwIDAgMS01Ny41IDdjMC01LjEwOSAyLjA3LTkuNzM0IDUuNDE5LTEzLjA4MUExOC40NDIgMTguNDQyIDAgMCAxLTM5LTExLjV6IiBzdHJva2U9IiNFMUUxRTEiLz4KICAgIDwvZz4KPC9zdmc+Cg==" style="width: 20px; height: 20px;">
+							<span style="font-size: 16px; font-weight: 500;">초기화</span>
+						</button>
+						<button type="button" class="apply-btn">적용하기</button>
+					</footer>
+			</div>
+			<span tabindex="0"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

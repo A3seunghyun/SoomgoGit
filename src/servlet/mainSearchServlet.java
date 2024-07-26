@@ -13,43 +13,30 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import dao.NoticeDao;
-import dto.NoticeDto;
-<<<<<<< HEAD
-=======
+import dao.ServiceDao;
 import dto.ServiceList;
->>>>>>> branch 'main' of https://github.com/A3seunghyun/SoomgoGit.git
 
-@WebServlet("/AjaxNoticeListServlet")
-public class AjaxNoticeListServlet extends HttpServlet {
+@WebServlet("/mainSearchServlet")
+public class mainSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("...ohm");
-		//System.out.println("user_idx : " + request.getParameter("user_idx"));
+//		System.out.println("요청 들어옴");
+		String searchText = request.getParameter("search_text");
 		
-		NoticeDao nDao = new NoticeDao();
-		ArrayList<NoticeDto> list = null;
-		
-		int userIdx = Integer.parseInt(request.getParameter("user_idx"));
+		ServiceDao sDao = new ServiceDao();
+		ArrayList<ServiceList> listService = null;
 		try {
-			list = nDao.getNoticeList(userIdx);
+			listService = sDao.getServiceList(searchText);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-
 		response.setContentType("application/json; charset=utf-8");
 		JSONArray array1 = new JSONArray();
-		for(NoticeDto dto : list) {
+		for(ServiceList dto : listService) {
 			JSONObject obj = new JSONObject();
-			obj.put("chat_idx", dto.getChatIdx());
-			obj.put("estimate_idx", dto.getEstimateIdx());
-			obj.put("comments_idx", dto.getCommentsIdx());
-			obj.put("notice_date", dto.getNoticeDate().substring(2,10));
-			obj.put("message", dto.getMessage());
-			obj.put("name", dto.getName());
-			obj.put("svc_name", dto.getServiceName());
+			obj.put("service_idx", dto.getServiceIdx());
+			obj.put("service_title", dto.getServieTitle());
 			array1.add(obj);
 		}
 		PrintWriter writer = response.getWriter();
