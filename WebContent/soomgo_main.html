@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8">
 	<title>숨고 메인 -승현</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-	<link rel="stylesheet" href="soomgo_main.css">
+	<link rel="stylesheet" href="css/soomgo_main.css">
+	
+	<script type="text/javascript">
+		$(function () {
+			$("#nav-left-list > li:nth-child(3)").click(function () {
+				location.href = "soomgo_market.jsp?category_idx=1";
+			})
+		})
+	</script>
 </head>
 	<body>
 		<div id="app" class="center">
@@ -14,7 +23,7 @@
 						<div id="desktop-header" class="center">
 							<div id="left-section">
 								<div id="logo">
-									<a> <img
+									<a href="soomgo_main.html"> <img
 										src="https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
 									</a>
 								</div>
