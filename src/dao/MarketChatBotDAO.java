@@ -79,6 +79,31 @@ public class MarketChatBotDAO {
 		return mChatContents;
 	}
 	
+	public boolean getMarketChatContentsCnt(int chatroomIdx) throws Exception {
+		Connection conn = getConnection();
+		
+		String sql = "SELECT count(*) " +
+				"FROM chat_contents " +
+				"WHERE chatroom_idx = ? " + 
+				"ORDER BY con_date ASC";
+		
+		// PreparedStatement 객체 얻고. & 물음표 셋팅.
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, chatroomIdx);
+		
+		// 실행 -> return true / false.
+		ResultSet rs = pstmt.executeQuery();
+		int result = 0;  // 0 : 초기값 (사실, 1이 아닌 값이면 오케이)
+		if(rs.next()) {
+			result = rs.getInt(1);   // 첫 번째 컬럼의 값.
+		}
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return result==1;
+	}
+	
 	public void marketChatInsert(int roomIdx, int usersIdx, String content) throws Exception {
 		Connection conn = getConnection();
 		

@@ -472,7 +472,7 @@
 			alert("Error!");
 		}
 		
-		let webSocket = new WebSocket("ws://localhost:9095/WebProject1/marketBroadcasting");
+		let webSocket = new WebSocket("ws://localhost:9095/SoomgoGit/marketBroadcasting");
 		
 		webSocket.onmessage = func_on_message;
 		webSocket.onerror = func_on_error;
@@ -508,23 +508,30 @@
 			url: "AjaxSoomgoMarketChatServlet",
 			success: function (res) {
 				console.log("성공");
-				$(".chat-body").attr("idx", res[0].roomIdx)
-				$(".chat-body").html("");
-				for(let i = 0; i <= res.length-1; i++){
-					let you = "<div class=\"message bot\">" +
-	                 			"<div class=\"avatar\"><img src=\"img/chat_soomgo.png\" style=\"width: 40px; height: 40px;\"></div>" +
-	                 			"<div class=\"text\">"+res[i].contents+"</div>" +
-	             			"</div>";
-	             			
-	             	let me = "<div class=\"message user\">" +
-	                 			"<div class=\"text\">"+res[i].contents+"</div>" +
-	             			"</div>";
-					if(res[i].usersIdx != <%=usersIdx%>){
-						$(".chat-body").append(you);
-					} else {
-						$(".chat-body").append(me);
+				alert(res.roomIdx);
+				if(res.length > 0){
+					$(".chat-body").attr("idx", res[0].roomIdx)
+					let a = $(".chat-body").attr("idx");
+					
+					$(".chat-body").html("");
+					for(let i = 0; i <= res.length-1; i++){
+						let you = "<div class=\"message bot\">" +
+		                 			"<div class=\"avatar\"><img src=\"img/chat_soomgo.png\" style=\"width: 40px; height: 40px;\"></div>" +
+		                 			"<div class=\"text\">"+res[i].contents+"</div>" +
+		             			"</div>";
+		             			
+		             	let me = "<div class=\"message user\">" +
+		                 			"<div class=\"text\">"+res[i].contents+"</div>" +
+		             			"</div>";
+						if(res[i].usersIdx != <%=usersIdx%>){
+							$(".chat-body").append(you);
+						} else {
+							$(".chat-body").append(me);
+						}
+						$(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
 					}
-					$(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+				} else {
+					$(".chat-body").attr("idx", res.roomIdx);
 				}
 // 				<div class="message bot">
 //                 <div class="avatar"><img src="img/chat_soomgo.png" style="width: 40px; height: 40px;"></div>
