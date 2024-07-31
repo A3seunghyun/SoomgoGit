@@ -40,8 +40,6 @@ public class AjaxSoomgoMarketChatServlet extends HttpServlet {
 		}
 		
 		JSONArray array = new JSONArray();
-		response.setContentType("application/json; charset=utf-8");
-		PrintWriter writer = response.getWriter();
 		if(result) {
 			try {
 				chatContents = mccDao.getMarketChatContents(roomIdx);
@@ -51,30 +49,21 @@ public class AjaxSoomgoMarketChatServlet extends HttpServlet {
 			
 			for(MarketChatContentsDTO dto : chatContents) {
 				JSONObject obj = new JSONObject();
-				System.out.println(dto.getChatRoomIdx());
 				obj.put("roomIdx", dto.getChatRoomIdx());
 				obj.put("usersIdx", dto.getUsersIdx());
 				obj.put("contents", dto.getContents());
 				array.add(obj);
-				writer.print(array);
-				
 			}
+			response.setContentType("application/json; charset=utf-8");
+			PrintWriter writer = response.getWriter();
+			writer.print(array);
 		} else {
-//			try {
-//				chatContents = mccDao.getMarketChatContents(roomIdx);
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//			
 			int idx = roomIdx;
-//			System.out.println(idx);
-//			for(MarketChatContentsDTO dto : chatContents) {
 				JSONObject obj = new JSONObject();
-//				System.out.println(dto.getChatRoomIdx());
 				obj.put("roomIdx", idx);
+				response.setContentType("application/json; charset=utf-8");
+				PrintWriter writer = response.getWriter();
 				writer.print(obj);
-//				array.add(obj);
-//			}
 		}
 		
 		

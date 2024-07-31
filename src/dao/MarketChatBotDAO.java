@@ -101,7 +101,8 @@ public class MarketChatBotDAO {
 		pstmt.close();
 		conn.close();
 		
-		return result==1;
+		return result>0;
+		
 	}
 	
 	public void marketChatInsert(int roomIdx, int usersIdx, String content) throws Exception {

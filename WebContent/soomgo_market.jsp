@@ -491,7 +491,6 @@
 				// 채팅 메시지 업데이트
 				let me = "<div class=\"message user\">" +
      						"<div class=\"text\">"+content+"</div>" +
-     						"<div class=\"avatar\"></div>" +
  						"</div>";
 				$(".chat-body").append(me);
 				$(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
@@ -507,9 +506,8 @@
 			data: {roomIdx: roomIdx},
 			url: "AjaxSoomgoMarketChatServlet",
 			success: function (res) {
-				console.log("성공");
-				alert(res.roomIdx);
 				if(res.length > 0){
+					console.log("채팅 내용 있음 성공");
 					$(".chat-body").attr("idx", res[0].roomIdx)
 					let a = $(".chat-body").attr("idx");
 					
@@ -531,16 +529,9 @@
 						$(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
 					}
 				} else {
+					console.log("채팅 내용 없음 성공");
 					$(".chat-body").attr("idx", res.roomIdx);
 				}
-// 				<div class="message bot">
-//                 <div class="avatar"><img src="img/chat_soomgo.png" style="width: 40px; height: 40px;"></div>
-//                 <div class="text">안녕하세요. 오늘 필요한 정보를 제공해 드리겠습니다. 무엇을 도와드릴까요?</div>
-//             </div>
-//             <div class="message user">
-//                 <div class="text">영수증 사본을 다시 받을 수 있나요?</div>
-//                 <div class="avatar"><img src="img/김연우1.jpg" style="width: 40px; height: 40px; border-radius: 50%;"></div>
-//             </div>
 			},
 			error: function (r, s, e) {
 				alert("[에러] code:" + r.status + ", message:" + r.responseText + ", error:"+e);
