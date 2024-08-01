@@ -142,7 +142,12 @@
 				 $("input").css('background','white');
 				 
 				 $(".input-search-box").show();
-				 
+			  });
+			  
+			  // 검색창 포커스 잃으면 밑에 조회하는 창이 닫힘
+			  $("#search-bar-input-group").focusout(function(){
+				  
+					 $(".input-search-box").hide();
 			  });
 			  
 			  $("input").on('focusout',function(){
@@ -216,8 +221,6 @@
 			let service_idx = $(this).attr("service_idx");
 			alert("견적 요청으로 이동해야 - service_idx=" + service_idx);
 		});
-		  
-		
 		
 
 	</script>

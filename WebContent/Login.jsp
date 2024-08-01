@@ -24,12 +24,9 @@
             $(this).css({
                 "border-color": "red",
                 "box-shadow": "none"
-                
             });
         }
-        
     });
-
     $(".email-input").focus(function() {
         $(this).css({
             "border": "1px solid #00c7ae",
