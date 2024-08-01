@@ -274,21 +274,21 @@
             <!--로그인 보더 박스-->
             <div id = "soomgo-login" class ="center">
                 <!--로그인 페이지 이동URL-->
-                <a href = "https://soomgo.com/login">
+                <a href = "Login.jsp">
                     <span style = "font-size : 14px; font-weight: 400; color:black;">로그인</span>
                 </a>
             </div>
             <!--회원가입 보더 박스-->
             <div id = "soomgo-join" class ="center">
                 <!--회원가입 페이지 이동URL-->
-                <a href = "https://soomgo.com/sign-up?from=gnb&entry_point=signup_cta">
+                <a href = "User.join.jsp">
                     <span style = "font-size : 14px; font-weight: 400; color:rgb(12, 12, 12);" >회원가입</span>
                 </a>
             </div>
             <!--고수가입 보더 박스-->
             <div id = "soomgo-gosu-join" class ="center">
                 <!--고수가입 페이지 이동URL-->
-                <a href = "https://soomgo.com/sign-up?from=gnb&entry_point=signup_cta">
+                <a href = "Gosu_join.jsp">
                     <span style = "font-size : 14px; color:#fff; font-weight: 500">고수가입</span>
                 </a>
             </div>
@@ -413,7 +413,7 @@
                         <button type = "button" class = "ok-button1">확인</button>
                         <button type = "button" class = "ok-button2">확인</button>
                         <button type = "button" class = "ok-button3">확인</button>
-                        <a class = "ok-button4" href = "/Web/Login.jsp">로그인 하기</a>
+                        <a class = "ok-button4" href = "Login.jsp">로그인 하기</a>
                     </div>
                 </div>
             </div>
