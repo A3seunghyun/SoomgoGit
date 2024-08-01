@@ -77,7 +77,7 @@
     });
 
     $(".pw-input").blur(function() {
-        if ($(this).val().length >= 8) {
+        if ($(this).val().length >= 5) {
             $("#pw-box-inner-text").hide();
             $(this).css({
                 "border-color": "#e1e1e1",
@@ -201,7 +201,7 @@
                     <span style = "font-weight: 500;">이메일</span>
                 </div>
                 <!--이메일 입력 보더 박스 아웃라인-->
-                <form action = "/Web/LoginUserServlet" method="post">
+                <form action = "LoginUserServlet" method="post">
                 <div id = "email-input-box-outter" class = "center">
                     <!--이메일 입력 input 박스-->
                     <div id = "email-input-box-inner" class ="center">
