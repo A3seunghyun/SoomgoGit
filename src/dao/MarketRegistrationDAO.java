@@ -50,7 +50,7 @@ public class MarketRegistrationDAO {
 	public int market(int category, String mTitle, int userIdx) throws Exception {
 		Connection conn = getConnection();
 		
-		String sql = "INSERT INTO MARKET(MARKET_IDX, SERVICE_IDX, NAME,  USERS_IDX, PRODUCT_DATE) VALUES(market_idx_seq.nextval, ?, ?, ?, sysdate)";
+		String sql = "INSERT INTO MARKET(MARKET_IDX, SERVICE_IDX, NAME,  USERS_IDX, PRODUCT_DATE) VALUES(SEQ_MARKET_IDX.nextval, ?, ?, ?, sysdate)";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql, new String[] {"market_idx"});
 		
@@ -95,7 +95,7 @@ public class MarketRegistrationDAO {
 	public void marketOption(int marketIdx, String optionTitle, String optionContent, int optionPrice) throws Exception {
 		Connection conn = getConnection();
 		
-		String sql = "INSERT INTO MARKET_ITEM_PRICE(MARKET_IDX, PRICE_IDX, NAME, DETAIL, PRICE) VALUES(?, marekt_option_price_idx_seq.nextval, ?, ?, ?)";
+		String sql = "INSERT INTO MARKET_ITEM_PRICE(MARKET_IDX, PRICE_IDX, OPTION_TITLE, DETAIL, PRICE) VALUES(?, SEQ_MARKET_OPTION_PRICE_IDX.NEXTVAL, ?, ?, ?)";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
@@ -113,7 +113,7 @@ public class MarketRegistrationDAO {
 	public void marketSchedule(int marketIdx, String dayWeek, String st_time, String ed_time) throws Exception {
 		Connection conn = getConnection();
 		
-		String sql = "INSERT INTO SCHEDULE(MARKET_IDX, DAYWEEK, ST_TIME, ED_TIME, SCHEDULE_IDX) VALUES(?, ?, ?, ?, MARKET_SCHEDULE_IDX_SEQ.NEXTVAL)";
+		String sql = "INSERT INTO SCHEDULE(MARKET_IDX, DAYWEEK, ST_TIME, ED_TIME, SCHEDULE_IDX) VALUES(?, ?, ?, ?, SEQ_MARKET_SCHEDULE_IDX.NEXTVAL)";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
@@ -164,7 +164,7 @@ public class MarketRegistrationDAO {
 	public void marketThumbnailImg(int marketIdx, String url) throws Exception {
 		Connection conn = getConnection();
 		
-		String sql = "INSERT INTO MARKET_IMG(MARKET_IDX, IMG_IDX, IMG_URL) VALUES(?, MARKET_THUMBNAIL_IMG_IDX_SEQ.nextval, ?)";
+		String sql = "INSERT INTO MARKET_IMG(MARKET_IDX, IMG_IDX, IMG_URL) VALUES(?, SEQ_MARKET_THUMBNAIL_IMG_IDX.nextval, ?)";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
@@ -180,7 +180,7 @@ public class MarketRegistrationDAO {
 	public void marketDetailImg(int marketIdx, String url) throws Exception {
 		Connection conn = getConnection();
 		
-		String sql = "INSERT INTO MARKET_ITEM_IMG(MARKET_IDX, IMG_IDX, IMG_URL) VALUES(?, MARKET_DETAIL_IMG_IDX_SEQ.nextval, ?)";
+		String sql = "INSERT INTO MARKET_ITEM_IMG(MARKET_IDX, IMG_IDX, IMG_URL) VALUES(?, SEQ_MARKET_DETAIL_IMG_IDX.nextval, ?)";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
