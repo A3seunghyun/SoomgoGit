@@ -123,7 +123,7 @@
             <!--고수찾기 보더 박스-->
             <div id = "soomgo-serch" class ="center">
                 <!--고수찾기 페이지 이동URL-->
-                <a href = "/Web/Seach.profile.jsp">
+                <a href = "Seach.profile.jsp">
                     <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">고수찾기</span>
                 </a>
             </div>
@@ -162,21 +162,21 @@
             <!--로그인 보더 박스-->
             <div id = "soomgo-login" class ="center">
                 <!--로그인 페이지 이동URL-->
-                <a href = "/Web/Login.jsp">
+                <a href = "Login.jsp">
                     <span style = "font-size : 14px; font-weight: 400;">로그인</span>
                 </a>
             </div>
             <!--회원가입 보더 박스-->
             <div id = "soomgo-join" class ="center">
                 <!--회원가입 페이지 이동URL-->
-                <a href = "/Web/User.join.jsp">
+                <a href = "User.join.jsp">
                     <span style = "font-size : 14px; font-weight: 400; color:rgb(12, 12, 12);" >회원가입</span>
                 </a>
             </div>
             <!--고수가입 보더 박스-->
             <div id = "soomgo-gosu-join" class ="center">
                 <!--고수가입 페이지 이동URL-->
-                <a href = "/Web/Gosu_join.jsp">
+                <a href = "Gosu_join.jsp">
                     <span style = "font-size : 14px; color:#fff; font-weight: 500">고수가입</span>
                 </a>
             </div>
@@ -247,7 +247,7 @@
                         </div>
 
                         <div id ="join" class ="center">
-                            <a href ="/Web/User.join.jsp"  style = "color:rgb(115, 115, 115); font-size :14px; font-weight: 400;">회원가입</a>
+                            <a href ="User.join.jsp"  style = "color:rgb(115, 115, 115); font-size :14px; font-weight: 400;">회원가입</a>
                         </div>
 
                         
