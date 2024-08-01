@@ -253,7 +253,7 @@
 			<div id="sub-page" class="fl">
 				<div id="filter-controller">
 					<button type="button">
-						<img src="img/지역버튼.svg">지역
+						<img src="img/area_fillter_btn.svg">지역
 					</button>
 				</div>
 				<div id="product-list-top">
