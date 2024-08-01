@@ -12,7 +12,7 @@
     	String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "soomgo";
-		String pw = "pass1234";
+		String pw = "soomgo";
     	
 		Class.forName(driver);
 		Connection conn = DriverManager.getConnection(url,id,pw);
