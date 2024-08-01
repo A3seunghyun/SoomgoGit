@@ -35,7 +35,7 @@ public class LoginUserServlet extends HttpServlet {
 		Class.forName(driver);
 		Connection conn = DriverManager.getConnection(url, id, pw);
 		
-		String sql = "SELECT users_idx,g_fuck " + 
+		String sql = "SELECT users_idx,isgosu " + 
 				"FROM users " + 
 				"WHERE email = ? " + 
 				"AND pw = ?";
@@ -48,11 +48,11 @@ public class LoginUserServlet extends HttpServlet {
 		
 		if(rs.next()) {
 			int users_idx = rs.getInt(1);
-			int g_fuck = rs.getInt(2);
+			int isgosu = rs.getInt(2);
 			
 			
-			hs.setAttribute("users_idx", users_idx);
-			hs.setAttribute("g_fuck", g_fuck);
+			hs.setAttribute("L_users_idx", users_idx);
+			hs.setAttribute("isgosu", isgosu);
 			
 			System.out.println("로그인됨");
 			
