@@ -231,7 +231,7 @@
                 <div id ="email-pw-join-outter" class = "center">
                     <div id ="email-pw-join-inline" class = "center">
                         <div id ="email-serch" class ="center">
-                            <a href = "/Web/email_search.jsp" style = "color:rgb(115, 115, 115); font-size :14px; font-weight: 400;">
+                            <a href = "email_search.jsp" style = "color:rgb(115, 115, 115); font-size :14px; font-weight: 400;">
                                 이메일 찾기
                             </a>
                         </div>
@@ -240,7 +240,7 @@
                         </div>
                         
                         <div id = "pw-serch" class = "center">
-                            <a href = "/Web/pw_search.jsp"  style = "color:rgb(115, 115, 115); font-size :14px; font-weight: 400;">비밀번호 찾기</a>
+                            <a href = "pw_search.jsp"  style = "color:rgb(115, 115, 115); font-size :14px; font-weight: 400;">비밀번호 찾기</a>
                         </div>
 
                         <div id ="line" class = "center">
