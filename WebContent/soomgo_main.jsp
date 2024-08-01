@@ -143,7 +143,7 @@
 				 
 				 $(".input-search-box").show();
 				 
-			  });	
+			  });
 			  
 			  $("input").on('focusout',function(){
 				  
