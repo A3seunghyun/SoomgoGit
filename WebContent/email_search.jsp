@@ -1,5 +1,3 @@
-<%@page import="dto.Search_emailDto"%>
-<%@page import="dao.Search_emailDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="java.util.ArrayList"%>
