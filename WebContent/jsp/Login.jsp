@@ -95,8 +95,8 @@
 
   </script>
   <link rel="icon" href="./img/favicon_logo.ico">
-  <link rel="stylesheet" href="./css/Login2.css"/>
-  <link rel="stylesheet" href="./css/clear3.css"/>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Login2.css"/>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/>
 </head>
 <body>
 <div id = "total-header">
