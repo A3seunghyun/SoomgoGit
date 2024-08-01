@@ -296,7 +296,7 @@
 							<div class="product-list-item-image">
 								<article class="preview-image">
 									<div class="image-wrap">
-										<img src="img/<%=dto.getImgUrl() %>">
+										<img src="<%=dto.getImgUrl() %>">
 									</div>
 								</article>
 							</div>
