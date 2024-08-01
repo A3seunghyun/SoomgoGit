@@ -18,12 +18,17 @@
 	%>
     <%
     	int categoryIdx = 1;
+    	int pageNum = 1;
     	try{
 	    	categoryIdx = Integer.parseInt(request.getParameter("category_idx"));
+	    	pageNum = Integer.parseInt(request.getParameter("page"));
     	} catch (Exception e) { }
     	
+    	int startNum, endNum;
+    	int lastPageNum;
+    	
     	MarketProductListDAO mplDao = new MarketProductListDAO();
-    	ArrayList<MarketProductListDTO> mpl = mplDao.marketList(categoryIdx);
+    	ArrayList<MarketProductListDTO> mpl = mplDao.marketList(categoryIdx, pageNum);
     	
     	CategoryDAO cateDao = new CategoryDAO();
     	ArrayList<CategoryDTO> category = cateDao.catelist();
@@ -63,7 +68,11 @@
 				}
 			})
 			
+			
 			$("#title-filter > ul > li:nth-child(<%=categoryIdx%>)").addClass("active");
+			if(<%=categoryIdx%> >=9 && <%=categoryIdx%> <=11){
+				swal("준비중입니다.");
+			}
 			
 			$("#title-filter ul li").click(function () {
 				if($("#title-filter ul li").hasClass("active") == true){
@@ -107,8 +116,73 @@
 				}
 			})
 			
+			$(window).scroll(function() {
+// 				if($(window).scrollTop() + $(window).height() == $(document).height()) {
+// 					console.log("페이지 맨아래 도달! 무한스크롤 실행!");
+// 					draw_new_board_list(++page_num);
+// 				}
+				if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
+        			console.log("페이지 맨아래 도달! 무한스크롤 실행!");
+        			draw_new_board_list(++page_num);
+    			}
+			});
+			
 			
 		})
+		
+		let page_num = <%=pageNum%>;
+		let category_idx = <%=categoryIdx%>;
+		function draw_new_board_list(page) {
+			$.ajax({
+				type: 'get',
+				data: {page_num : page_num, category_idx: category_idx},
+				dataType: "json",
+				url: "AjaxSoomgoMarketScrollServlet",
+				success: function (res) {
+					console.log("성공");
+					for(let i = 0; i <= res.length-1; i++){
+						let str = "<article class=\"product-list-item\">"+
+						"<a class=\"product-list-item-a\" href=\"SoomgoMarketDetailServlet?market_idx=\""+res[i].market_idx+">"+
+						"<div class=\"product-list-item-image\">"+
+						"<article class=\"preview-image\">"+
+						"<div class=\"image-wrap\">"+
+						"<img src=\""+res[i].imgUrl+"\">"+
+						"</div>"+
+						"</article>"+
+						"</div>"+
+						"<div class=\"product-list-service-name\">"+
+						"<span>"+res[i].title+"</span>"+
+						"</div>"+
+						"<div class=\"product-list-item-title\">"+
+						"<div class=\"item-title-collapsed\">"+
+						"<div class=\"item-title-line-clamp\">"+
+						"<h3>"+res[i].marketName+"</h3>"+
+						"</div>"+
+						"</div>"+
+						"</div>"+
+						"<div class=\"product-list-item-price\">"+
+						"<strong>"+res[i].marketMinPrice+"원 ~</strong>"+
+						"</div>"+
+						"<div class=\"product-list-provider-review\">"+
+						"<span class=\"review-star-icon\">"+
+						"<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\">"+
+						"<path d=\"m7.496 1.596 1.407 2.742 3.145.44c.91.127 1.275 1.204.615 1.822l-2.276 2.134.538 3.015c.155.872-.797 1.538-1.612 1.126L6.5 11.452l-2.813 1.423c-.815.412-1.767-.254-1.612-1.126l.538-3.015L.337 6.6c-.66-.618-.296-1.695.615-1.822l3.145-.44 1.407-2.742C5.912.8 7.088.8 7.496 1.596\" fill=\"#FFCE21\" fill-rule=\"evenodd\"></path>"+
+						"</svg>"+
+						"</span>"+
+						"<span class=\"review-avg\">"+res[i].marketAvg+"</span>"+
+						"<span class=\"review-count\">("+res[i].marketCount+")</span>"+
+						"</div>"+
+						"</a>"+
+						"</article>";
+						$(".product-list").append(str);
+					}
+					
+				},
+				error: function (r, s, e) {
+					alert("[에러] code:" + r.status + ", message:" + r.responseText + ", error:"+e)
+				}
+			});
+		}
 	</script>
 </head>
 <body>

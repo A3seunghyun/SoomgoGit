@@ -80,6 +80,10 @@
 				$(window).scrollTop(0);
 			})
 			
+			$(".btn-search-cancel").click(function () {
+				location.href = "soomgo_market.jsp?category_idx=1";
+			})
+			
 			
 		});
 		

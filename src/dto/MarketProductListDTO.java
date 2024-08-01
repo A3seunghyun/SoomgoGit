@@ -25,8 +25,8 @@ public class MarketProductListDTO {
 	private int marketMinPrice;
 	private double marketAvg;
 	private int marketCount;
-	public MarketProductListDTO(int market_idx, String imgUrl, String title, String marketName, int marketMinPrice,
-			double marketAvg, int marketCount) {
+	public MarketProductListDTO(int market_idx, String imgUrl, String title, String marketName,
+			int marketMinPrice, double marketAvg, int marketCount) {
 		this.market_idx = market_idx;
 		this.imgUrl = imgUrl;
 		this.title = title;
@@ -77,7 +77,5 @@ public class MarketProductListDTO {
 	public void setMarketCount(int marketCount) {
 		this.marketCount = marketCount;
 	}
-	
-	
 	
 }
