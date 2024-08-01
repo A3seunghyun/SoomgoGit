@@ -43,7 +43,7 @@
             let phone = $(".input-number").val();
                 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/Web/SearchEmailServlet", true);
+            xhr.open("POST", "/SoomgoGit/SearchEmailServlet", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
@@ -58,6 +58,9 @@
                         $(".certification-number-outter").hide();
                         $(".phone-message-font1").show();
                         $(".phone-message-font2").hide();
+                        if ($(".phone-message-font1").is(':visible')) {
+                            location.reload();
+                        }
                     }
                 }
             }
@@ -140,7 +143,7 @@
         $(".ok-button1").css("cursor","pointer");
     });
     
-    $(".ok-button1").click(function(){
+    /* $(".ok-button1").click(function(){
         $(".body-inner").hide();
         $(".certification-number-outter").hide();
         $(this).css("background-color","#B5B5B5");
@@ -148,6 +151,18 @@
         $(".select-name-body").show();
         $(".ok-button1").hide();
         $(".ok-button2").show();
+    }); */
+    
+    $(document).ready(function() {
+        $(".ok-button1").click(function() {
+            if ($(this).css("background-color") === "rgb(0, 199, 174)" &&
+                $(this).css("border-color") === "rgb(0, 199, 174)" &&
+                $(this).css("cursor") === "pointer") {
+                $(".select-name-body").show();
+            } else {
+                $(".select-name-body").hide();
+            }
+        });
     });
 
     $(".select-name-li").click(function() {
