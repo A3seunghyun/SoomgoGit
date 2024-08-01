@@ -56,7 +56,7 @@
 <meta charset="UTF-8">
 	<title>숨고 메인 </title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-	<link rel="stylesheet" href="css/soomgo_main.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/soomgo_main.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	<script>
 	
@@ -351,9 +351,16 @@
 																	</div>
 																</div>
 																<%
+																/* String msg = dto.getMessage();
+																msg = msg.replace("@svc_name@", dto.getServiceName());	 */		
 																	String msg = dto.getMessage();
-																																																																																								msg = msg.replace("@svc_name@", dto.getServiceName());
+																    String serviceName = dto.getServiceName();
+																    if (serviceName == null) {
+																        serviceName = ""; // 또는 적절한 기본값
+																    }
+																    msg = msg.replace("@svc_name@", serviceName);
 																%>
+																
 																<div class="div_row_content">
 																	<div class="div_text">
 																		<h4 class="title" idx="<%=dto.getEstimateIdx()+dto.getChatIdx()+dto.getCommentsIdx()%>"><%=msg%> </h4>
