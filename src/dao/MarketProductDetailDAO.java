@@ -156,7 +156,7 @@ public class MarketProductDetailDAO {
 	public ArrayList<MarketOptionDTO> molist(int marketIdx) throws Exception {
 		//옵션 가격
 		Connection conn = getConnection();
-		String sql = "SELECT mip.name \"옵션이름\" , mip.price \"상품 금액\" " 
+		String sql = "SELECT mip.option_title \"옵션이름\" , mip.price \"상품 금액\" " 
 				+ " FROM market_item_price mip, market m "
 				+ " WHERE mip.market_idx = m.market_idx " 
 				+ " AND m.market_idx = ?" 
