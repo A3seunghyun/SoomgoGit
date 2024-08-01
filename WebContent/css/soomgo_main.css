@@ -772,7 +772,6 @@
 	.col {
 		color: #323232;
 		flex-basis: 0;
-		flex-grow;
 		max-width: 100%;
 		position: relative;
 		padding: 0px 15px;
