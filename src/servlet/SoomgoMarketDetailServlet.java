@@ -16,6 +16,7 @@ public class SoomgoMarketDetailServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mIdx = request.getParameter("market_idx");
+		String mTitle = request.getParameter("market_title");
 //		System.out.println(mIdx);
 		
 		HttpSession session = request.getSession();

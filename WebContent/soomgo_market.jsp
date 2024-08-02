@@ -366,7 +366,7 @@
  						for(MarketProductListDTO dto : mpl) {
  					%>
 					<article class="product-list-item">
-						<a class="product-list-item-a" href="SoomgoMarketDetailServlet?market_idx=<%=dto.getMarket_idx() %>" >
+						<a class="product-list-item-a" href="SoomgoMarketDetailServlet?market_idx=<%=dto.getMarket_idx() %>&market_title=<%=dto.getMarketName() %>>" >
 							<div class="product-list-item-image">
 								<article class="preview-image">
 									<div class="image-wrap">
