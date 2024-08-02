@@ -177,28 +177,6 @@
 		});
 	});
 	</script> <!--헤더 jquery 끝 -->
-	<script type="text/javascript">
-		$(document).ready(function () {
-	        $("#marketTitle").click(function () {
-	            const Toast = Swal.mixin({
-	                toast: true,
-	                position: 'top-end',
-	                showConfirmButton: false,
-	                timer: 1500,
-// 	                timerProgressBar: true,
-	                didOpen: (toast) => {
-	                    toast.addEventListener('mouseenter', Swal.stopTimer)
-	                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-	                }
-	            })
-	
-	            Toast.fire({
-	                icon: 'info',
-	                title: 'toast 알림이 정상적으로 실행 되었습니다.'
-	            })
-	        });
-	    });
-	</script>
 	
 	<script type="module">
 		import { v4 as uuidv4 } from 'https://cdn.skypack.dev/uuid';
