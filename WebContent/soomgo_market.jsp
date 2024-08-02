@@ -93,6 +93,7 @@
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css"> <!-- 헤더 css 꼭 추가하기 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	
 	<script> <!--헤더 jquery 시작 -->
 		$(function(){
@@ -937,6 +938,23 @@
 				"</div>";
 				$(".chat-body").append(you);
 				$(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+				
+				const Toast = Swal.mixin({
+	                toast: true,
+	                position: 'top-end',
+	                showConfirmButton: false,
+	                timer: 1500,
+ 	                timerProgressBar: true,
+	                didOpen: (toast) => {
+	                    toast.addEventListener('mouseenter', Swal.stopTimer)
+	                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+	                }
+	            })
+	            
+				Toast.fire({
+	                icon: 'info',
+	                title: e.data
+	            })
 			}
 			
 			function func_on_error(e) {
@@ -997,6 +1015,7 @@
 							} else {
 								$(".chat-body").append(me);
 							}
+							
 							$(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
 						}
 					} else {

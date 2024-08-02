@@ -66,6 +66,7 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css"> <!-- clear css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/> <!-- clear3 css 꼭 추가하기 -->
@@ -176,6 +177,28 @@
 		});
 	});
 	</script> <!--헤더 jquery 끝 -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+	        $("#marketTitle").click(function () {
+	            const Toast = Swal.mixin({
+	                toast: true,
+	                position: 'top-end',
+	                showConfirmButton: false,
+	                timer: 1500,
+// 	                timerProgressBar: true,
+	                didOpen: (toast) => {
+	                    toast.addEventListener('mouseenter', Swal.stopTimer)
+	                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+	                }
+	            })
+	
+	            Toast.fire({
+	                icon: 'info',
+	                title: 'toast 알림이 정상적으로 실행 되었습니다.'
+	            })
+	        });
+	    });
+	</script>
 	
 	<script type="module">
 		import { v4 as uuidv4 } from 'https://cdn.skypack.dev/uuid';
@@ -208,7 +231,7 @@
 		        if (rsp.success) {
 		            alert("완료 -> imp_uid : " + rsp.imp_uid + " / merchant_uid(orderKey) : " + rsp.merchant_uid);
 		        } else {
-		            alert("실패 : 코드(" + rsp.error_code + ") 메시지(" + rsp.error_msg + ")");
+		            alert(rsp.error_msg);
 		        }
 		    });
 		}
