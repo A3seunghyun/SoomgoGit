@@ -21,7 +21,44 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/soomgo_market_reserve.css"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css"/>
+<script type="module">
+	import { v4 as uuidv4 } from 'https://cdn.skypack.dev/uuid';
+	window.uuidv4 = uuidv4;
+</script>
   <script type="text/javascript">
+  
+  function payment(data) {
+		
+		const uid = window.uuidv4();
+		
+		
+		let marketTitle = $("#marketTitle").text();
+		let marketPrice = $("#marketPrice").text();
+		let marketOption = $("#marketOption").text();
+		let reserveDate = $("#reserveDate").text();
+		let reserveTime = $("#reserveTime").text();
+		
+		IMP.init('imp54682524');	// 아임포트 관리자 콘솔에서 확인한 '가맹점 식별코드' 입력
+		
+		IMP.request_pay({	// param
+			pg: "kakaopay.TC0ONETIME",	// pg사명 or pg사명.CID (잘못 입력할 경우, 기본 PG사가 띄워짐)
+			pay_method: "card",	// 지불 방법
+			merchant_uid: uid,	// 가맹점 주문번호 (아임포트를 사용하는 가맹점에서 중복되지 않은 임의의 문자열을 입력)
+			name: marketTitle + " " + marketOption + " " + reserveDate + " " + reserveTime,
+			amount: marketPrice, 	// 금액
+			buyer_email: "tkswk8093@naver.com",
+			buyer_name: "장용준",
+			buyer_tel: "01040968093"
+		}, function (rsp) {	// callback
+			if(rsp.success){
+				alert("완료 -> imp_uid : " + rsp.imp_uid + " / merchant_uid(orderKey) : " + rsp.merchant_uid);
+			} else {
+				alert("실패 : 코드(" + rsp.error_code + ") 메시지(" + rsp.error_msg + ")");
+			}
+		});
+		
+	}
+  
 	$(function () {
 		
 		$(document).on("click", "#chkBox1, #chkBox2",function(){
@@ -35,8 +72,31 @@
 		})
 		
 		$(document).on("click", ".pay-button.complete", function () {
-			swal("결제시스템 준비중입니다.")
-		})
+			let marketTitle = $("#marketTitle").text();
+			let marketOption = $("#marketOption").text();
+			let marketPrice = $("#marketPrice").text();
+			let reserveDate = $("#reserveDate").text();
+			let reserveTime = $("#reserveTime").text();
+			swal({
+		        title: "결제 정보 확인\n\n",
+		        text: "상품명 : " + marketTitle + "\n\n상품 옵션 : " + marketOption + "\n\n상품 가격 : " + marketPrice + "\n\n예약 날짜 : " + reserveDate + "\n\n예약 시간 : " + reserveTime + "\n\n결제 수단 : Kakao Pay 카카오페이",
+		        icon: "info",
+		        buttons: true,
+		        dangerMode: true,
+		    }).then((willPay) => {
+		    	if (willPay) {
+	                const paymentData = {
+	                	marketTitle,
+	                    marketOption,
+	                    marketPrice,
+	                    reserveDate,
+	                    reserveTime
+	                };
+	                payment(paymentData);
+		    });
+		   });
+	});
+		
 		
 		$(".informationPrivacy").click(function () {
 			swal("숨고 회원 계정으로 마켓 상품을 구매하는 경우, 주식회사 브레이브모바일(이하 “회사”)은 사이트 이용을 위해 필요한 최소한의 범위로 개인정보를 수집합니다. 회사는 이용자의 사전 동의 없이는 이용자의 개인 정보를 공개하지 않으며, 다음과 같은 목적을 위하여 개인정보를 수집하고 이용합니다.\n\n"+
@@ -163,15 +223,15 @@
    					<ul>
 	   					<li>
 	   						<span>상품명</span>
-	   						<p><%=title %></p>
+	   						<p id="marketTitle"><%=title %></p>
 	   					</li>
 	   					<li>
 	   						<span>상품 옵션</span>
-	   						<p><%=optionTitle %></p>
+	   						<p id="marketOption"><%=optionTitle %></p>
 	   					</li>
 	   					<li>
 	   						<span>상품 가격</span>
-	   						<p><%=optionPrice %></p>
+	   						<p id="marketPrice"><%=optionPrice %></p>
 	   					</li>
    					</ul>
    				</div>
@@ -186,11 +246,11 @@
    					<table id="reservation-table">
    						<tr id="tr-row1">
    							<th>예약 날짜</th>
-   							<td><%=year %>년 <%=month %>월 <%=day %>일 (<%=dayWeek %>)</td>
+   							<td id="reserveDate"><%=year %>년 <%=month %>월 <%=day %>일 (<%=dayWeek %>)</td>
    						</tr>   						
    						<tr id="tr-row2">
    							<th>예약 시간</th>
-   							<td><%=time %></td>
+   							<td id="reserveTime"><%=time %></td>
    						</tr>   						
    					</table>
    					
@@ -202,7 +262,7 @@
    				<div id="payment-methods-list" class="center">
    					<div id="payment-control">
    						<input type="radio" checked>
-   						<span>신용/체크카드</span>
+   						<span>Kakao Pay 카카오페이</span>
    					</div>
    				</div>
    			</div>
