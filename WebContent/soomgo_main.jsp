@@ -76,7 +76,7 @@
 		return ret;
 	}%>
 <%
-// 	int userIdx = 19;		//일단 userIdx 22번으로 로그인후 바꾸기 (22번기준으로 db만들어놓음)
+	int userIdx = 19;		//일단 userIdx 22번으로 로그인후 바꾸기 (22번기준으로 db만들어놓음)
 
 	MainPageDao mDao = new MainPageDao();
 
