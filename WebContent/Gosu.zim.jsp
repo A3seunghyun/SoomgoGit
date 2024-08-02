@@ -1,3 +1,8 @@
+<%@page import="dto.Soomgo_header2Dto"%>
+<%@page import="dto.Soomgo_headerDto"%>
+<%@page import="dao.Soomgo_headerDao"%>
+<%@page import="dao.Gosu_profileDao"%>
+<%@page import="dto.Gosu_profile_header_inforDto"%>
 <%@page import="dto.Gosu_zim_count1Dto"%>
 <%@page import="dto.Gosu_zimDto"%>
 <%@page import="dao.Gosu_zimDao"%>
@@ -8,9 +13,12 @@
 <%
 	int users_idx = Integer.parseInt(request.getParameter("users_idx"));
 	Gosu_zimDao gjsDao = new Gosu_zimDao();
-
 	ArrayList<Gosu_zimDto> GosuZim = gjsDao.getGosuZim(users_idx);
 	ArrayList<Gosu_zim_count1Dto> GosuZimcount1 = gjsDao.getGosuZimCount1(users_idx);
+	
+	Soomgo_headerDao shDao = new Soomgo_headerDao();
+	ArrayList<Soomgo_headerDto> Soomgoheader = shDao.getSoomgoHeader(users_idx);
+	ArrayList<Soomgo_header2Dto> Soomgoheader2 = shDao.getSoomgoHeader2(users_idx);
 	
 	HttpSession hs = request.getSession();
 	// 세션에서 users_idx를 가져옴, 존재하지 않으면 기본값 0 설정
@@ -189,7 +197,7 @@
                     users_idx: users_idx, // 서버로 전송할 데이터
                     g_users_idx: g_users_idx 
                 },
-                url: 'GosuZimDeleteServlet', // 요청을 보낼 URL 설정
+                url: '/Web/GosuZimDeleteServlet', // 요청을 보낼 URL 설정
                 dataType: 'json',
                 success: function(response) {
                 	if(response.status === "success") {
@@ -236,11 +244,7 @@
          $(".header-total1").hide();
          $(".header-total2").hide();
      });
-    /*  $(document).ready(function(){
-     	if(g_user != 1){
-      		$(".usermenu-dropdown-div2-button").hide();
-     	}
-     }); */
+    
      
      $(".usermenu-dropdown-div3-button").click(function(){
     	 $.ajax({
@@ -260,12 +264,11 @@
     	        }
     	    });
     	
-     });
-
-
+     	});
     });
   </script>
 </head>
+
 <body>
 <header class = "header-total">
         <div class = "header-inner">
@@ -310,7 +313,7 @@
                         <nav class = "right-section-nav">
                             <ul class = "right-section-nav-ul">
                                 <li class = "right-section-nav-li">
-                                    <a href = "Login.jsp">
+                                    <a href = "/Web/Login.jsp">
                                         <span class = "right-section-nav-li-span">로그인</span>
                                     </a>
                                 </li>
@@ -323,7 +326,7 @@
                             </ul>
                         </nav>
                         <button type = "button" class = "btn-signup">
-                            <a href = "Gosu_join.jsp" class = "btn-a">고수가입</a>
+                            <a href = "" class = "btn-a">고수가입</a>
                         </button>
                     </div>
                 </div>
@@ -395,7 +398,7 @@
                                     <a href = "">
                                         <span class = "right-section-nav-li-span">채팅</span>
                                     </a>
-                                    <span class = "right-section-nav-li-span1">148</span>
+                                    <span class = "right-section-nav-li-span1"></span>
                                 </li>
                             </ul>
                         </nav>
@@ -408,17 +411,19 @@
                                 </span>
                             </button>
                         </div>
+                        <% for(Soomgo_headerDto shdto : Soomgoheader ){ %>
                         <div class = "right-section-div2-outter">
                             <div class = "right-section-div2">
                                 <div class = "right-section-div2-1">
-                                    <div class = "right-section-div2-2"></div>
+                                    <div class = "right-section-div2-2">
+                                    	<img src = "<%=shdto.getF_img()%>">
+                                    </div>
                                 </div>
                                 <img class = "right-section-div2-2-img" src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K">
-                                
                             </div>
                             <div class = "usermenu-dropdown">
                                 <div class = "usermenu-dropdown-div1">
-                                    <h4 class = "usermenu-dropdown-div1-font">유영현 고객님</h4>
+                                    <h4 class = "usermenu-dropdown-div1-font"><%=shdto.getName()%> 고객님</h4>
                                 </div>
                                 <ul class = "usermenu-dropdown-ul">
                                     <li class = "usermenu-dropdown-li">
@@ -440,12 +445,13 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu-dropdown-div3">
-                                <a href = "soomgo_main.jsp">
+                                <a href = "/Web/Seach.profile.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                 </a>
                                 </div>
                             </div>
                         </div>
+                        <%} %>
                     </div>
                 </div>
             </section>
@@ -548,14 +554,15 @@
                                 <img class = "right3-section-div2-2-img" src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K">
                                 
                             </div>
+                            <% for(Soomgo_headerDto shdto : Soomgoheader ){ %>
                             <div class = "usermenu3-dropdown">
                                 <div class = "usermenu3-dropdown-div1">
-                                    <h4 class = "usermenu3-dropdown-div1-font">유영현 고객님</h4>
+                                    <h4 class = "usermenu3-dropdown-div1-font"><%=shdto.getName()%> 고객님</h4>
                                     <a class = "usermenu3-dropdown-div1-a">
                                         <div class = "usermenu3-dropdown-div1-a-1">
                                             <span class = "usermenu3-dropdown-div1-a-1-span1">
                                                 <img class = "usermenu3-dropdown-div1-a-1-span1-img" src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2IDE1Ij4KICAgIDxwYXRoIGZpbGw9IiNFMUUyRTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRTFFMkU2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iLjUiIGQ9Ik04IDFsMi4xNjMgNC4zODJMMTUgNi4wODlsLTMuNSAzLjQwOS44MjYgNC44MTZMOCAxMi4wMzlsLTQuMzI2IDIuMjc1LjgyNi00LjgxNkwxIDYuMDg5bDQuODM3LS43MDd6Ii8+Cjwvc3ZnPgo=">
-                                                평점 0
+                                                	평점 0
                                             </span>
                                             <span class = "usermenu3-dropdown-div1-a-1-span2"></span>
                                             <span class = "usermenu3-dropdown-div1-a-1-span3">리뷰 0</span>
@@ -582,11 +589,12 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                <a href = "soomgo_main.jsp">
+                                <a href = "/Web/Seach.profile.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                 </a>
                                 </div>
                             </div>
+                            <% } %>
                         </div>
                     </div>
                 </div>

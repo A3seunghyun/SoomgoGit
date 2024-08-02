@@ -1,3 +1,6 @@
+<%@page import="dto.Soomgo_header2Dto"%>
+<%@page import="dto.Soomgo_headerDto"%>
+<%@page import="dao.Soomgo_headerDao"%>
 <%@page import="dto.Gosu_profile_ReservationDto"%>
 <%@page import="dto.Gosu_profile_portfolio_innerDto"%>
 <%@page import="dto.Gosu_profile_transaction_countDto"%>
@@ -29,11 +32,14 @@
 	ArrayList<Gosu_profile_career_yearDto> GosuProfileCareerYear = gpDao.getGosuprofileCareerYear(users_idx);
 	ArrayList<Gosu_profile_careerDto> GosuProfileCareer = gpDao.getGosuprofileCareer(users_idx);
 	ArrayList<Gosu_profile_portfolio_outterDto> GosuProfilePortfolioOutter = gpDao.getGosuprofilePortfolioOutter(users_idx);
-	//Gosu_profile_portfolio_innerDto dto  = gpDao.getGosuprofilePortfolioInner(portfolio_idx);
 	ArrayList<Gosu_profile_photo_videoDto> GosuProfilePhotoVideo = gpDao.getGosuprofilePhotoVideo(users_idx);
 	ArrayList<Gosu_profile_reviewDto> GosuProfileReview = gpDao.getGosuprofileReview(users_idx);
 	ArrayList<Gosu_profile_qna_answerDto> GosuProfileQnaAnswer = gpDao.getGosuprofileQnaAnswer(users_idx);
 	ArrayList<Gosu_profile_ReservationDto> GosuProfileReservation = gpDao.getGosuprofileReservation(users_idx);
+	
+	Soomgo_headerDao shDao = new Soomgo_headerDao();
+	ArrayList<Soomgo_headerDto> Soomgoheader = shDao.getSoomgoHeader(users_idx);
+	ArrayList<Soomgo_header2Dto> Soomgoheader2 = shDao.getSoomgoHeader2(users_idx);
 	
 	
 	
@@ -86,8 +92,8 @@
         
         let users_idx = <%= users_idx %>;
         let users_idx1 = <%= users_idx1 %>;
-        alert(users_idx1);
-        alert(users_idx);
+        //alert(users_idx1);
+        //alert(users_idx);
         
         
          let g_user = <%= isgosu %>
@@ -243,10 +249,7 @@
              $(".right3-section-div2-2-img").attr("src", img1);
             }
         });
-        $(".usermenu-dropdown-div2-button").click(function(){
-            $(".header-total1").hide();
-            $(".header-total2").show(); 
-        });
+        
         $(".usermenu3-dropdown-div2-button").click(function(){
             $(".header-total1").show();
             $(".header-total2").hide(); 
@@ -659,6 +662,10 @@
                 }
             });
             
+            $(".pp-body-main-inner-button").click(function(){
+            	alert("준비중입니다.");
+            });
+            
         });
   </script>
 </head>
@@ -669,20 +676,20 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "/Web/Seach.profile.jsp">
+                                    <a href = "">
                                         <span class = "header-nav-li-span">견적요청</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "/Web/Seach.profile.jsp">
+                                    <a href = "Seach.profile.jsp">
                                         <span class = "header-nav-li-span">고수찾기</span>
                                     </a>
                                 </li>
@@ -706,13 +713,13 @@
                         <nav class = "right-section-nav">
                             <ul class = "right-section-nav-ul">
                                 <li class = "right-section-nav-li">
-                                    <a href = "/Web/Login.jsp">
+                                    <a href = "Login.jsp">
                                         <span class = "right-section-nav-li-span">로그인</span>
                                     </a>
                                 </li>
 
                                 <li class = "right-section-nav-li1">
-                                    <a href = "/Web/User.join.jsp">
+                                    <a href = "User.join.jsp">
                                         <span class = "right-section-nav-li-span">회원가입</span>
                                     </a>
                                 </li>
@@ -735,7 +742,7 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
@@ -797,6 +804,7 @@
                                 </li>
                             </ul>
                         </nav>
+                        <% for(Soomgo_headerDto shdto : Soomgoheader){ %>
                         <div class = "right-section-div1">
                             <button type = "button" class = "right-section-div1-button">
                                 <span class = "right-section-div1-span">
@@ -809,14 +817,16 @@
                         <div class = "right-section-div2-outter">
                             <div class = "right-section-div2">
                                 <div class = "right-section-div2-1">
-                                    <div class = "right-section-div2-2"></div>
+                                    <div class = "right-section-div2-2">
+                                    	<img src = "<%=shdto.getF_img()%>">
+                                    </div>
                                 </div>
                                 <img class = "right-section-div2-2-img" src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K">
                                 
                             </div>
                             <div class = "usermenu-dropdown">
                                 <div class = "usermenu-dropdown-div1">
-                                    <h4 class = "usermenu-dropdown-div1-font">유영현 고객님</h4>
+                                    <h4 class = "usermenu-dropdown-div1-font"><%=shdto.getName()%> 고객님</h4>
                                 </div>
                                 <ul class = "usermenu-dropdown-ul">
                                     <li class = "usermenu-dropdown-li">
@@ -838,12 +848,13 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu-dropdown-div3">
-                                	<a = href= "/Web/Seach.profile.jsp">
+                                	<a = href= "Seach.profile.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <% } %>
                     </div>
                 </div>
             </section>
@@ -869,7 +880,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "Seach.profile.jsp">
                                         <span class = "header-nav-li-span">고수찾기</span>
                                     </a>
                                 </li>
@@ -938,25 +949,28 @@
                                 </span>
                             </button>
                         </div>
+                        <% for(Soomgo_header2Dto sh2dto : Soomgoheader2){ %>
                         <div class = "right3-section-div2-outter">
                             <div class = "right3-section-div2">
                                 <div class = "right3-section-div2-1">
-                                    <div class = "right3-section-div2-2"></div>
+                                    <div class = "right3-section-div2-2">
+                                    	<img src = "<%=sh2dto.getF_img()%>" width = "30px;" height = "30px;" >
+                                    </div>
                                 </div>
                                 <img class = "right3-section-div2-2-img" src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K">
                                 
                             </div>
                             <div class = "usermenu3-dropdown">
                                 <div class = "usermenu3-dropdown-div1">
-                                    <h4 class = "usermenu3-dropdown-div1-font">유영현 고객님</h4>
+                                    <h4 class = "usermenu3-dropdown-div1-font"><%=sh2dto.getName()%> 고객님</h4>
                                     <a class = "usermenu3-dropdown-div1-a">
                                         <div class = "usermenu3-dropdown-div1-a-1">
                                             <span class = "usermenu3-dropdown-div1-a-1-span1">
                                                 <img class = "usermenu3-dropdown-div1-a-1-span1-img" src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2IDE1Ij4KICAgIDxwYXRoIGZpbGw9IiNFMUUyRTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRTFFMkU2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iLjUiIGQ9Ik04IDFsMi4xNjMgNC4zODJMMTUgNi4wODlsLTMuNSAzLjQwOS44MjYgNC44MTZMOCAxMi4wMzlsLTQuMzI2IDIuMjc1LjgyNi00LjgxNkwxIDYuMDg5bDQuODM3LS43MDd6Ii8+Cjwvc3ZnPgo=">
-                                                평점 0
+                                               	평점 <%=sh2dto.getAvg_score()%>.0
                                             </span>
                                             <span class = "usermenu3-dropdown-div1-a-1-span2"></span>
-                                            <span class = "usermenu3-dropdown-div1-a-1-span3">리뷰 0</span>
+                                            <span class = "usermenu3-dropdown-div1-a-1-span3">리뷰 <%=sh2dto.getCount_review()%>회</span>
                                         </div>
                                     </a>
                                 </div>
@@ -980,12 +994,13 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                	<a = href= "/Web/Search.profile.jsp">
+                                	<a = href= "Search.profile.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <% } %>
                     </div>
                 </div>
             </section>
@@ -1781,28 +1796,40 @@
                             </div>
                             <span class = "pp-body-right-inner-title1-span">조회 116</span>
                             <hr class = "pp-divider">
+                            <% for(Gosu_profile_header_inforDto hidto: GosuProfileHeader) {%>
                             <div class = "pp-body-main-inner">
                                 <div class = "pp-body-main-inner1">
-                                    <div class = "pp-body-main-inner1-img" style = "background-image: url();"></div>
+                                    <div class = "pp-body-main-inner1-img" style = "background-image: url(<%=hidto.getF_img()%>);"></div>
                                 </div>
 
                                 <div class = "pp-body-main-inner-text-outter">
            						
                                     <span class = "pp-body-main-inner-text-span">
+                                    	<%=hidto.getName() %>
                                     </span>
 					
                                     <div class = "pp-body-main-inner-score-outter">
                                         <ul class = "pp-body-main-inner-score-ul">
+                                        <% 
+                                           for(Gosu_profile_countDto dto6 : GosuProfileCount){ 
+                                               for (int i=0;i< dto6.getScore(); i++ ){
+                                        %>
                                             <li class = "pp-body-main-inner-score-li">
                                                 <img class = "pp-body-main-inner-score-li-img" src = "https://assets.cdn.soomgo.com/icons/icon-common-review-star-small-full.svg">
-                                            </li>
-                                            
+                                           
+											</li>
+                                        <% 
+                                               }
+                                           }
+                                        %>
                                         </ul>
                                         <span class = "pp-body-main-inner-score-span"></span>
                                     </div>
                                 </div>
                                 <button type = "button" class = "pp-body-main-inner-button"></button>
                             </div>
+                            <%} %>
+                            
                             <div class = "pp-body-main-button-outter">
                                 <button class = "pp-body-main-button" type = "button">
                                     견적 요청하기

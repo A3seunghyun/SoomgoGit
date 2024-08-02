@@ -1,25 +1,51 @@
+<%@page import="dto.Soomgo_header2Dto"%>
+<%@page import="dto.Soomgo_headerDto"%>
+<%@page import="dao.Soomgo_headerDao"%>
 <%@page import="dto.Search_profile_mapDto"%>
 <%@page import="dao.Search_profile_mapDao"%>
 <%@page import="java.util.ArrayList"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	int users_idx = 0;
+	String users_idx_param = request.getParameter("users_idx");
+	
+	if (users_idx_param != null && !users_idx_param.trim().isEmpty()) {
+	    try {
+	        users_idx = Integer.parseInt(users_idx_param);
+	    } catch (NumberFormatException e) {
+	        // 예외 처리: 잘못된 형식의 숫자가 들어온 경우 기본값 0을 사용
+	        users_idx = 0;
+	    }
+	}
+	
 	Search_profile_mapDao spmDao = new Search_profile_mapDao();
 	ArrayList<Search_profile_mapDto> Searchprofilemap = spmDao.getSeachprofilemap();
 	
+	ArrayList<Soomgo_headerDto> SoomgoHeader = new ArrayList<>(); // 초기화
+	ArrayList<Soomgo_header2Dto> SoomgoHeader2 = new ArrayList<>(); // 초기화
+	
 	HttpSession hs = request.getSession();
 	
-	 // 세션에서 users_idx를 가져옴, 존재하지 않으면 기본값 0 설정
-   Integer users_idx1 = (Integer) hs.getAttribute("L_users_idx");
-   if (users_idx1 == null) {
-       users_idx1 = 0; // 기본값 0
-   }
+	try{
+		users_idx =	 Integer.parseInt(hs.getAttribute("L_users_idx").toString());
+		
+		Soomgo_headerDao shdao = new Soomgo_headerDao();
+		SoomgoHeader = shdao.getSoomgoHeader(users_idx);
+		SoomgoHeader2 = shdao.getSoomgoHeader2(users_idx);
+		
+		}catch(Exception e){
+			
+		}
 
-   // 세션에서 g_fuck를 가져옴, 존재하지 않으면 기본값 2 설정
-   Integer isgosu = (Integer) hs.getAttribute("isgosu");
-   if (isgosu == null) {
-   	isgosu = 2; // 기본값 2
-   }
+	    // 세션에서 isgosu를 가져옴, 존재하지 않으면 기본값 2 설정
+	    Integer isgosu = (Integer) hs.getAttribute("isgosu");
+	    if (isgosu == null) {	
+	    	// 고수일때 실행할 메서드
+	    	isgosu = 2; // 기본값 2
+	    }//else{
+	    	// 고수아닐때 일반회원일때 실행할 메서드
+	    	// }
 %> 
 
 <!DOCTYPE html>
@@ -62,16 +88,22 @@
             }
         });
         $(".usermenu-dropdown-div2-button").click(function(){
-            $(".header-total1").hide();
-            $(".header-total2").show(); 
+        	if(g_user != 0){
+            	$(".header-total1").hide();
+            	$(".header-total2").show();
+        	}else{
+        		$(".header-total1").show();
+        		$(".header-total2").hide();
+        		location.href = "Gosu_join.jsp";
+        	}
         });
         $(".usermenu3-dropdown-div2-button").click(function(){
             $(".header-total1").show();
             $(".header-total2").hide(); 
         });
         
-        let users_idx = <%=users_idx1%>; 
-        alert(users_idx);
+        let users_idx = <%=users_idx%>; 
+        //alert(users_idx);
        
        let g_user = <%=isgosu%>
        $(document).ready(function(){
@@ -93,7 +125,7 @@
        
        $(".usermenu-dropdown-div2-button").click(function(){
       	 if(g_user != 1){
-      		location.href = "Gosu_join.jsp";
+      		location.href = "/Web/Gosu_join.jsp";
       		$(".header-total2").hide();
       		$(".header-total1").show();
       	 }else{
@@ -143,14 +175,14 @@
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "">
+                                    <a href = "Seach.profile.jsp">
                                         <span class = "header-nav-li-span">견적요청</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
-                                        <span class = "header-nav-li-span">고수찾기</span>
+                                    <a href = "Seach.profile.jsp">
+                                        <span class = "header-nav-li-span" id = "serarch_profile">고수찾기</span>
                                     </a>
                                 </li>
 
@@ -271,17 +303,23 @@
                                 </span>
                             </button>
                         </div>
+                        <% 
+                        if (SoomgoHeader != null && !SoomgoHeader.isEmpty()) {
+                        for(Soomgo_headerDto shdto : SoomgoHeader){ 
+                        %>
                         <div class = "right-section-div2-outter">
                             <div class = "right-section-div2">
                                 <div class = "right-section-div2-1">
-                                    <div class = "right-section-div2-2"></div>
+                                    <div class = "right-section-div2-2">
+	                                    <img src = "<%=shdto.getF_img() %>">
+                                    </div>
                                 </div>
                                 <img class = "right-section-div2-2-img" src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K">
                                 
                             </div>
                             <div class = "usermenu-dropdown">
                                 <div class = "usermenu-dropdown-div1">
-                                    <h4 class = "usermenu-dropdown-div1-font">유영현 고객님</h4>
+                                    <h4 class = "usermenu-dropdown-div1-font"><%=shdto.getName()%> 고객님</h4>
                                 </div>
                                 <ul class = "usermenu-dropdown-ul">
                                     <li class = "usermenu-dropdown-li">
@@ -303,16 +341,23 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu-dropdown-div3">
+                                	<a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
+                                	</a>
                                 </div>
                             </div>
                         </div>
+                       <% 
+                       		} 
+                       	}
+                       %>
                     </div>
                 </div>
             </section>
         </div>
     </header>
-
+	<div>
+	</div>
     <header class = "header-total2">
         <div class = "header-inner">
             <section class = "header-section1">
@@ -332,7 +377,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "Seach.profile.jsp">
                                         <span class = "header-nav-li-span">고수찾기</span>
                                     </a>
                                 </li>
@@ -401,25 +446,31 @@
                                 </span>
                             </button>
                         </div>
+                         <% 
+                        		if (SoomgoHeader2 != null && !SoomgoHeader2.isEmpty()) {
+                        		for(Soomgo_header2Dto sh2dto : SoomgoHeader2){ 
+                        	%>
                         <div class = "right3-section-div2-outter">
                             <div class = "right3-section-div2">
                                 <div class = "right3-section-div2-1">
-                                    <div class = "right3-section-div2-2"></div>
+                                    <div class = "right3-section-div2-2">
+                                    	<img src = "<%=sh2dto.getF_img()%>" width = "30px;" height = "30px;">
+                                    </div>
                                 </div>
                                 <img class = "right3-section-div2-2-img" src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K">
                                 
                             </div>
                             <div class = "usermenu3-dropdown">
                                 <div class = "usermenu3-dropdown-div1">
-                                    <h4 class = "usermenu3-dropdown-div1-font">유영현 고객님</h4>
+                                    <h4 class = "usermenu3-dropdown-div1-font"><%=sh2dto.getName() %> 고객님</h4>
                                     <a class = "usermenu3-dropdown-div1-a">
                                         <div class = "usermenu3-dropdown-div1-a-1">
                                             <span class = "usermenu3-dropdown-div1-a-1-span1">
                                                 <img class = "usermenu3-dropdown-div1-a-1-span1-img" src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2IDE1Ij4KICAgIDxwYXRoIGZpbGw9IiNFMUUyRTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRTFFMkU2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iLjUiIGQ9Ik04IDFsMi4xNjMgNC4zODJMMTUgNi4wODlsLTMuNSAzLjQwOS44MjYgNC44MTZMOCAxMi4wMzlsLTQuMzI2IDIuMjc1LjgyNi00LjgxNkwxIDYuMDg5bDQuODM3LS43MDd6Ii8+Cjwvc3ZnPgo=">
-                                                평점 0
+                                                평점 <%=sh2dto.getAvg_score() %>.0
                                             </span>
                                             <span class = "usermenu3-dropdown-div1-a-1-span2"></span>
-                                            <span class = "usermenu3-dropdown-div1-a-1-span3">리뷰 0</span>
+                                            <span class = "usermenu3-dropdown-div1-a-1-span3">리뷰 <%=sh2dto.getCount_review() %>개</span>
                                         </div>
                                     </a>
                                 </div>
@@ -443,10 +494,16 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
+                                	<a href = "/Web/Seach.profile2.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                            	<%
+		                            }
+		                        }
+                        		%>
                     </div>
                 </div>
             </section>
