@@ -117,14 +117,14 @@
 			})
 			
 			$(window).scroll(function() {
-// 				if($(window).scrollTop() + $(window).height() == $(document).height()) {
-// 					console.log("페이지 맨아래 도달! 무한스크롤 실행!");
-// 					draw_new_board_list(++page_num);
-// 				}
-				if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
-        			console.log("페이지 맨아래 도달! 무한스크롤 실행!");
-        			draw_new_board_list(++page_num);
-    			}
+				if($(window).scrollTop() + $(window).height() == $(document).height()) {
+					console.log("페이지 맨아래 도달! 무한스크롤 실행!");
+					draw_new_board_list(++page_num);
+				}
+// 				if($(window).scrollTop() + $(window).height() >= $(document).height() - 5) {
+//         			console.log("페이지 맨아래 도달! 무한스크롤 실행! page_num : " + page_num);
+//         			draw_new_board_list(++page_num);
+//     			}
 			});
 			
 			
