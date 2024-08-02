@@ -852,66 +852,66 @@
 <!-- 								<button class="notice-btn"> -->
 <!-- 									<img src="img/숨고알림.png" class="svg-icon"/> -->
 <!-- 								</button> -->
-<!-- 								<div class="notification-overlay"> 알림창 코드 숨겨놓음 -->
-<!-- 									<div class="div_notice_box"> -->
-<!-- 										<div class="overlay_header"> -->
-<!-- 											<h2 class="h2">알림</h2>	 -->
-<!-- 											<button class="all-read">전체읽음</button> -->
-<!-- 										</div> -->
-<!-- 										<div class="overlay-body"> -->
-<!-- 											<div class="user-notice"> -->
-<!-- 												<ul class="notice-list"> -->
-<%-- 													<% --%>
-// 														for (CommuNoticeDto dto : nList) {
-<%-- 													%> --%>
-<!-- 														<li  -->
-<%-- 															<%if(dto.getCommentsIdx() != 0) {%>comments_idx="<%=dto.getCommentsIdx()%>" <%}%> --%>
-<%-- 															<%if(dto.getEstimateIdx() != 0) {%>estimate_idx="<%=dto.getEstimateIdx()%>"<%}%> --%>
-<%-- 															<%if(dto.getChatIdx() != 0) {%>chat_idx="<%=dto.getChatIdx()%>"<%}%> --%>
-<!-- 														> -->
-<!-- 															<div class="user-notice-item"> -->
-<!-- 																<div class="div_row_info"> -->
-<!-- 																	<div class="div_notice_text_box"> -->
-<!-- 																		<div class="type"> -->
-<!-- 																			<span class="notice_text"> 알림 </span> -->
-<!-- 																		</div> -->
-<!-- 																	</div> -->
-<!-- 																	<div class="div_notice_date"> -->
-<%-- 																		<%=dto.getNoticeDate().substring(2,10)%> --%>
-<!-- 																	</div> -->
-<!-- 																</div> -->
-<%-- 																<% --%>
-// 																	String msg = dto.getMessage();
-// 																																																																																							if(dto.getName() != null)
-// 																																																																																								msg = msg.replace("@name@", dto.getName());
-// 																																																																																							if(dto.getServiceName() != null)
-// 																																																																																								msg = msg.replace("@svc_name@", dto.getServiceName());
-<%-- 																%> --%>
-<!-- 																<div class="div_row_content"> -->
-<!-- 																	<div class="div_text"> -->
-<%-- 																		<h4 class="title" idx="<%=dto.getEstimateIdx()+dto.getChatIdx()+dto.getCommentsIdx()%>"><%=msg%> </h4> --%>
-<!-- 																	</div> -->
-<!-- 																	<button class="btn_wrapper"> -->
-<!-- 																	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMEgxOFYxOEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTYgNEwxMiA5LjUgNiAxNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgPC9nPgo8L3N2Zz4K"/> -->
-<!-- 																	</button> -->
-<!-- 																</div> -->
-<!-- 																<p class="content">견적 내용을 자세히 확인해보세요</p> -->
-<!-- 															</div> -->
-<!-- 														</li> -->
-<%-- 													<% --%>
-// 														}
-<%-- 													%> --%>
-<!-- 												</ul> -->
-<!-- 												<div class="div_more_btn">더 보기</div> -->
-<!-- 											</div> -->
-<!-- 											<div class="confirm"> -->
-<!-- 												<p>모든 알림을 삭제하시겠습니까?</p> -->
-<!-- 												<button class="confirm-btn">예</button> -->
-<!-- 												<button class="cancel-btn">아니오</button> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
+								<div class="notification-overlay"> 알림창 코드 숨겨놓음
+									<div class="div_notice_box">
+										<div class="overlay_header">
+											<h2 class="h2">알림</h2>	
+											<button class="all-read">전체읽음</button>
+										</div>
+										<div class="overlay-body">
+											<div class="user-notice">
+												<ul class="notice-list">
+													<%
+ 														for (CommuNoticeDto dto : nList) {
+													%>
+														<li 
+															<%if(dto.getCommentsIdx() != 0) {%>comments_idx="<%=dto.getCommentsIdx()%>" <%}%>
+															<%if(dto.getEstimateIdx() != 0) {%>estimate_idx="<%=dto.getEstimateIdx()%>"<%}%>
+															<%if(dto.getChatIdx() != 0) {%>chat_idx="<%=dto.getChatIdx()%>"<%}%>
+														>
+															<div class="user-notice-item">
+																<div class="div_row_info">
+																	<div class="div_notice_text_box">
+																		<div class="type">
+																			<span class="notice_text"> 알림 </span>
+																		</div>
+																	</div>
+																	<div class="div_notice_date">
+																		<%=dto.getNoticeDate().substring(2,10)%>
+																	</div>
+																</div>
+																<%
+ 																	String msg = dto.getMessage();
+ 																																																																																							if(dto.getName() != null)
+ 																																																																																								msg = msg.replace("@name@", dto.getName());
+ 																																																																																							if(dto.getServiceName() != null)
+ 																																																																																								msg = msg.replace("@svc_name@", dto.getServiceName());
+																%>
+																<div class="div_row_content">
+																	<div class="div_text">
+																		<h4 class="title" idx="<%=dto.getEstimateIdx()+dto.getChatIdx()+dto.getCommentsIdx()%>"><%=msg%> </h4>
+																	</div>
+																	<button class="btn_wrapper">
+																	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMEgxOFYxOEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTYgNEwxMiA5LjUgNiAxNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgPC9nPgo8L3N2Zz4K"/>
+																	</button>
+																</div>
+																<p class="content">견적 내용을 자세히 확인해보세요</p>
+															</div>
+														</li>
+													<%
+ 														}
+													%>
+												</ul>
+												<div class="div_more_btn">더 보기</div>
+											</div>
+											<div class="confirm">
+												<p>모든 알림을 삭제하시겠습니까?</p>
+												<button class="confirm-btn">예</button>
+												<button class="cancel-btn">아니오</button>
+											</div>
+										</div>
+									</div>
+								</div>
 <!-- 							</div> -->
 <!-- 							<div class="usermenu"> -->
 <!-- 								<div class="usermenu-button"> -->
