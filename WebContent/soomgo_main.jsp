@@ -439,7 +439,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
                                         <span class = "header-nav-li-span">마켓</span>
                                     </a>
                                 </li>
@@ -504,7 +504,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
                                         <span class = "header-nav-li-span">마켓</span>
                                     </a>
                                 </li>
@@ -636,7 +636,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
                                         <span class = "header-nav-li-span">마켓</span>
                                     </a>
                                 </li>

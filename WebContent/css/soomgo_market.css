@@ -553,134 +553,134 @@
 	}
 	
 	
-	#total-header{
-    top: 0;
-    width :1903px;
-    height:72px;
-    background-color: rgb(255, 255, 255);
-    border-bottom-color : rgb(242, 242, 242);
-    border-bottom-style : solid;
-    border-bottom-width : 1px;
-    z-index: 999;
-  	}
+/* 	#total-header{ */
+/*     top: 0; */
+/*     width :1903px; */
+/*     height:72px; */
+/*     background-color: rgb(255, 255, 255); */
+/*     border-bottom-color : rgb(242, 242, 242); */
+/*     border-bottom-style : solid; */
+/*     border-bottom-width : 1px; */
+/*     z-index: 999; */
+/*   	} */
   
-  #soomgo-header{
-      width: 100%;
-      width : 972px;
-      height : 72px;
-      margin-left : 464px;
-      margin-right : 466.5px;
-      background-color: rgb(255, 255, 255);
-      border-bottom-color : rgb(242, 242, 242);
-      border-bottom-style : solid;
-      border-bottom-width : 1px;
-  }
-  #soomgo-header1{
-      width : 79.5px;
-      height : 27px;
-      float : left;
-      margin-top : 22.5px;
-      margin-left : 2.5px 
-  }
-  #soomgo-menu1{
-      width : 264.13px;
-      height : 28.16px;
-      float : left; 
-      margin-top : 26.5px;
-      margin-left : 29.5px;
-  }
-  #soomgo-request{
-      width : 63.89px;
-      height : 24px;
-      float : left;
-      line-height: 120%;
-  }
-  #soomgo-serch{
-      width : 63.89px;
-      height : 24px;
-      float : left;
-      margin-left : 13px;
-      line-height: 120%;
-  }
-  #soomgo-market{
-      width : 33.45px;
-      height : 24px;
-      float : left;
-      margin-left : 13px;
-      line-height: 120%;
-  }
-  #soomgo-community{
-      width : 60.89px;
-      height : 24px;
-      float : left;
-      margin-left : 14px;
-      line-height: 120%;
-  }
-  #soomgo-header-serch{
-      background-color : rgb(242, 242, 242);
-        width: 280px;
-        height :40px;
-        float :left;
-        margin-left : 55.5px;
-        margin-top : 15.5px;
-        border-radius: 6px
-  }
-  #reading-glasses-img{
-        width:24px;
-        height :40px;
-        float:left;
-        padding-top :9px;
-        padding-bottom: 8px;
-        margin-left: 12px;
-  }
-  #serch-input-outter{
-    background-color : rgb(242, 242, 242);
-    width:224px;
-    height :38px;
-    float:left;
-    margin-left: 5px;
-    margin-top : 3px;
-  }
-  .serch-input{
-    background-color :rgb(242, 242, 242);
-    width:224px;
-    height :38px;
-    border: none;
-    font-size:.875rem;
-  }
-  #soomgo-menu2{
-      width : 202.17px;
-      height : 36px;
-      float : right;
-      margin-top : 16px;
-      margin-left: 20px;
-  }
-  #soomgo-login{
-      width : 40.64px;
-      height : 20px;
-      float : left;
-      margin-top : 11px;
-      margin-left : 0.5px;
-      line-height: 100%; 
-  }
-  #soomgo-join{
-      width : 60.53px;
-      height : 20px;
-      float : left;
-      margin-left : 13.8px;
-      margin-top : 11px;
-      line-height: 100%;
-  }
-  #soomgo-gosu-join{
-      width : 80px;
-      height : 36px;
-      float : right;
-      margin-top : 2px;
-      line-height: 35px;
-      background-color:#00c7ae;
-      border-radius: 6px;
-      text-align : center;
-  }
+/*   #soomgo-header{ */
+/*       width: 100%; */
+/*       width : 972px; */
+/*       height : 72px; */
+/*       margin-left : 464px; */
+/*       margin-right : 466.5px; */
+/*       background-color: rgb(255, 255, 255); */
+/*       border-bottom-color : rgb(242, 242, 242); */
+/*       border-bottom-style : solid; */
+/*       border-bottom-width : 1px; */
+/*   } */
+/*   #soomgo-header1{ */
+/*       width : 79.5px; */
+/*       height : 27px; */
+/*       float : left; */
+/*       margin-top : 22.5px; */
+/*       margin-left : 2.5px  */
+/*   } */
+/*   #soomgo-menu1{ */
+/*       width : 264.13px; */
+/*       height : 28.16px; */
+/*       float : left;  */
+/*       margin-top : 26.5px; */
+/*       margin-left : 29.5px; */
+/*   } */
+/*   #soomgo-request{ */
+/*       width : 63.89px; */
+/*       height : 24px; */
+/*       float : left; */
+/*       line-height: 120%; */
+/*   } */
+/*   #soomgo-serch{ */
+/*       width : 63.89px; */
+/*       height : 24px; */
+/*       float : left; */
+/*       margin-left : 13px; */
+/*       line-height: 120%; */
+/*   } */
+/*   #soomgo-market{ */
+/*       width : 33.45px; */
+/*       height : 24px; */
+/*       float : left; */
+/*       margin-left : 13px; */
+/*       line-height: 120%; */
+/*   } */
+/*   #soomgo-community{ */
+/*       width : 60.89px; */
+/*       height : 24px; */
+/*       float : left; */
+/*       margin-left : 14px; */
+/*       line-height: 120%; */
+/*   } */
+/*   #soomgo-header-serch{ */
+/*       background-color : rgb(242, 242, 242); */
+/*         width: 280px; */
+/*         height :40px; */
+/*         float :left; */
+/*         margin-left : 55.5px; */
+/*         margin-top : 15.5px; */
+/*         border-radius: 6px */
+/*   } */
+/*   #reading-glasses-img{ */
+/*         width:24px; */
+/*         height :40px; */
+/*         float:left; */
+/*         padding-top :9px; */
+/*         padding-bottom: 8px; */
+/*         margin-left: 12px; */
+/*   } */
+/*   #serch-input-outter{ */
+/*     background-color : rgb(242, 242, 242); */
+/*     width:224px; */
+/*     height :38px; */
+/*     float:left; */
+/*     margin-left: 5px; */
+/*     margin-top : 3px; */
+/*   } */
+/*   .serch-input{ */
+/*     background-color :rgb(242, 242, 242); */
+/*     width:224px; */
+/*     height :38px; */
+/*     border: none; */
+/*     font-size:.875rem; */
+/*   } */
+/*   #soomgo-menu2{ */
+/*       width : 202.17px; */
+/*       height : 36px; */
+/*       float : right; */
+/*       margin-top : 16px; */
+/*       margin-left: 20px; */
+/*   } */
+/*   #soomgo-login{ */
+/*       width : 40.64px; */
+/*       height : 20px; */
+/*       float : left; */
+/*       margin-top : 11px; */
+/*       margin-left : 0.5px; */
+/*       line-height: 100%;  */
+/*   } */
+/*   #soomgo-join{ */
+/*       width : 60.53px; */
+/*       height : 20px; */
+/*       float : left; */
+/*       margin-left : 13.8px; */
+/*       margin-top : 11px; */
+/*       line-height: 100%; */
+/*   } */
+/*   #soomgo-gosu-join{ */
+/*       width : 80px; */
+/*       height : 36px; */
+/*       float : right; */
+/*       margin-top : 2px; */
+/*       line-height: 35px; */
+/*       background-color:#00c7ae; */
+/*       border-radius: 6px; */
+/*       text-align : center; */
+/*   } */
    
 	
 	
