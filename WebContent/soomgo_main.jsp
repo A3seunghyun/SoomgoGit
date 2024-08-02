@@ -107,8 +107,8 @@
 <meta charset="UTF-8">
 	<title>숨고 메인 </title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-	<link rel="stylesheet" href="css/soomgo_main.css">
-	<link rel="stylesheet" href="css/clear3.css">
+	<link rel="stylesheet" href="./css/soomgo_main.css">
+	<link rel="stylesheet" href="./css/clear3.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	
 	<script>

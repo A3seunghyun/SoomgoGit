@@ -1239,7 +1239,7 @@ header-total{
     color: #323232;
     text-align: left;
    }
-   .header-inner{
+   .header-inner{ 
     border-bottom: none;
     height: 4.5rem;
     padding: 0;
