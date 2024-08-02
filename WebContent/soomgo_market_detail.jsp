@@ -59,6 +59,8 @@
     %>
     <%
     	int marketIdx = Integer.parseInt(request.getParameter("market_idx"));
+    	String marketTitle = request.getParameter("market_title");
+    	
     	MarketProductDetailDAO mpddao = new MarketProductDetailDAO();
     	
     	//온라인진행, 대면/비대면, 서비스지역, 상세 설명
@@ -685,7 +687,7 @@
 							</ol>
 						</div>
 						<div id="product-title">
-							<h3>건강하고 아름다운 몸만들기</h3>
+							<h3><%=marketTitle %></h3>
 						</div>
 						<div id="product-reserve">
 							<div id="product-reserve-option">

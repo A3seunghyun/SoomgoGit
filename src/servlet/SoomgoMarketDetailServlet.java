@@ -17,10 +17,11 @@ public class SoomgoMarketDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mIdx = request.getParameter("market_idx");
 		String mTitle = request.getParameter("market_title");
-//		System.out.println(mIdx);
+		System.out.println(mIdx+" "+mTitle);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("market_idx", mIdx);
+		session.setAttribute("market_title", mTitle);
 		RequestDispatcher rd = request.getRequestDispatcher("soomgo_market_detail.jsp");
 		rd.forward(request, response);
 		
