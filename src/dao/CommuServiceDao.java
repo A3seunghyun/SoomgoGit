@@ -7,14 +7,15 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import dto.CommuServiceCountDto;
+import dto.CommuServiceDto;
 import dto.CommuServiceList;
 
 public class CommuServiceDao {
 	public static Connection getConnection() throws Exception {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "soomgo";	//"hr";	 오라클 계정
-		String pw = "soomgo";
+		String id = "soomgo1";	//"hr";	 오라클 계정
+		String pw = "pass1234";
 		
 		Class.forName(driver);
 		Connection conn = DriverManager.getConnection(url,id,pw);
