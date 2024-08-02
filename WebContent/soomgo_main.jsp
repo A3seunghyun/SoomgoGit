@@ -94,7 +94,7 @@
 	
 // 	int userIdx = Integer.parseInt(request.getParameter("userIDx"));
 	CommuNoticeDao nDao = new CommuNoticeDao();
-// 	ArrayList<CommuNoticeDto> nList = nDao.getNoticeList(userIdx);  // 알림 리스트를 가져올 메서드
+	ArrayList<CommuNoticeDto> nList = nDao.getNoticeList(users_idx);  // 알림 리스트를 가져올 메서드
 	
 	CommuServiceDao sDao = new CommuServiceDao(); 
 // 	검색창
