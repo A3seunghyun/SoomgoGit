@@ -16,8 +16,8 @@ public class MainPageDao {
 	public static Connection getConnection() throws Exception {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "soomgo1";	//	 오라클 계정
-		String pw = "pass1234";
+		String id = "soomgo";	//	 오라클 계정
+		String pw = "soomgo";
 		
 		Class.forName(driver);
 		
