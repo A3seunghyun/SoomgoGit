@@ -130,6 +130,11 @@
 			
 		})
 		
+		function comma(num) {
+			num = String(num);
+			return num.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+		}
+		
 		let page_num = <%=pageNum%>;
 		let category_idx = <%=categoryIdx%>;
 		function draw_new_board_list(page) {
@@ -161,7 +166,7 @@
 						"</div>"+
 						"</div>"+
 						"<div class=\"product-list-item-price\">"+
-						"<strong>"+res[i].marketMinPrice+"원 ~</strong>"+
+						"<strong>" + comma(res[i].marketMinPrice) + "원 ~</strong>"+
 						"</div>"+
 						"<div class=\"product-list-provider-review\">"+
 						"<span class=\"review-star-icon\">"+
