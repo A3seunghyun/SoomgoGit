@@ -234,12 +234,18 @@
 				let idx = $(this).attr("idx");
 				location.href = "soomgoGosu_knowhow_post.jsp?post_idx=" + idx;
 			});
-			$(".notice-btn").click(function(){
+			
+			
+// 			알림시작============================================
+			$(".right-section-div1-button").click(function(){
 				
 				$(".notification-overlay").toggle();
 				$(".usermenu-dropdown").hide();			
 				
 			});
+			$(".right-section-div1-button").blur(function(){
+				$(".notification-overlay").hide();
+			})
 			$(".usermenu-button").click(function(){
 				
 				$(".usermenu-dropdown").toggle();
@@ -294,6 +300,18 @@
 					alert("견적창 주소 estimate_idx:" + estimate_idx);
 				}
 			  });
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
 			  
 			  $("#search-bar-input-group").click(function(){
 				  
@@ -758,99 +776,8 @@
 
 <body>
 	<div id="app" class="center">
-<!-- 			로그아웃시에 헤더 -->
-<!-- 		<div class="header"> -->
-<!-- 			<div class="app-header" class="center"> -->
-<!-- 				<div class="global-navigation-bar" class="center"> -->
-<!-- 					<div class="desktop-header" class="center"> -->
-<!-- 						<div class="left-section"> -->
-<!-- 							<div class="logo"> -->
-<!-- 								<a> <img -->
-<!-- 									src="https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg"> -->
-<!-- 								</a> -->
-<!-- 							</div> -->
-<!-- 							<nav> -->
-<!-- 								<ul class="nav-left-list"> -->
-<!-- 									<li class="nav-left-section-item"><span>견적요청</span></li> -->
-<!-- 									<li class="nav-left-section-item left-item-margin"><span>고수찾기</span></li> -->
-<!-- 									<li class="nav-left-section-item left-item-margin"><span>마켓</span></li> -->
-<!-- 									<li class="nav-left-section-item left-item-margin"><span>커뮤니티</span></li> -->
-<!-- 								</ul> -->
-<!-- 							</nav> -->
-<!-- 						</div> -->
-<!-- 						<div class="right-section"> -->
-<!-- 							<nav> -->
-<!-- 								<ul class="nav-right-list"> -->
-<!-- 									<li class="nav-right-section-item"><span>로그인</span></li> -->
-<!-- 									<li class="nav-right-section-item right-item-margin"><span>회원가입</span></li> -->
-<!-- 								</ul> -->
-<!-- 							</nav> -->
-<!-- 							<button> -->
-<!-- 								<a>고수가입</a> -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-		
-		<!-- 	고수 일때 헤더 -->
-<!-- 		<div class="header"> -->
-<!-- 			<div class="app-header" class="center"> -->
-<!-- 				<div class="global-navigation-bar" class="center"> -->
-<!-- 					<div class="desktop-header" class="center"> -->
-<!-- 						<div class="left-section"> -->
-<!-- 							<div class="logo"> -->
-<!-- 								<a> <img -->
-<!-- 									src="https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg"> -->
-<!-- 								</a> -->
-<!-- 							</div> -->
-<!-- 							<nav> -->
-<!-- 								<ul class="nav-left-list"> -->
-<!-- 									<li class="nav-left-section-item"><span>견적요청</span></li> -->
-<!-- 									<li class="nav-left-section-item left-item-margin"><span>고수찾기</span></li> -->
-<!-- 									<li class="nav-left-section-item left-item-margin"><span>마켓</span></li> -->
-<!-- 									<li class="nav-left-section-item left-item-margin"><span>커뮤니티</span></li> -->
-<!-- 								</ul> -->
-<!-- 							</nav> -->
-<!-- 						</div> -->
-<!-- <!-- 						<div class="center-section">  일반USER일때  헤더 검색창 --> -->
-<!-- <!-- 							<div class="search-box"> --> -->
-<!-- <!-- 								<form> --> -->
-<!-- <!-- 									<div class="input-group"> --> -->
-<!-- <!-- 										<div class="input-group-prepend"> --> -->
-<!-- <!-- 											<img class="search-icon" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIHN0cm9rZT0iI0M1QzVDNSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBjeD0iNi42MTEiIGN5PSI2LjYxMSIgcj0iNS44NjEiLz4KICAgICAgICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Im0xNS4yNSAxNS4yNS00LjI0My00LjI0MyIvPgogICAgPC9nPgo8L3N2Zz4K"/> --> -->
-<!-- <!-- 										</div> --> -->
-<!-- <!-- 										<input type="text" placeholder="키워드와 #태그 검색" autocomplete="off" class="search-input" maxlength="15" id="search"/> --> -->
-<!-- <!-- 										<div class="input-group-append"> --> -->
-<!-- <!-- 											<img class="reset" alt="검색어 삭제 아이콘" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMykiPgogICAgICAgICAgICA8Y2lyY2xlIGZpbGw9IiNDNUM1QzUiIGN4PSI5IiBjeT0iOSIgcj0iOSIvPgogICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Im02IDYgNi4wMDUgNi4wMDZNMTIuMDA1IDYgNiAxMi4wMDYiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo="/> --> -->
-<!-- <!-- 										</div> --> -->
-<!-- <!-- 									</div> --> -->
-<!-- <!-- 								</form> --> -->
-<!-- <!-- 							</div> --> -->
-<!-- <!-- 						</div> --> -->
-						
-<!-- 						<div class="right-infor"> -->
-<!-- 							<nav> -->
-<!-- 								<ul class="nav_list"> -->
-<!-- 									<li class="nav-item"> -->
-<!-- 										<span>받은요청</span> -->
-<!-- 									</li> -->
-<!-- 									<li class="nav-item-chat"> -->
-<!-- 										<span>바로견적</span> -->
-<!-- 									</li> -->
-<!-- 									<li class="nav-item-chat"> -->
-<!-- 										<span>채팅</span> -->
-<!-- <!-- 										<span class="badge-count">97</span>  고수 부분 --> -->
-<!-- 									</li> -->
-<!-- 									<li class="nav-item-chat"> -->
-<!-- 										<span>프로필</span> -->
-<!-- 									</li> -->
-<!-- 								</ul> -->
-<!-- 							</nav> -->
-<!-- 							<div class="notification"> -->
+							<div class="notification">
 <!-- 								<button class="notice-btn"> -->
-<!-- 									<img src="img/숨고알림.png" class="svg-icon"/> -->
 <!-- 								</button> -->
 								<div class="notification-overlay"> 알림창 코드 숨겨놓음
 									<div class="div_notice_box">
@@ -882,10 +809,6 @@
 																</div>
 																<%
  																	String msg = dto.getMessage();
- 																																																																																							if(dto.getName() != null)
- 																																																																																								msg = msg.replace("@name@", dto.getName());
- 																																																																																							if(dto.getServiceName() != null)
- 																																																																																								msg = msg.replace("@svc_name@", dto.getServiceName());
 																%>
 																<div class="div_row_content">
 																	<div class="div_text">
@@ -912,57 +835,7 @@
 										</div>
 									</div>
 								</div>
-<!-- 							</div> -->
-<!-- 							<div class="usermenu"> -->
-<!-- 								<div class="usermenu-button"> -->
-<!-- 									<div class="user-prifile-picture"> -->
-<!-- 										<img  class="profile-img" src="img/두찜.png"/> -->
-<!-- 									</div>	 -->
-<!-- 									<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K"/>						 -->
-<!-- 									<img  class="arrowUp" data-v-35a09b99="" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDggNiA0IDIgOCIvPgogICAgPC9nPgo8L3N2Zz4K"> -->
-<!-- 								</div> -->
-<!-- 								<div class="usermenu-dropdown" style="display:none;"> -->
-<!-- 									<div data-name="user-infor"> -->
-<!-- 										<h4 class="user-name">마포구 이사전문 장용준 고객님</h4> -->
-<!-- 										<a class="score-review"> -->
-<!-- 											<div class="review-avg"> -->
-<!-- 												<span class="score-span"> -->
-<!-- 													<img class="star-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2IDE1Ij4KICAgIDxwYXRoIGZpbGw9IiNFMUUyRTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRTFFMkU2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iLjUiIGQ9Ik04IDFsMi4xNjMgNC4zODJMMTUgNi4wODlsLTMuNSAzLjQwOS44MjYgNC44MTZMOCAxMi4wMzlsLTQuMzI2IDIuMjc1LjgyNi00LjgxNkwxIDYuMDg5bDQuODM3LS43MDd6Ii8+Cjwvc3ZnPgo="/> -->
-<!-- 														평점 0 -->
-<!-- 												</span> -->
-<!-- 												<span class="score-review-line"></span> -->
-<!-- 												<span class="score-span"> -->
-<!-- 													리뷰 0 -->
-<!-- 												</span> -->
-<!-- 											</div> -->
-<!-- 										</a> -->
-<!-- 									</div> -->
-<!-- 									<ul class="user-menu-control"> -->
-<!-- 										<li class="row">  -->
-<!-- 											<div class="col">프로필 관리</div>   -->
-<!-- 										</li>  -->
-<!-- 										<li class="row"> -->
-<!-- 											<div class="col">마이페이지</div> -->
-<!-- 										</li> -->
-<!-- 									</ul> -->
-<!-- 									<div data-name="user-type-control"> -->
-<!-- 										<button class="btn-secondary"> -->
-<!-- 											<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMzMjMyMzIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjIiPjxwYXRoIGQ9Ik0xMiAxLjV2M0g5bS04IDV2LTNoMyIvPjxwYXRoIGQ9Ik0yLjI1NSA0QTQuNSA0LjUgMCAwIDEgOS42OCAyLjMyTDEyIDQuNW0tMTEgMmwyLjMyIDIuMThBNC41IDQuNSAwIDAgMCAxMC43NDUgNyIvPjwvZz48L3N2Zz4="/> -->
-<!-- 											고객전환 -->
-<!-- 										</button> -->
-<!-- 									</div> -->
-<!-- 									<div class="logout"> -->
-<!-- 										<button class="logout-btn"> -->
-<!-- 											로그아웃 -->
-<!-- 										</button> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
+							</div>
 		
 <!-- ========= 		바디                 ========== -->
 		<div id="app-body" class="center">
