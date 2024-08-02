@@ -142,7 +142,7 @@
 					console.log("성공");
 					for(let i = 0; i <= res.length-1; i++){
 						let str = "<article class=\"product-list-item\">"+
-						"<a class=\"product-list-item-a\" href=\"SoomgoMarketDetailServlet?market_idx=\""+res[i].market_idx+">"+
+						"<a class=\"product-list-item-a\" href=\"SoomgoMarketDetailServlet?market_idx=" + res[i].market_idx + "&market_title=" + res[i].title + "\">"+
 						"<div class=\"product-list-item-image\">"+
 						"<article class=\"preview-image\">"+
 						"<div class=\"image-wrap\">"+
@@ -366,7 +366,7 @@
  						for(MarketProductListDTO dto : mpl) {
  					%>
 					<article class="product-list-item">
-						<a class="product-list-item-a" href="SoomgoMarketDetailServlet?market_idx=<%=dto.getMarket_idx() %>&market_title=<%=dto.getMarketName() %>" >
+						<a class="product-list-item-a" href="SoomgoMarketDetailServlet?market_idx=<%=dto.getMarket_idx()%>&market_title=<%=dto.getMarketName()%>" >
 							<div class="product-list-item-image">
 								<article class="preview-image">
 									<div class="image-wrap">
