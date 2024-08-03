@@ -1,0 +1,602 @@
+@charset "UTF-8";
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		margin:0;
+		font-family:"Noto Sans KR", "Malgun Gothic", -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+	}
+	.fl{float: left;}
+	.fr{float: right;}
+	.border{border: 1px solid red;}
+	
+	
+	p{
+      margin: 0;
+      letter-spacing: -2px;
+      font-size: 12px;
+  }
+  a {
+      text-decoration-line: none;
+      }
+h2 {
+    margin: 0;
+}
+  #total-header{
+    position: fixed;
+    top: 0;
+    width :1903px;
+    height:72px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-color : rgb(242, 242, 242);
+    border-bottom-style : solid;
+    border-bottom-width : 1px;
+  }
+  #soomgo-header{
+      width: 100%;
+      width : 972px;
+      height : 72px;
+      margin-left : 464px;
+      margin-right : 466.5px;
+      background-color: rgb(255, 255, 255);
+      border-bottom-color : rgb(242, 242, 242);
+      border-bottom-style : solid;
+      border-bottom-width : 1px;
+  }
+  #soomgo-header1{
+      width : 79.5px;
+      height : 27px;
+      float : left;
+      margin-top : 22.5px;
+      margin-left : 2.5px 
+  }
+  #soomgo-menu1{
+      width : 264.13px;
+      height : 28.16px;
+      float : left; 
+      margin-top : 26.5px;
+      margin-left : 29.5px;
+  }
+  #soomgo-request{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      line-height: 120%;
+  }
+  #soomgo-serch{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-market{
+      width : 33.45px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-community{
+      width : 60.89px;
+      height : 24px;
+      float : left;
+      margin-left : 14px;
+      line-height: 120%;
+  }
+  #soomgo-header-serch{
+      background-color : rgb(242, 242, 242);
+        width: 280px;
+        height :40px;
+        float :left;
+        margin-left : 55.5px;
+        margin-top : 15.5px;
+        border-radius: 6px
+  }
+  #reading-glasses-img{
+        width:24px;
+        height :40px;
+        float:left;
+        padding-top :9px;
+        padding-bottom: 8px;
+        margin-left: 12px;
+  }
+  #serch-input-outter{
+    background-color : rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    float:left;
+    margin-left: 5px;
+    margin-top : 3px;
+  }
+  .serch-input{
+    background-color :rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    border: none;
+    font-size:.875rem;
+  }
+  #soomgo-menu2{
+      width : 202.17px;
+      height : 36px;
+      float : right;
+      margin-top : 16px;
+      margin-left: 20px;
+  }
+  #soomgo-login{
+      width : 40.64px;
+      height : 20px;
+      float : left;
+      margin-top : 11px;
+      margin-left : 0.5px;
+      line-height: 100%; 
+  }
+  #soomgo-join{
+      width : 60.53px;
+      height : 20px;
+      float : left;
+      margin-left : 13.8px;
+      margin-top : 11px;
+      line-height: 100%;
+  }
+  #soomgo-gosu-join{
+      width : 80px;
+      height : 36px;
+      float : right;
+      margin-top : 2px;
+      line-height: 35px;
+      background-color:#00c7ae;
+      border-radius: 6px;
+      text-align : center;
+  }
+	
+	
+	/* ------------------------------헤더------------------------------------------------- */
+	
+	
+	#div_soomgoGuideLine_layout {	
+		/* 숨고가이드라인을 담을div */
+		width: 600px;
+		min-height: 900px;	
+		font-size: 16px;
+		font-weight: 400;
+		margin: 130px auto 0px;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header {  
+		/* 헤더 div*/
+		width: 600px;
+		height: 608px;
+		margin: 56px 0px 0px;
+		font-size: 16px;
+		font-weight: 400;
+		text-align: left;
+		border-bottom: .0625rem solid #f4f4f4;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_img_layout { 
+		/* 숨고생활 가이드라인이미지 div */
+		width: 600px;
+		height: 400px;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_img_layout > img{ 
+		/* 숨고생활 가이드라인이미지 */
+		width: 600PX;
+		height: 400PX;
+		border-radius: 8px;
+		object-fit: cover;   /* 이미지 비율 유지시켜줌 */
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_category {  
+		/* 카테고리 > 공지사항 text담을 div */
+		width: 600px;
+		height: 22px;
+		margin-top: 26px;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_category > div:nth-child(1){  
+		/* 카테고리 text div */
+		width: 51px;
+		height: 22px;
+		color: rgb(169, 169, 169);
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: -0.3px;
+		margin-left: 1px;
+		white-space: nowrap;
+   		float: left;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_category > div:nth-child(2){  
+		/* > div */
+		width: 14px;
+		height: 14px;
+   		float: left;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_category > div:nth-child(2) > img{
+		color: rgb(169, 169, 169);
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: -0.3px;
+		margin-right: 2px;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_category > div:nth-child(3){  /* 카테고리 text div */
+		/* 커뮤니티 > 공지사항 text 담을 div */
+		width: 51px;
+		height: 22px;
+		color: rgb(169, 169, 169);
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: -0.3px;
+		white-space: nowrap;
+   		float: left;
+   		margin-left: 6px;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_post_title {
+		/* 숨고생활 가이드라인(title)을 담을 div */
+		width: 100%;
+		height: 38px;
+		font-size: 24px;
+		margin-top: 26px;
+		font-weight: 700;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile {
+		/* 게시글 작성자, 이미지, 등록일시 등을 담을 div */
+		width: 600px;
+		height: 44px;
+		margin: 30px 0px 24px;;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile > #div_box {
+		width: 181px;
+		height: 100%;
+		float: left;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile > #div_box > div:nth-child(1){  
+		/* 작성자 숨고이미 로고를 담을 div */
+		width: 44px;
+		float: left;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile > #div_box > div:nth-child(1) > img { 
+		/* 숨고로고 img */
+		width: 100%;
+		height: 100%;
+		margin: 0px 12px 0px 0px;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile #div_box > div:nth-child(2) {
+		/* 게시글 작성자 text 담을 div */
+		width: 126px;
+		height: 22px;
+		margin:0px 0px 2px;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: -0.3px;
+		float: right;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile #div_box > div:nth-child(3)  {
+		/* 게시글 등록일시 text 담을 div */
+		width: 126px;
+		height: 18px;
+		margin: 1px 0px 0px;
+		font-size: 12px;
+		font-weight: 400;
+		color: rgb(136, 136, 136);
+		letter-spacing: -0.2px;
+		float: right;
+		white-space: nowrap;
+	}
+	#div_soomgoGuideLine_layout > #div_post_header > #div_users_profile > #div_img {
+		width: 24px;
+		margin: 10px 2px 0px;
+		float: right;
+		cursor: pointer;
+	}
+	#div_soomgoGuideLine_layout > #div_body_container {   
+	/*  게시글내용 전체를 담을 idv */
+		width: 600px;
+		height: 1500px;
+		margin: 40px 0px 60px;
+	}
+	#div_soomgoGuideLine_layout > #div_body_container > #div_content {  
+	/* 게시글 제목 담을div */
+		width: 100%;
+		height: 280px;
+		text-wrap: wrap;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.75;
+		letter-spacing: -0.2px;
+	}
+	.subheading {   
+	/* 게시글 서브제목 담을 div */
+		width: 600px;
+		height: 28.1px;
+		font-size: 18px;
+		margin: 40px 0px 0px;
+		font-weight: 700;
+		text-align: left;
+		line-height: 1.56;
+		text-size-adjust: 100%;
+	}
+	.content {		
+	/* 게시글 내용 담을 div */
+		width: 600px;
+		min-height: 52px;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		margin: 20px 0px 0px ;
+		text-align: left;
+		text-wrap: wrap;
+		color: rgb(78, 78, 78);
+		line-height: 1.75;
+	}
+	#div_post_react-state {   
+	/* 좋앙요 박스를 담을 div */
+		width: 600px;
+		height: 55px;
+	}
+	#div_post_react-state > div { 
+	/*  좋아요 정보 담을 박스 */
+		width: 85px;
+		height: 55px;
+		margin: 0px 28px 0px 0px;
+		padding: 17px 0px;
+		color: rgb(106, 118, 133);
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.likes {
+		margin-left: 2px;
+	}
+	#div_recommend_request {
+		/* 인기서비스 top8을 담을 큰 div */
+		width: 600px;
+		height: 248px;
+		padding: 40px 0px;
+		border-top: .0625rem solid #f4f4f4;
+	}
+	#div_recommend_request > div:nth-child(1) {
+		width: 600px;
+		height: 48px;
+		margin: 0px 0px 20px;
+		float: left;
+	}
+	#div_recommend_request > div:nth-child(2) {
+		width: 600px;
+		height: 84px;
+		margin: 0px 0px 16px;
+		float: left;
+	}
+	#div_recommend_request > div:nth-child(1) > div:nth-child(1) {
+		width: 200px;
+		height: 48px;
+		float: left;
+	}
+	#div_recommend_request > div:nth-child(1) > div:nth-child(1) > h2 {
+		margin:0;
+		font-size: 16px;
+		font-weight: 700;
+		color: #2D2D2D;
+	}
+	#div_recommend_request > div:nth-child(1) > div:nth-child(2) {
+		width: 55px;
+		height: 20px;
+		font-size: 14px;
+		color: #888888;
+		float: right;
+		cursor: pointer;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(1) { 
+		/* 인기서비스 top 1 ~ 8 */
+		width: 137px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin-right: 6px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+		/* display: block;
+		row-gap: 12px; */
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(2) {
+		width: 80px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin-right: 6px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(3) {
+		width: 141px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin-right: 6px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(4) {
+		width: 80px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin-right: 6px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(5) {
+		width: 80px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin-right: 6px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(6) {
+		width: 141px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin: 10px 6px 0px 0px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(7) {
+		width: 114px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin: 10px 6px 0px 0px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	#div_recommend_request > div:nth-child(2) > div:nth-child(8) {
+		width: 156px;
+		height: 36px;
+		padding: 4px 11px 6px;
+		float:left;
+		margin: 10px 6px 0px 0px;
+		border: .0625rem solid #f4f4f4;
+		border-radius: 41px;
+	}
+	.top8-font { 
+		/* 인기서비스 top8의 폰트 */
+		font-size: 14px;
+		font-weight: 400;
+		text-align: left;
+		text-size-adjust: 100%;
+		line-height: 24px;
+		color: rgb(12, 12, 12);
+		white-space:nowrap;
+		cursor: pointer;
+	}
+	#div_popular_post {
+		/* 가장 뜨거운 커뮤 게시글 3개를 담을 div */
+		width: 600px;
+		height: 594px;
+		padding: 40px 0px 160px;
+	}
+	#div_popular_post > #div_hot {
+		/* 가장 뜨거운 커뮤 게시글 div */
+		width: 600px;
+		height: 24px;
+		margin-bottom: 12px;
+	}
+	#div_popular_post > #div_hot > h2{
+		/* 가장 뜨거운 커뮤니티 게시글  text*/
+		margin:0;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: -0.3px;
+		line-height: 24px;
+		
+	}
+	#div_popular_post > #div_content_box {
+		/* 게시글을 담을 큰 div */
+		width: 600px;
+		height: 117px;
+		margin: 0px 0px 2px;
+		padding: 12px 2px;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: .0625rem solid #f4f4f4;
+		cursor: pointer;
+	}
+	#div_popular_post > #div_content_box > #div_content {
+		/* 게시글을 담을 div */
+		width: 518px;
+		height: 92px;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+	#div_popular_post > #div_content_box > #div_post_img {
+		/* 게시글 img 담을 div */
+		width: 64px;
+		height: 64px;
+		border-radius: 8px;
+	}
+	.post_img {
+		/* 게시글 img */
+		width: 64px;
+		height: 64px;
+		border-radius: 8px;
+		margin-top: 15px;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_category {
+		/* 게시글 카테고리 */
+		width: 518px;
+		height: 18px;
+		margin: 0px 0px 5px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 18px;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_title {
+		/* 게시글 제목 */
+		width: 518px;
+		height: 21px;
+		margin: 0px 0px 3px;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 21px;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_post {
+		/* 게시물 게시글 일부 ... */
+		width: 518px;
+		height: 21px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 21px;
+		white-space:nowrap;	     /* 게시글 ... 처리 */
+		text-overflow: ellipsis;
+   		overflow: hidden;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_view_comment {
+		/* 조회수 이미지, 댓글수 이미지 담을 div */
+		width:518px;
+		height: 18px;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		float: left;
+		margin: 6px 0px 0px;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_view_comment > #div_view {
+		/* 조회수div */
+		width: 40px;
+		height: 18px;
+		margin: 0px 14px 0px 0px;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		line-height: 18px;
+		float: left;
+		display: flex;
+		justify-content: space-between;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_view_comment > #div_view > img {
+		/* 조회수 이미지 */
+		width: 16px;
+		height: 16px;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_view_comment > #div_comment {
+		/* 댓글 div */
+		width: 27px;
+		height: 18px;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		line-height: 18px;
+		float: left;
+		display: flex;
+		justify-content: space-between;
+	}
+	#div_popular_post > #div_content_box > #div_content > #div_view_comment > #div_comment > img {
+		/* 댓글 이미지 */
+		width: 16px;		
+		height: 16px;
+	}
+	

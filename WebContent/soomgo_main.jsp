@@ -55,9 +55,15 @@
 	    }//else{
 	    	// 고수아닐때 일반회원일때 실행할 메서드
 	    	// }
-	
-	
  %>   
+<<<<<<< HEAD
+=======
+    
+    
+    
+    
+    
+>>>>>>> refs/heads/YJ-BRANCH
 <%!// <%!   --> 메서드를 정의 할 수 있는 공간 
 	String convStr(String name) {		
 		int length = name.length();			// 이름의 길이를 구함
@@ -86,7 +92,7 @@
 	
 // 	int userIdx = Integer.parseInt(request.getParameter("userIDx"));
 	CommuNoticeDao nDao = new CommuNoticeDao();
-	ArrayList<CommuNoticeDto> nList = nDao.getNoticeList(users_idx);  // 알림 리스트를 가져올 메서드
+	ArrayList<CommuNoticeDto> nList = nDao.getNoticeList(userIdx);  // 알림 리스트를 가져올 메서드  로그인한 유저 idx 
 	
 	CommuServiceDao sDao = new CommuServiceDao(); 
 // 	검색창
@@ -99,8 +105,9 @@
 <meta charset="UTF-8">
 	<title>숨고 메인 </title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-	<link rel="stylesheet" href="./css/soomgo_main.css">
-	<link rel="stylesheet" href="./css/clear3.css">
+	<link rel="stylesheet" href="css/soomgo_main.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/clear3.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	
 	<script>
@@ -121,7 +128,7 @@
              $(".right-section-div2-2-img").attr("src", img1);
             }
         });
-
+        
         $(".right3-section-div2").click(function(){
             var img1 = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDggNiA0IDIgOCIvPgogICAgPC9nPgo8L3N2Zz4K";
             var img2 = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxMnYxMkgweiIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEwIDQgNiA4IDIgNCIvPgogICAgPC9nPgo8L3N2Zz4K";
@@ -201,9 +208,6 @@
     	   	});
     	 
        });
-        
-
-        
     });
   </script>
 	
@@ -211,9 +215,86 @@
 	
 	<script>
 	
+	// 알림
+	function func_on_message(e) {
+// 			댓글 등록 버튼을 누르면 알림을 받아와서 뿌려줌
+			alert("notice!");
+			let str = e.data;
+			let arr = str.split("||");
+			if(arr[0]=="Notice" && arr[1]=="<%=userIdx%>") {
+// 				alert(arr[2]);   // before toast testing.
+				let params = { user_idx : <%=userIdx%> };
+				
+				$.ajax({
+					type: "get",
+					url: "AjaxNoticeListServlet",
+					data: params,
+					success: function(res) {
+ 						console.log(res);     // CHECK, res = JSON ARRAY.
+ 						$(".notice-list").html("");
+ 						for(let i=0; i<=res.length-1; i++) {
+ 							let idx_name = "";
+ 							if(res[i].chat_idx != 0) idx_name = "chat_idx";
+ 							if(res[i].estimate_idx != 0) idx_name = "estimate_idx";
+ 							if(res[i].comments_idx != 0) idx_name = "comments_idx";
+ 						
+ 							let idx_number = res[i].chat_idx + res[i].estimate_idx + res[i].comments_idx; 
+
+ 							let msg = res[i].message;
+ 							msg = msg.replace("@name@", res[i].name);
+ 							msg = msg.replace("@svc_name@", res[i].svc_name);
+ 							
+ 							let new_li = '<li ' + idx_name + '="' + idx_number + '">' 
+ 								+ '<div class="user-notice-item">' 
+ 								+ '<div class="div_row_info">' 
+ 								+ '<div class="div_notice_text_box">' 
+ 								+ '<div class="type">' 
+ 								+ '<span class="notice_text"> 알림 </span>' 
+ 								+ '</div>' 
+ 								+ '</div>' 
+ 								+ '<div class="div_notice_date">' 
+ 								+ res[i].notice_date 
+ 								+ '</div>' 
+ 								+ '</div>' 
+ 								+ '<div class="div_row_content">' 
+ 								+ '<div class="div_text">' 
+ 								+ '<h4 class="title" idx="' + idx_number + '">' + msg + '</h4>' 
+ 								+ '</div>' 
+ 								+ '<button class="btn_wrapper">' 
+ 								+ '<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMEgxOFYxOEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTYgNEwxMiA5LjUgNiAxNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgPC9nPgo8L3N2Zz4K">' 
+ 								+ '</button>' 
+ 								+ '</div>' 
+ 								+ '<p class="content">견적 내용을 자세히 확인해보세요</p>' 
+ 								+ '</div>' 
+ 								+ '</li>';
+ 							$(".notice-list").append(new_li);
+ 						}
+					},
+					error: function(r, s, e) {
+						alert('에러');
+					}
+				});
+			}
+			
+//			alert("새로운 메시지가 도착하였습니다!");
+//			$("#div_message").append("<p class='chat'>" + e.data + "</p>");
+		}
+		function func_on_open(e) {
+// 			alert("websocket connected.");
+		}
+		function func_on_error(e) {
+			alert("Error!");
+		}
+	
+		let webSocket = new WebSocket("ws://localhost:9090/Hello/broadcast_notice");
+		webSocket.onmessage = func_on_message;
+		webSocket.onopen = func_on_open;
+		webSocket.onerror = func_on_error;
+		
+// 		여기까지 알림	
+	
 		$(function(){
 			$(".curation-list").click(function(){
-				
 				let idx = $(this).attr("idx");
 // 				if(idx == 1 || idx == 3 || idx == 4 || idx == 6) {
 				  location.href="soomgoQnA_Post.jsp?post_idx=" + idx;
@@ -227,14 +308,13 @@
 				location.href = "soomgoGosu_knowhow_post.jsp?post_idx=" + idx;
 			});
 			
-			
 // 			알림시작============================================
-			$(".right-section-div1-button").click(function(){
+// 			$(".right-section-div1").click(function(){
+// 				alert("AA");
+// 				$(".notification-overlay").toggle();
+// 				$(".usermenu-dropdown").show();			
 				
-				$(".notification-overlay").toggle();
-				$(".usermenu-dropdown").hide();			
-				
-			});
+// 			});
 			$(".right-section-div1-button").blur(function(){
 				$(".notification-overlay").hide();
 			})
@@ -293,17 +373,7 @@
 				}
 			  });
 			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
+
 			  
 			  $("#search-bar-input-group").click(function(){
 				  
@@ -335,24 +405,6 @@
 			  	} else {
 			  	  $(".popular-section").hide();
 			  	}
-				/*
-				$.ajax({
-				    type : "get",            // HTTP method type(GET, POST) 형식이다.
-				    url : "mainSearchServlet",      // 컨트롤러에서 대기중인 URL 주소이다.
-				    success : function(response) { // 비동기통신의 성공일경우 success콜백으로 들어옵니다. 'response'는 응답받은 데이터.
-				        //alert("성공!");
-				    },
-				    error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옴
-				        alert("통신 실패.")
-				    }
-				});
-				*/
-			  });
-			  
-// 			  $("#search").focusout(function(){
-// 				  $(".input-search-box").hide();
-// 			  });
-
 
 			  $(".x-btn").click(function(){
 				  $("#search").val(""); // 검색 입력창을 지움.
@@ -398,9 +450,6 @@
 			let service_idx = $(this).attr("service_idx");
 			alert("견적 요청으로 이동해야 - service_idx=" + service_idx);
 		});
-		  
-		
-		
 
 	</script>
 </head>
@@ -438,7 +487,17 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
+<<<<<<< HEAD
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
+=======
+                                        <span class = "header-nav-li-span">마켓</span>
+                                    </a>
+                                </li>
+
+                                <li class = "header-nav-li1">
+                                    <a href = "soomgoCommu.jsp">
+                                        <span class = "header-nav-li-span">커뮤니티</span>
+>>>>>>> refs/heads/YJ-BRANCH
                                     </a>
                                 </li>
                             </ul>
@@ -503,7 +562,17 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
+<<<<<<< HEAD
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
+=======
+                                        <span class = "header-nav-li-span">마켓</span>
+                                    </a>
+                                </li>
+
+                                <li class = "header-nav-li1">
+                                    <a href = "soomgoCommu.jsp">
+                                        <span class = "header-nav-li-span">커뮤니티</span>
+>>>>>>> refs/heads/YJ-BRANCH
                                     </a>
                                 </li>
                             </ul>
@@ -601,8 +670,7 @@
             </section>
         </div>
     </header>
-	<div>
-	</div>
+	
     <header class = "header-total2">
         <div class = "header-inner">
             <section class = "header-section1">
@@ -635,7 +703,17 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
+<<<<<<< HEAD
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
+=======
+                                        <span class = "header-nav-li-span">마켓</span>
+                                    </a>
+                                </li>
+
+                                <li class = "header-nav-li1">
+                                    <a href = "soomgoCommu.jsp">
+                                        <span class = "header-nav-li-span">커뮤니티</span>
+>>>>>>> refs/heads/YJ-BRANCH
                                     </a>
                                 </li>
                             </ul>
@@ -755,79 +833,66 @@
         </div>
     </header>
 
-
-
-
-
-
-
-
-
-
-
-
 <body>
 	<div id="app" class="center">
-							<div class="notification">
-<!-- 								<button class="notice-btn"> -->
-<!-- 								</button> -->
-								<div class="notification-overlay"> 알림창 코드 숨겨놓음
-									<div class="div_notice_box">
-										<div class="overlay_header">
-											<h2 class="h2">알림</h2>	
-											<button class="all-read">전체읽음</button>
-										</div>
-										<div class="overlay-body">
-											<div class="user-notice">
-												<ul class="notice-list">
-													<%
- 														for (CommuNoticeDto dto : nList) {
-													%>
-														<li 
-															<%if(dto.getCommentsIdx() != 0) {%>comments_idx="<%=dto.getCommentsIdx()%>" <%}%>
-															<%if(dto.getEstimateIdx() != 0) {%>estimate_idx="<%=dto.getEstimateIdx()%>"<%}%>
-															<%if(dto.getChatIdx() != 0) {%>chat_idx="<%=dto.getChatIdx()%>"<%}%>
-														>
-															<div class="user-notice-item">
-																<div class="div_row_info">
-																	<div class="div_notice_text_box">
-																		<div class="type">
-																			<span class="notice_text"> 알림 </span>
-																		</div>
-																	</div>
-																	<div class="div_notice_date">
-																		<%=dto.getNoticeDate().substring(2,10)%>
-																	</div>
-																</div>
-																<%
- 																	String msg = dto.getMessage();
-																%>
-																<div class="div_row_content">
-																	<div class="div_text">
-																		<h4 class="title" idx="<%=dto.getEstimateIdx()+dto.getChatIdx()+dto.getCommentsIdx()%>"><%=msg%> </h4>
-																	</div>
-																	<button class="btn_wrapper">
-																	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMEgxOFYxOEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTYgNEwxMiA5LjUgNiAxNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgPC9nPgo8L3N2Zz4K"/>
-																	</button>
-																</div>
-																<p class="content">견적 내용을 자세히 확인해보세요</p>
-															</div>
-														</li>
-													<%
- 														}
-													%>
-												</ul>
-												<div class="div_more_btn">더 보기</div>
+		<div class="notification">
+			<div class="notification-overlay"> <!-- 알림창 코드 숨겨놓음 -->
+				<div class="div_notice_box">
+					<div class="overlay_header">
+						<h2 class="h2">알림</h2>	
+						<button class="all-read">전체읽음</button>
+					</div>
+					<div class="overlay-body">
+						<div class="user-notice">
+							<ul class="notice-list">
+								<%
+									for (CommuNoticeDto dto : nList) {
+								%>
+									<li 
+										<%if(dto.getCommentsIdx() != 0) {%>comments_idx="<%=dto.getCommentsIdx()%>" <%}%>
+										<%if(dto.getEstimateIdx() != 0) {%>estimate_idx="<%=dto.getEstimateIdx()%>"<%}%>
+										<%if(dto.getChatIdx() != 0) {%>chat_idx="<%=dto.getChatIdx()%>"<%}%>
+									>
+										<div class="user-notice-item">
+											<div class="div_row_info">
+												<div class="div_notice_text_box">
+													<div class="type">
+														<span class="notice_text"> 알림 </span>
+													</div>
+												</div>
+												<div class="div_notice_date">
+													<%=dto.getNoticeDate().substring(2,10)%>
+												</div>
 											</div>
-											<div class="confirm">
-												<p>모든 알림을 삭제하시겠습니까?</p>
-												<button class="confirm-btn">예</button>
-												<button class="cancel-btn">아니오</button>
+											<%
+												String msg = dto.getMessage();
+											%>
+											<div class="div_row_content">
+												<div class="div_text">
+													<h4 class="title" idx="<%=dto.getEstimateIdx()+dto.getChatIdx()+dto.getCommentsIdx()%>"><%=msg%> </h4>
+												</div>
+												<button class="btn_wrapper">
+												<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMEgxOFYxOEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTYgNEwxMiA5LjUgNiAxNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwNDYgLTE5NykgdHJhbnNsYXRlKDc1MyA1MikgdHJhbnNsYXRlKDAgOSkgdHJhbnNsYXRlKDI0IDgzKSB0cmFuc2xhdGUoMjY5IDUzKSIvPgogICAgPC9nPgo8L3N2Zz4K"/>
+												</button>
 											</div>
+											<p class="content">견적 내용을 자세히 확인해보세요</p>
 										</div>
-									</div>
-								</div>
-							</div>
+									</li>
+								<%
+									}
+								%>
+							</ul>
+							<div class="div_more_btn">더 보기</div>
+						</div>
+						<div class="confirm">
+							<p>모든 알림을 삭제하시겠습니까?</p>
+							<button class="confirm-btn">예</button>
+							<button class="cancel-btn">아니오</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		
 <!-- ========= 		바디                 ========== -->
 		<div id="app-body" class="center">
