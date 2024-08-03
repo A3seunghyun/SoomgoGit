@@ -22,7 +22,7 @@
 	%>
 	
 	<%
-		// 영현이 헤더
+		// 헤더
 		int users_idx = 0;
 		String users_idx_param = request.getParameter("users_idx");
 		
