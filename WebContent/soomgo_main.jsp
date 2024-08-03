@@ -56,14 +56,14 @@
 	    	// 고수아닐때 일반회원일때 실행할 메서드
 	    	// }
  %>   
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
 =======
     
     
     
     
     
->>>>>>> refs/heads/YJ-BRANCH
+>>>>>>> refs/heads/YJ-BRANCH -->
 <%!// <%!   --> 메서드를 정의 할 수 있는 공간 
 	String convStr(String name) {		
 		int length = name.length();			// 이름의 길이를 구함
@@ -487,17 +487,7 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
-<<<<<<< HEAD
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
-=======
-                                        <span class = "header-nav-li-span">마켓</span>
-                                    </a>
-                                </li>
-
-                                <li class = "header-nav-li1">
-                                    <a href = "soomgoCommu.jsp">
-                                        <span class = "header-nav-li-span">커뮤니티</span>
->>>>>>> refs/heads/YJ-BRANCH
                                     </a>
                                 </li>
                             </ul>
@@ -562,17 +552,7 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
-<<<<<<< HEAD
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
-=======
-                                        <span class = "header-nav-li-span">마켓</span>
-                                    </a>
-                                </li>
-
-                                <li class = "header-nav-li1">
-                                    <a href = "soomgoCommu.jsp">
-                                        <span class = "header-nav-li-span">커뮤니티</span>
->>>>>>> refs/heads/YJ-BRANCH
                                     </a>
                                 </li>
                             </ul>
@@ -703,17 +683,7 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
-<<<<<<< HEAD
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
-=======
-                                        <span class = "header-nav-li-span">마켓</span>
-                                    </a>
-                                </li>
-
-                                <li class = "header-nav-li1">
-                                    <a href = "soomgoCommu.jsp">
-                                        <span class = "header-nav-li-span">커뮤니티</span>
->>>>>>> refs/heads/YJ-BRANCH
                                     </a>
                                 </li>
                             </ul>
@@ -817,7 +787,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                	<a href = "/Web/Seach.profile2.jsp">
+                                	<a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                     </a>
                                 </div>
