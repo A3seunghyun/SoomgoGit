@@ -445,7 +445,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu-dropdown-div3">
-                                <a href = "/Web/Seach.profile.jsp">
+                                <a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                 </a>
                                 </div>
@@ -589,7 +589,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                <a href = "/Web/Seach.profile.jsp">
+                                <a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                 </a>
                                 </div>
