@@ -654,7 +654,7 @@
 									</button>
 								</div>
 								<div class = "usermenu3-dropdown-div3">
-									<a href = "Seach.profile2.jsp">
+									<a href = "soomgo_main.jsp">
 										<button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
 									</a>
 								</div>
