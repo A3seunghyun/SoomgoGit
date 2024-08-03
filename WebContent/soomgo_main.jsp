@@ -426,7 +426,7 @@
 
                                 <li class = "header-nav-li1">
                                     <a href = "Seach.profile.jsp">
-                                        <span class = "header-nav-li-span" id = "serarch_profile">고수찾기</span>
+                                        <span class = "header-nav-li-span" id = "serarch_profile">고수찾기</span>  
                                     </a>
                                 </li>
 
