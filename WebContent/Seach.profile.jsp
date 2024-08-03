@@ -343,33 +343,33 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "Seach.profile.jsp">
-                                        <span class = "header-nav-li-span">견적요청</span>
+                                    <a href = "sgRequestMain.jsp">
+                                        <span class = "header-nav-li-span" style = "color : black;">견적요청</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
                                     <a href = "Seach.profile.jsp">
-                                        <span class = "header-nav-li-span" id = "serarch_profile">고수찾기</span>
+                                        <span class = "header-nav-li-span" id = "serarch_profile" style = "color : black;">고수찾기</span>
+                                    </a>
+                                </li>
+
+                                <li class = "header-nav-li1">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
+                                        <span class = "header-nav-li-span" style = "color : black;">마켓</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
-                                        <span class = "header-nav-li-span">마켓</span>
-                                    </a>
-                                </li>
-
-                                <li class = "header-nav-li1">
-                                    <a href = "">
-                                        <span class = "header-nav-li-span">커뮤니티</span>
+                                        <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
                             </ul>
@@ -407,33 +407,33 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "">
-                                        <span class = "header-nav-li-span">견적요청</span>
+                                    <a href = "sgRequestMain.jsp">
+                                        <span class = "header-nav-li-span" style = "color : black;">견적요청</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
                                     <a href = "Seach.profile.jsp">
-                                        <span class = "header-nav-li-span">고수찾기</span>
+                                        <span class = "header-nav-li-span" style = "color : black;">고수찾기</span>
+                                    </a>
+                                </li>
+
+                                <li class = "header-nav-li1">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
+                                        <span class = "header-nav-li-span" style = "color : black;">마켓</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
-                                        <span class = "header-nav-li-span">마켓</span>
-                                    </a>
-                                </li>
-
-                                <li class = "header-nav-li1">
-                                    <a href = "">
-                                        <span class = "header-nav-li-span">커뮤니티</span>
+                                        <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
                             </ul>
@@ -539,33 +539,33 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "">
-                                        <span class = "header-nav-li-span">견적요청</span>
+                                    <a href = "sgRequestMain.jsp">
+                                        <span class = "header-nav-li-span" style = "color : black;">견적요청</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
                                     <a href = "Seach.profile.jsp">
-                                        <span class = "header-nav-li-span">고수찾기</span>
+                                        <span class = "header-nav-li-span" style = "color : black;">고수찾기</span>
+                                    </a>
+                                </li>
+
+                                <li class = "header-nav-li1">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
+                                        <span class = "header-nav-li-span" style = "color : black;">마켓</span>
                                     </a>
                                 </li>
 
                                 <li class = "header-nav-li1">
                                     <a href = "">
-                                        <span class = "header-nav-li-span">마켓</span>
-                                    </a>
-                                </li>
-
-                                <li class = "header-nav-li1">
-                                    <a href = "">
-                                        <span class = "header-nav-li-span">커뮤니티</span>
+                                        <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
                             </ul>

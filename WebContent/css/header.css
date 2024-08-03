@@ -86,6 +86,7 @@ header-total{
   font-weight: 500;
   line-height: 1.5;
   font-size: 1rem;
+  color : black;
  }
  .header-nav-li1{
   position: relative;
@@ -475,6 +476,7 @@ header-total{
     font-weight: 500;
     line-height: 1.5;
     font-size: 1rem;
+    color : black;
    }
    .header-nav-li1{
     position: relative;

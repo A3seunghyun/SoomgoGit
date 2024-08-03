@@ -102,7 +102,7 @@
         <!--상단바 로고  보더 박스 -->
         <div id = "soomgo-header1" class = "center">
             <!--숨고 메인 페이지 이동 URL-->
-            <a href = "https://soomgo.com/">
+            <a href = "soomgo_main.jsp">
                 <!--숨고 메인 로고-->
                 <img src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg" width = "79.5px" height = "27px">
             </a>
@@ -113,7 +113,7 @@
             <!--견적요청 보더 박스-->
             <div id = "soomgo-request" class = "center">
                 <!--견적요청 페이지 이동URL-->
-                <a href = "https://soomgo.com/category-home/?from=web_gnb">
+                <a href = "sgRequestMain.jsp">
                     <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">견적요청</span>
                 </a>
             </div>
@@ -128,14 +128,14 @@
             <!--마켓 보더 박스-->
             <div id = "soomgo-market" class ="center">
                 <!--마켓 페이지 이동 URL-->
-                <a href = "https://soomgo.com/market/%EC%B7%A8%EB%AF%B8-%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9CA">
+                <a href = "soomgo_market.jsp?category_idx=1">
                     <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">마켓</span>
             </div>
             
             <!--커뮤니티 보더 박스-->
             <div id = "soomgo-community" class ="center">
                 <!--커뮤니티 페이지 이동 URL-->
-                <a href = "https://soomgo.com/community/soomgo-life/all?from=web_gnb">
+                <a href = "">
                     <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">커뮤니티</span>
                 </a>
             </div>
