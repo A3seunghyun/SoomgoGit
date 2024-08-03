@@ -64,14 +64,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>숨고 마켓 상품 예약하기 -승현</title>
 	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css"> <!-- clear css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/> <!-- clear3 css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/soomgo_market_reserve.css"/>
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css"> <!-- 헤더 css 꼭 추가하기 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css">
 	<script> <!--헤더 jquery 시작 -->
 		$(function(){
 			$(".usermenu-dropdown").hide();
@@ -231,7 +233,7 @@
 		        let marketPrice = $("#marketPrice").text();
 		        let reserveDate = $("#reserveDate").text();
 		        let reserveTime = $("#reserveTime").text();
-		        swal({
+		        swal.fire({
 		            title: "결제 정보 확인\n\n",
 		            text: "상품명 : " + marketTitle + "\n\n상품 옵션 : " + marketOption + "\n\n상품 가격 : " + marketPrice + "\n\n예약 날짜 : " + reserveDate + "\n\n예약 시간 : " + reserveTime + "\n\n결제 수단 : Kakao Pay 카카오페이",
 		            icon: "info",
