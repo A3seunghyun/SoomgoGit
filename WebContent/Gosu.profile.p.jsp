@@ -20,6 +20,20 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%  
+	HttpSession hs = request.getSession();
+
+// 세션에서 users_idx를 가져옴, 존재하지 않으면 기본값 0으로 설정
+	Integer login_idx = (Integer) hs.getAttribute("L_users_idx");
+	if (login_idx == null) {
+	    login_idx = 0; // 기본값 0
+	}
+	
+	// 세션에서 g_fuck를 가져옴, 존재하지 않으면 기본값 2 설정
+	Integer isgosu = (Integer) hs.getAttribute("isgosu");
+	if (isgosu == null) {
+		isgosu = 2; // 기본값 2
+}
+
 	int users_idx = Integer.parseInt(request.getParameter("users_idx"));
 	Gosu_profileDao gpDao = new Gosu_profileDao();
 	
@@ -38,25 +52,13 @@
 	ArrayList<Gosu_profile_ReservationDto> GosuProfileReservation = gpDao.getGosuprofileReservation(users_idx);
 	
 	Soomgo_headerDao shDao = new Soomgo_headerDao();
-	ArrayList<Soomgo_headerDto> Soomgoheader = shDao.getSoomgoHeader(users_idx);
-	ArrayList<Soomgo_header2Dto> Soomgoheader2 = shDao.getSoomgoHeader2(users_idx);
+	ArrayList<Soomgo_headerDto> Soomgoheader = shDao.getSoomgoHeader(login_idx);
+	ArrayList<Soomgo_header2Dto> Soomgoheader2 = shDao.getSoomgoHeader2(login_idx);
 	
 	
 	
 	
-	HttpSession hs = request.getSession();
 	
-	// 세션에서 users_idx를 가져옴, 존재하지 않으면 기본값 0으로 설정
-    Integer users_idx1 = (Integer) hs.getAttribute("L_users_idx");
-    if (users_idx1 == null) {
-        users_idx1 = 0; // 기본값 0
-    }
-
-    // 세션에서 g_fuck를 가져옴, 존재하지 않으면 기본값 2 설정
-    Integer isgosu = (Integer) hs.getAttribute("isgosu");
-    if (isgosu == null) {
-    	isgosu = 2; // 기본값 2
-    }
 	
 %>
 <!DOCTYPE html>
@@ -91,8 +93,8 @@
         $(".review-main-more-button-outter1").hide();
         
         let users_idx = <%= users_idx %>;
-        let users_idx1 = <%= users_idx1 %>;
-        //alert(users_idx1);
+        let login_idx = <%= login_idx %>;
+        //alert(login_idx);
         //alert(users_idx);
         
         
@@ -334,7 +336,7 @@
             $(".app-body-div10-info-icon-button-inner").click(function() {
                 /* $(".heart-no-button").toggle(); */
                 
-            	 if (users_idx1 === 0) {
+            	 if (login_idx === 0) {
             	        console.log("users_idx가 0입니다. AJAX 요청이 실행되지 않습니다.");
             	        $(".heart-button").hide();
             	        alert("로그인이 필요합니다.");
@@ -345,7 +347,7 @@
             	    $(".heart-button").show();
             	    $.ajax({
             	        type: 'post',
-            	        data: { users_idx1: users_idx1, users_idx: users_idx },
+            	        data: { login_idx: login_idx, users_idx: users_idx },
             	        dataType: "json",
             	        url: "/Web/GosuZimInsertServlet",
             	        success: function(res) {
@@ -755,7 +757,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "Seach.profile.jsp">
                                         <span class = "header-nav-li-span">고수찾기</span>
                                     </a>
                                 </li>
