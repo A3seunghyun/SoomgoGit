@@ -433,14 +433,13 @@
 			<div class="user.profile_container">
 				<div class="user_profile_wrapper">
 					<div id="div_user_profile_area">
-						<img class="user_img" src="img/유저img.png"/><%--  <%=dto.getUserImg()%> 이미지가 아직 없음--%>
+						<img class="user_img" src=<%=postDto.getUserImg() %>/><%--  <%=dto.getUserImg()%> 이미지가 아직 없음--%>
 						<div id="div_profile_info">
 							<div class="user_name" class="border"><%=postDto.getUserName()%></div>
 							<div class="post_date" class="border"><%=postDto.getWriteDate().substring(2,10)%>· 조회 <%=likeViewDto.getViewCount()%></div> 
 						</div>
 					</div>
 					<div class="post_actions">
-						<img class="icon" src="img/아이콘.png"/>
 						<div class="drop_icon">
 							<img class="drop_btn" src="img/세로점3.png"/>
 						</div>
@@ -492,9 +491,14 @@
 	</div>
 	<div class="post_commenets_container">
 		<div id="div_best">
-			<img class="img1" src="img/캐쉬.png"/>
+			<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+			    <g fill="none" fill-rule="evenodd">
+			        <path fill="none" d="M0 0h20v20H0z"></path>
+			        <path d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10z" fill="#FFBF0D"></path>
+			        <path d="M7.916 7.341a3.312 3.312 0 0 1 2.316-.912 3.32 3.32 0 0 1 2.293.974.714.714 0 1 0 1.005-1.015A4.75 4.75 0 0 0 10.25 5a4.74 4.74 0 0 0-3.313 1.301 5.066 5.066 0 0 0-1.562 3.264 5.124 5.124 0 0 0 .989 3.49 4.806 4.806 0 0 0 3.038 1.878 4.703 4.703 0 0 0 3.467-.773c.325-.224.62-.486.879-.778a.714.714 0 1 0-1.069-.948 3.453 3.453 0 0 1-.621.55 3.274 3.274 0 0 1-2.416.541 3.377 3.377 0 0 1-2.133-1.323 3.695 3.695 0 0 1-.71-2.517A3.637 3.637 0 0 1 7.915 7.34z" stroke="#FFF" stroke-width=".833" fill="#FFF"></path>
+			    </g>
+			</svg>
 			<div id="div_text">베스트 댓글 선정시 1000캐시 적립</div>
-			<img class="img2" src="img/i.png"/>
 		</div>
 		<form id="form_comment" action="commentWriteAction.jsp" method="post">
 <!-- 			댓글을 작성하고 등록버튼(submit)을 클릭가면 name에 담김 입력값을 담아서 넘겨줌 -->
