@@ -18,7 +18,7 @@
     
     
  <%
-//  	영현이 헤더 jquery
+// 헤더 jquery
  	int users_idx = 0;
 	String users_idx_param = request.getParameter("users_idx");
 	
@@ -58,14 +58,6 @@
 	
 	
  %>   
-    
-    
-    
-    
-    
-    
-    
-    
 <%!// <%!   --> 메서드를 정의 할 수 있는 공간 
 	String convStr(String name) {		
 		int length = name.length();			// 이름의 길이를 구함
@@ -427,7 +419,7 @@
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "Seach.profile.jsp">
+                                    <a href = "sgRequestMain.jsp">
                                         <span class = "header-nav-li-span">견적요청</span>
                                     </a>
                                 </li>
