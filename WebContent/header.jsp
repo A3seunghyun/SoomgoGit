@@ -155,14 +155,14 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "Seach.profile.jsp">
+                                    <a href = "sgRequestMain.jsp">
                                         <span class = "header-nav-li-span">견적요청</span>
                                     </a>
                                 </li>
@@ -174,7 +174,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
                                         <span class = "header-nav-li-span">마켓</span>
                                     </a>
                                 </li>
@@ -220,14 +220,14 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "">
+                                    <a href = "sgRequestMain.jsp">
                                         <span class = "header-nav-li-span">견적요청</span>
                                     </a>
                                 </li>
@@ -239,7 +239,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
                                         <span class = "header-nav-li-span">마켓</span>
                                     </a>
                                 </li>
@@ -352,14 +352,14 @@
                 <div class = "header-div1">
                     <div class = "header-div1-1">
                         <div class = "header-div1-1-logo">
-                            <a href = "https://soomgo.com/">
+                            <a href = "soomgo_main.jsp">
                                 <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                             </a>
                         </div>
                         <nav class = "header-nav">
                             <ul class = "header-nav-ul">
                                 <li class = "header-nav-li">
-                                    <a href = "">
+                                    <a href = "sgRequestMain.jsp">
                                         <span class = "header-nav-li-span">견적요청</span>
                                     </a>
                                 </li>
@@ -371,7 +371,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgo_market.jsp?category_idx=1">
                                         <span class = "header-nav-li-span">마켓</span>
                                     </a>
                                 </li>
