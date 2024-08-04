@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import dto.Search_profile_mapDto;
+import dto.Search_profile_map_innerDto;
 
 public class Search_profile_mapDao {
 	// getConnection() : Connection 객체를 리턴.
@@ -54,4 +56,56 @@ public class Search_profile_mapDao {
 				return listRet;
 	
 			}
+			
+			public Search_profile_map_innerDto getSeachProfileMapInner(int u_idx) throws Exception {
+							
+							String sql = "SELECT gi.users_idx,\r\n" + 
+									"       gi.name, \r\n" + 
+									"       gi.career, \r\n" + 
+									"       gi.explain,\r\n" + 
+									"       gi.f_img,\r\n" + 
+									"       rc.review_count, \r\n" + 
+									"       rc.average_score, \r\n" + 
+									"       tc.transaction_count\r\n" + 
+									"FROM gosu_infor gi\r\n" + 
+									"LEFT JOIN (\r\n" + 
+									"    SELECT r.g_users_idx,\r\n" + 
+									"           COUNT(*) AS review_count,\r\n" + 
+									"           AVG(r.score) AS average_score\r\n" + 
+									"    FROM review r\r\n" + 
+									"    GROUP BY r.g_users_idx\r\n" + 
+									") rc ON gi.users_idx = rc.g_users_idx\r\n" + 
+									"LEFT JOIN (\r\n" + 
+									"    SELECT t.g_users_idx,\r\n" + 
+									"           COUNT(*) AS transaction_count\r\n" + 
+									"    FROM transaction t\r\n" + 
+									"    GROUP BY t.g_users_idx\r\n" + 
+									") tc ON gi.users_idx = tc.g_users_idx\r\n" + 
+									"WHERE gi.users_idx = ?";
+							Connection conn = getConnection();
+							
+							Search_profile_map_innerDto dto = null;
+							PreparedStatement pstmt = conn.prepareStatement(sql);
+							pstmt.setInt(1,u_idx);
+							
+							ResultSet rs = pstmt.executeQuery();
+							while(rs.next()) {
+								int users_idx = rs.getInt(1);
+								String name = rs.getString(2);
+								int career = rs.getInt(3);
+								String explain = rs.getString(4);
+								String f_img = rs.getString(5);
+								int r_count = rs.getInt(6);
+								int r_avg = rs.getInt(7);
+								int t_count = rs.getInt(8);
+								
+								 dto = new Search_profile_map_innerDto(users_idx, name, career, explain, f_img, r_count, r_avg, t_count);
+							}
+							rs.close();
+							pstmt.close();
+							conn.close();
+							
+							return dto;
+				
+						}
 }

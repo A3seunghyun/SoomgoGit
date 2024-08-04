@@ -556,27 +556,12 @@
 
 	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-	//마커를 표시할 위치와 title 객체 배열입니다 
-	<%--  var positions = [];
-	<% for(Search_profile_mapDto smdto : Searchprofilemap) { %>
- 	{
-     title: '<%=smdto.getUsers_idx() %>', 
-     latlng: new kakao.maps.LatLng(<%=smdto.getLatitude() %>, <%=smdto.getHardness() %>)
- 	}
- 	/* {
-     title: '생태연못', 
-     latlng: new kakao.maps.LatLng(37.5546866896511, 126.932605840626)
- 	}, */
- 
-	];
-	
-	 <% } %> --%>
-	 
 	  var positions = [];
     
     <% for (Search_profile_mapDto smdto : Searchprofilemap) { %>
         positions.push({
-            title: '<%= smdto.getUsers_idx() %>',
+        	idx: '<%= smdto.getUsers_idx() %>',
+            title: '고수 프로필',
             latlng: new kakao.maps.LatLng(<%= smdto.getLatitude() %>, <%= smdto.getHardness() %>)
         });
     <% } %>
@@ -606,30 +591,51 @@
 	     title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
 	     image : markerImage // 마커 이미지 
 	 });
-	}		
  
  
-        $(function(){
-            $(".map-profile-outter").hide();
+	 $(function() {
+		    $(".map-profile-outter").hide();
+		});
 
-            kakao.maps.event.addListener(marker, 'click', function() {
-                $(".map-profile-outter").show();
-            });
-            // $(document).click(function(e) {
-            //     if (!$(event.target).closest('.map-profile-outter').length &&
-            //         !$(event.target).is(marker.getImage().src)) {
-            //         $(".map-profile-outter").hide();
-            //     }
-            // });
-            
-        });
+		kakao.maps.event.addListener(marker, 'click', (function(idx) {
+		    return function() {
+		        $.ajax({
+		            type: "post",
+		            url: "SearchMapServlet",
+		            data: { users_idx: idx },
+		            success: function(response) {
+		                // 성공적으로 데이터를 가져온 경우
+		                $(".map-profile-div2-header-font").text(response.name);
+		                $(".review_avg").text(response.r_avg + ".0 ");
+		                $(".review_count").text("·" + response.r_count);
+		                $(".transaction-count-span1").text(response.t_count + "회 고용 ");
+		                $(".career-font").text("경력 " + response.career + "년");
+		                $(".map-profile-div3-font").text(response.explain);
+		                $(".map-profile-img").css("background-image", "url(" + response.f_img + ")");
+		                
+		                $(".map-profile-outter").data("currentIdx", idx); // data 속성에 idx 값 저장
+		                $(".map-profile-outter").show(); // 성공 콜백 내에서 show() 호출
+
+		                // .map-profile-outter 요소 클릭 시 idx 값을 alert (한 번만 실행)
+		                $(".map-profile-outter").one("click", function() {
+		                    var idx = $(this).data("currentIdx");
+		                    //alert("Current idx: " + idx);
+		                    location.href = "Gosu.profile.p.jsp?users_idx=" + idx;
+		                });
+		            },
+		            error: function(xhr, status, error) {
+		                console.error("AJAX 요청 실패:", status, error);
+		            }
+		        });
+		    };
+		})(positions[i].idx));
+		    }
 	</script>
-			
-            <a class = "map-profile-outter">
+			<a class = "map-profile-outter">
                 <div class = "map-profile-inner">
                     <div class = "map-profile-div1">
                         <div class = "map-profile-div2">
-                            <h5 class = "map-profile-div2-header-font">상위 1% 영문 번역 & 교정가 Heather Kim</h5>
+                            <h5 class = "map-profile-div2-header-font"></h5>
                         </div>
                         <div class = "map-profile-div3">
                             <div class = "map-profile-div3-1">
@@ -638,22 +644,22 @@
                                         <path d="m7.496 1.596 1.407 2.742 3.145.44c.91.127 1.275 1.204.615 1.822l-2.276 2.134.538 3.015c.155.872-.797 1.538-1.612 1.126L6.5 11.452l-2.813 1.423c-.815.412-1.767-.254-1.612-1.126l.538-3.015L.337 6.6c-.66-.618-.296-1.695.615-1.822l3.145-.44 1.407-2.742C5.912.8 7.088.8 7.496 1.596" fill="#FFCE21" fill-rule="evenodd"></path>
                                     </svg>
                                 </span>
-                                <span class = "review_avg">5.0</span>
+                                <span class = "review_avg"></span>
                                 <span class = "review_count"></span> 
                             </div>
 
                             <span class = "transaction-count-span1">
-                                306회 고용
+                                
                             </span>
-                            <span>경력 12년</span>
+                            <span class = "career-font"></span>
                         </div>
-                        <p class = "map-profile-div3-font">뉴욕 출신 | 외국계 & 대기업 글로벌 부서  | 비즈니스 & 아카데믹 특화 영문 번역 및 교정 제공 (당일 번역 가능)</p>
+                        <p class = "map-profile-div3-font"></p>
                     </div>
                     <div class = "map-profile-img-outter">
-                        <div class = "map-profile-img"></div>
+                        <div class = "map-profile-img" style = "background-image: url();"></div>
                     </div>
                 </div>
-            </a>
+            	</a>
             </div>
         </div>
     </div>
