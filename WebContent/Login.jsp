@@ -91,7 +91,7 @@
     });
 
   </script>
-  <link rel="icon" href="./img/favicon_logo.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Login2.css"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/>
 </head>

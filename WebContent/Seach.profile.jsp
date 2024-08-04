@@ -911,12 +911,10 @@
             </div>
             <div id = "gosu-zim-buttom-outter">
             
-                <!-- <a href = "/Web/Login.jsp"> -->
                     <button id = "gosu-zim-buttom" class = "gosu-zim-buttom">
                         <img src = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+SWNvbl9oZWFydDwvdGl0bGU+CiAgICA8ZyBpZD0i8J+UljEwNTct66Gk67CxLe2bhC3rs4Dqsr3rkJwtVUktKOywnO2VnOqzoOyImCkiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLslYTsnbTsvZhfQ1RBLeyVhOydtOy9mC3rs4Dqsr0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMy4wMDAwMDAsIC00MzEuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxnIGlkPSJJY29uX2hlYXJ0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMy4wMDAwMDAsIDQzMS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOS42MTIwMzE4LDUuNjg3OTY4MjIgQzE4LjcyMzc3MDIsNC43OTkyODk1NSAxNy41MTg3Nzg2LDQuMyAxNi4yNjIyOTIsNC4zIEMxNS4wMDU4MDU1LDQuMyAxMy44MDA4MTM4LDQuNzk5Mjg5NTUgMTIuOTEyNTUyMiw1LjY4Nzk2ODIyIEwxMS45OTk3Njk3LDYuNjAwNzUwNzggTDExLjA4Njk4NzEsNS42ODc5NjgyMiBDOS4yMzY5NzY5MywzLjgzNzk1ODA4IDYuMjM3NTE3ODEsMy44Mzc5NTgxIDQuMzg3NTA3NjQsNS42ODc5NjgyNyBDMi41Mzc0OTc0Nyw3LjUzNzk3ODQ0IDIuNTM3NDk3NDUsMTAuNTM3NDM3NiA0LjM4NzUwNzU5LDEyLjM4NzQ0NzggTDUuMzAwMjkwMTUsMTMuMzAwMjMwMyBMMTEuOTk5NzY5NywxOS45OTk3MDk4IEwxOC42OTkyNDkyLDEzLjMwMDIzMDMgTDE5LjYxMjAzMTgsMTIuMzg3NDQ3OCBDMjAuNTAwNzEwNCwxMS40OTkxODYyIDIxLDEwLjI5NDE5NDUgMjEsOS4wMzc3MDc5OSBDMjEsNy43ODEyMjE0NCAyMC41MDA3MTA0LDYuNTc2MjI5ODIgMTkuNjEyMDMxOCw1LjY4Nzk2ODIyIFoiIGlkPSJQYXRoIj48L3BhdGg+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==">
                         <span class = "gosu-zim-font">찜한 고수</span>
                     </button>
-                <!-- </a> -->
             </div>
             
             
