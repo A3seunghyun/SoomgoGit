@@ -193,7 +193,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -257,7 +257,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -389,7 +389,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>

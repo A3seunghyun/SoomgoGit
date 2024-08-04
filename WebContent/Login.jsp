@@ -135,7 +135,7 @@
             <!--커뮤니티 보더 박스-->
             <div id = "soomgo-community" class ="center">
                 <!--커뮤니티 페이지 이동 URL-->
-                <a href = "">
+                <a href = "soomgoCommu.jsp">
                     <span style = "font-size : 16px; font-weight:500; color:rgb(12, 12, 12);">커뮤니티</span>
                 </a>
             </div>

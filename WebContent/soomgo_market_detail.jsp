@@ -502,7 +502,7 @@
 						<nav class = "header-nav">
 							<ul class = "header-nav-ul">
 								<li class = "header-nav-li">
-									<a href = "Seach.profile.jsp">
+									<a href = "sgRequestMain.jsp">
 										<span class = "header-nav-li-span">견적요청</span>
 									</a>
 								</li>
@@ -517,7 +517,7 @@
 									</a>
 								</li>
 								<li class = "header-nav-li1">
-									<a href = "">
+									<a href = "soomgoCommu.jsp">
 										<span class = "header-nav-li-span">커뮤니티</span>
 									</a>
 								</li>
