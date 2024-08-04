@@ -30,6 +30,7 @@
 	// Dao 객체 생성 및 메소드 호출
 	Search_profile_1Dao sp1Dao = new Search_profile_1Dao();
 	ArrayList<Search_profile_1Dto> SearchProfile1 = sp1Dao.getSeachprofile();
+	ArrayList<Search_profile_1Dto> SearchProfile3 = sp1Dao.getSeachprofileRandom();
 
 	Search_profile_2Dao sp2Dao = new Search_profile_2Dao();
 	ArrayList<Search_profile_2Dto> SearchProfile2 = sp2Dao.getSeachprofile();
@@ -329,10 +330,13 @@
                     });
                 }
             });
-             
-            /* $("#serarch_profile").click(function(){
-            	location.href = "Seach.profile.jsp";
-            }); */
+            $(document).on("click", ".gosu-profile-outter", function(){			
+                //$(".gosu-profile-outter1").click(function(){
+                	 //let idx = $(this).find(".gosu-profile-outter1").attr("idx");
+                	 let idx = $(this).attr("idx");
+                	location.href = "Gosu.profile.p.jsp?users_idx=" + idx;
+                	//alert(idx);
+                });
 		});
   </script>
 </head>
@@ -819,9 +823,10 @@
                             <div id = "item-top-title-outter" class = "center">
                                 <span class = "item-title">숨고와 함께하는 소상공인 고수</span>
                             </div>
-                                <div class = "gosu-profile-outter" >
+                            <% for(Search_profile_1Dto sp11dto : SearchProfile3 ){ %>
+                                <div class = "gosu-profile-outter" idx = "<%=sp11dto.getUsers_idx()%>">
                                     <div id = "gosu-profile-name-outter" class = "center">
-                                        <h5 class = "profile-title">조덕호아카이브</h5>
+                                        <h5 class = "profile-title"><%=sp11dto.getName() %></h5>
                                     </div>
                                     <div id = "gosu-profile-second-outter" class = "center">
                                         <div id = "gosu-profile-secont-1" class = "center">
@@ -829,21 +834,22 @@
     											<path d="m7.496 1.596 1.407 2.742 3.145.44c.91.127 1.275 1.204.615 1.822l-2.276 2.134.538 3.015c.155.872-.797 1.538-1.612 1.126L6.5 11.452l-2.813 1.423c-.815.412-1.767-.254-1.612-1.126l.538-3.015L.337 6.6c-.66-.618-.296-1.695.615-1.822l3.145-.44 1.407-2.742C5.912.8 7.088.8 7.496 1.596" fill="#FFCE21" fill-rule="evenodd"></path>
 												</svg>
 											</span>
-                                            <span class = "profile-review">5.0</span>
-                                            <span class = "profile-text1">(6) ·</span>
+                                            <span class = "profile-review"><%=sp11dto.getScore() %>.0</span>
+                                            <span class = "profile-text1">(<%=sp11dto.getC_review() %>) ·</span>
                                         </div>
-                                        <span class = "profile-text2">2회 고용 ·</span>
-                                        <span class = "profile-text2">경력 9년</span>
+                                        <span class = "profile-text2"><%=sp11dto.getC_transaction() %>회 고용 ·</span>
+                                        <span class = "profile-text2">경력 <%=sp11dto.getCareer() %>년</span>
                                     </div>
             
-                                    <div id = "profile-img1" class = "center">
+                                    <div id = "profile-img1" class = "center" style = "background-image: url(<%=sp11dto.getF_img() %>);">
                                     </div>
             
                                     <div id = "profile-intro-outter" class = "center">
-                                        <p class = "profile-intro">당신이 브랜드가 될 수 있도록 '초정밀 성장 아카이브'을 제공합니다.</p>
+                                        <p class = "profile-intro"><%=sp11dto.getIntro() %></p>
                                     </div>
                                 </div>
-                                <div class = "gosu-profile-outter">
+                                <% } %>
+                               <!--  <div class = "gosu-profile-outter">
                                     <div id = "gosu-profile-name-outter" class = "center">
                                         <h5 class = "profile-title">한빛난방관리</h5>
                                     </div>
@@ -865,7 +871,7 @@
                                     <div id = "profile-intro-outter" class = "center">
                                         <p class = "profile-intro">고수의 수도 관련 설치 및 수리, 보일러 설치 및 수리(지역난방 포함), 온수기 설치 및 수리, 누수 탐지 서비스</p>
                                     </div>
-                                </div>
+                                </div> -->
                             
             
                             <div id = "item-top-title1-outter" class = "center">
