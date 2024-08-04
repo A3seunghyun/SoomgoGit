@@ -607,7 +607,7 @@
 		                // 성공적으로 데이터를 가져온 경우
 		                $(".map-profile-div2-header-font").text(response.name);
 		                $(".review_avg").text(response.r_avg + ".0 ");
-		                $(".review_count").text("·" + response.r_count);
+		                $(".review_count").text("  ·  " + "(" + response.r_count + ")");
 		                $(".transaction-count-span1").text(response.t_count + "회 고용 ");
 		                $(".career-font").text("경력 " + response.career + "년");
 		                $(".map-profile-div3-font").text(response.explain);
