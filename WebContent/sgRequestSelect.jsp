@@ -137,7 +137,7 @@
 			<div id="title_wrapper" class="">
 				<span class="form_title"><h1><%=sDto.getTitle()%></h1></span>
 				<button class="info_button btn">
-					<img src="img/soomgo/img_icon_bang.PNG"/>
+					<img src="img/icon/img_icon_bang.PNG"/>
 				</button>
 			</div>
 			<!-- 진행도 -->
@@ -191,7 +191,7 @@
 							                                <input id="checkbox_<%= numberIdx %>" type="checkbox" class="input_checkbox" value="포장이사"/>
 							                                <label for="checkbox_<%= numberIdx %>" class="checkbox_label">
 							                                    <div class="checkbox_icon">
-							                                        <img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+							                                        <img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 							                                    </div>
 							                                    <div class="text_area">
 							                                        <div class="text">
@@ -216,7 +216,7 @@
 							                                <input id="radio_<%= numberIdx %>" type="radio" class="input_radio" value="네"/>
 							                                <label for="radio_<%= numberIdx %>" class="circle_label">
 							                                    <div class="icon_circle radio_icon">
-							                                        <img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+							                                        <img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 							                                    </div> 
 							                                    <div class="text_area">
 							                                        <div class="text checked">
@@ -270,7 +270,7 @@
 							                        <div id="img_card_0" class="upload_img_card">
 							                            <div class="image_wrapper">
 							                                <div class="image_thumbnail_wrapper">
-							                                    <img src="img/soomgo/img_gosuprof_1.webp" class="img_thumbnail"/>
+							                                    <img src="img/icon/img_gosuprof_1.webp" class="img_thumbnail"/>
 							                                </div>
 							                                <div class="text_form">
 							                                    <textarea placeholder="사진을 설명해주세요.(선택)" class="input_text form_control text_length" rows="2" wrap="soft" maxlength="100"></textarea>
@@ -288,7 +288,7 @@
 							                        <label for="file_input_11" class="upload_label">
 							                            <button class="upload_btn">
 							                                <div class="img_plus">
-							                                    <img src="img/soomgo/img_icon_plus_black.PNG">
+							                                    <img src="img/icon/img_icon_plus_black.PNG">
 							                                </div>
 							                                사진추가
 							                            </button>
@@ -300,11 +300,11 @@
 							                    %>
 							                    <div class="button_wrapper login_btn">
 							                        <button class="btn btn_kakao btn_social">
-							                            <img src="img/soomgo/img_icon_kakao.svg">
+							                            <img src="img/icon/img_icon_kakao.svg">
 							                            <span>카카오로 시작하기</span>
 							                        </button>
 							                        <button class="btn btn_naver btn_social">
-							                            <img src="img/soomgo/img_icon_naver_white.svg">
+							                            <img src="img/icon/img_icon_naver_white.svg">
 							                            <span>네이버로 시작하기</span>
 							                        </button>
 							                        <button class="btn btn_sg">이메일로 시작하기</button>
@@ -352,7 +352,7 @@
 											<input id="checkbox_0" type="checkbox" class="input_checkbox" value="포장이사"	/>
 											<label for="checkbox_0" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -371,7 +371,7 @@
 											<input id="checkbox_1" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_1" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -390,7 +390,7 @@
 											<input id="checkbox_2" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_2" class="checkbox_label">
 												<div class="checkbox_icon"> 
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -409,7 +409,7 @@
 											<input id="checkbox_3" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_3" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -551,7 +551,7 @@
 											<input id="radio_0" type="radio" class="input_radio" value="네"/>
 											<label for="radio_0" class="circle_label">
 												<div class="icon_circle radio_icon">
-													<img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+													<img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 												</div> 
 												<div class="text_area">
 													<div class="text checked">
@@ -567,7 +567,7 @@
 										<input id="radio_1" type="radio" class="input_radio" value="아니오"/>
 										<label for="radio_1" class="circle_label">
 											<div class="icon_circle radio_icon">
-												<img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+												<img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 											</div> 
 											<div class="text_area">
 												<div class="text checked">
@@ -615,7 +615,7 @@
 											<input id="checkbox_0" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_0" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -633,7 +633,7 @@
 											<input id="checkbox_1" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_1" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -651,7 +651,7 @@
 											<input id="checkbox_2" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_2" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -669,7 +669,7 @@
 											<input id="checkbox_3" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_3" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -687,7 +687,7 @@
 											<input id="checkbox_4" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_4" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -705,7 +705,7 @@
 											<input id="checkbox_5" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_5" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -723,7 +723,7 @@
 											<input id="checkbox_6" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_6" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -741,7 +741,7 @@
 											<input id="checkbox_7" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_7" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -759,7 +759,7 @@
 											<input id="checkbox_8" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_8" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -777,7 +777,7 @@
 											<input id="checkbox_9" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_9" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -795,7 +795,7 @@
 											<input id="checkbox_10" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_10" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -848,7 +848,7 @@
 											<input id="checkbox_0" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_0" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -866,7 +866,7 @@
 											<input id="checkbox_1" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_1" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -884,7 +884,7 @@
 											<input id="checkbox_2" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_2" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -902,7 +902,7 @@
 											<input id="checkbox_3" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_3" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -920,7 +920,7 @@
 											<input id="checkbox_4" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_4" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -938,7 +938,7 @@
 											<input id="checkbox_5" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_5" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -956,7 +956,7 @@
 											<input id="checkbox_6" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_6" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -974,7 +974,7 @@
 											<input id="checkbox_7" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_7" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -992,7 +992,7 @@
 											<input id="checkbox_8" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_8" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -1010,7 +1010,7 @@
 											<input id="checkbox_9" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_9" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -1028,7 +1028,7 @@
 											<input id="checkbox_10" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_10" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -1046,7 +1046,7 @@
 											<input id="checkbox_11" type="checkbox" class="input_checkbox" value="포장이사"/>
 											<label for="checkbox_11" class="checkbox_label">
 												<div class="checkbox_icon">
-													<img src="img/soomgo/img_icon_checkbox_none.PNG" class="box_icon"/>
+													<img src="img/icon/img_icon_checkbox_none.PNG" class="box_icon"/>
 												</div>
 												<div class="text_area">
 													<div class="text">
@@ -1095,7 +1095,7 @@
 									<div imd="img_card_0" class="upload_img_card">
 										<div class="image_wrapper">
 											<div class="image_thumbnail_wrapper">
-												<img src="img/soomgo/img_gosuprof_1.webp" class="img_thumbnail"/>
+												<img src="img/icon/img_gosuprof_1.webp" class="img_thumbnail"/>
 											</div>
 											<div class="text_form">
 												<textarea placeholder="사진을 설명해주세요.(선택)" class="input_text form_control text_length" rows="2" wrap="soft" maxlength="100"></textarea>
@@ -1113,7 +1113,7 @@
 									<label for="file_input_11" class="uplopad_label">
 										<button class="upload_btn">
 											<div class="img_plus"">
-												<img src="img/soomgo/img_icon_plus_black.PNG">
+												<img src="img/icon/img_icon_plus_black.PNG">
 											</div>
 											사진추가
 										</button>
@@ -1131,7 +1131,7 @@
 				<!-- 8번답변 -->
 				<li id="answer_7" class="message_wrapper my_answer answers">
 					<div class="answer_image">
-						<img src="img/soomgo/img_gosuprof_1.webp" alt="첨부이미지-0" class="my_image">
+						<img src="img/icon/img_gosuprof_1.webp" alt="첨부이미지-0" class="my_image">
 					</div>
 					<div class="answer_message message">
 						<p class="content">
@@ -1221,7 +1221,7 @@
 											<input id="radio_0" type="radio" class="input_radio" value="네"/>
 											<label for="radio_0" class="circle_label">
 												<div class="icon_circle radio_icon">
-													<img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+													<img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 												</div> 
 												<div class="text_area">
 													<div class="text checked">
@@ -1237,7 +1237,7 @@
 										<input id="radio_1" type="radio" class="input_radio" value="아니오"/>
 										<label for="radio_1" class="circle_label">
 											<div class="icon_circle radio_icon">
-												<img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+												<img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 											</div> 
 											<div class="text_area">
 												<div class="text checked">
@@ -1318,7 +1318,7 @@
 											<input id="radio_0" type="radio" class="input_radio" value="네"/>
 											<label for="radio_0" class="circle_label">
 												<div class="icon_circle radio_icon">
-													<img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+													<img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 												</div> 
 												<div class="text_area">
 													<div class="text checked">
@@ -1334,7 +1334,7 @@
 										<input id="radio_1" type="radio" class="input_radio" value="아니오"/>
 										<label for="radio_1" class="circle_label">
 											<div class="icon_circle radio_icon">
-												<img src="img/soomgo/img_icon_radio_none.PNG" class="circle_icon"/>
+												<img src="img/icon/img_icon_radio_none.PNG" class="circle_icon"/>
 											</div> 
 											<div class="text_area">
 												<div class="text checked">
@@ -1381,11 +1381,11 @@
 							<div class=answer_wrapper>
 								<div class="button_wrapper login_btn">
 									<button class="btn btn_kakao btn_social">
-										<img src="img/soomgo/img_icon_kakao.svg">
+										<img src="img/icon/img_icon_kakao.svg">
 										<span>카카오로 시작하기</span>
 									</button>
 									<button class="btn btn_naver btn_social">
-										<img src="img/soomgo/img_icon_naver_white.svg">
+										<img src="img/icon/img_icon_naver_white.svg">
 										<span>네이버로 시작하기</span>
 									</button>
 									<button class="btn btn_sg">이메일로 시작하기</button>
@@ -1404,7 +1404,7 @@
 				<div class="modal_header">
 					<h2 class="title">서비스안내</h2>
 					<button class="btn modal_close_btn">
-						<img src="img/soomgo/img_icon_exit.PNG" class="close_img"/>
+						<img src="img/icon/img_icon_exit.PNG" class="close_img"/>
 					</button>
 				</div>
 				<div class="modal_content">
@@ -1413,11 +1413,11 @@
 							<h2 class="service_name">가정이사(투룸 이상)</h2>
 							<div class="review_rate">
 								<ul class="star_rate">
-									<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-									<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-									<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-									<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-									<li><img src="img/soomgo/img_icon_star_half.svg"></li>
+									<li><img src="img/icon/img_icon_star_full.svg"></li>
+									<li><img src="img/icon/img_icon_star_full.svg"></li>
+									<li><img src="img/icon/img_icon_star_full.svg"></li>
+									<li><img src="img/icon/img_icon_star_full.svg"></li>
+									<li><img src="img/icon/img_icon_star_half.svg"></li>
 								</ul>
 								<span class="rate">4.8</span>
 							</div>
@@ -1457,7 +1457,7 @@
 								<div class="profile_section">
 									<div class="pro_profile">
 										<div class="user_profile_image profile_image">
-											<img src="img/soomgo/img_gosuprof_1.webp"/>
+											<img src="img/icon/img_gosuprof_1.webp"/>
 										</div>
 										<div class="pro_name">⭐고객평가1위스마트친절이사</div>
 									</div>
@@ -1467,7 +1467,7 @@
 								</div>
 								<div class="review_section">
 									<div class="pro_rate">
-										<div class="rate_icon"><img src="img/soomgo/img_icon_star_full.svg"></div>
+										<div class="rate_icon"><img src="img/icon/img_icon_star_full.svg"></div>
 										<span class="review_rate">5</span>
 										<span class="review_count">(388)</span>
 									</div>
@@ -1479,7 +1479,7 @@
 								<div class="profile_section">
 									<div class="pro_profile">
 										<div class="user_profile_image profile_image">
-											<img src="img/soomgo/img_gosuprof_1.webp"/>
+											<img src="img/icon/img_gosuprof_1.webp"/>
 										</div>
 										<div class="pro_name">⭐고객평가1위스마트친절이사</div>
 									</div>
@@ -1489,7 +1489,7 @@
 								</div>
 								<div class="review_section">
 									<div class="pro_rate">
-										<div class="rate_icon"><img src="img/soomgo/img_icon_star_full.svg"></div>
+										<div class="rate_icon"><img src="img/icon/img_icon_star_full.svg"></div>
 										<span class="review_rate">5</span>
 										<span class="review_count">(388)</span>
 									</div>
@@ -1501,7 +1501,7 @@
 								<div class="profile_section">
 									<div class="pro_profile">
 										<div class="user_profile_image profile_image">
-											<img src="img/soomgo/img_gosuprof_1.webp"/>
+											<img src="img/icon/img_gosuprof_1.webp"/>
 										</div>
 										<div class="pro_name">⭐고객평가1위스마트친절이사</div>
 									</div>
@@ -1511,7 +1511,7 @@
 								</div>
 								<div class="review_section">
 									<div class="pro_rate">
-										<div class="rate_icon"><img src="img/soomgo/img_icon_star_full.svg"></div>
+										<div class="rate_icon"><img src="img/icon/img_icon_star_full.svg"></div>
 										<span class="review_rate">5</span>
 										<span class="review_count">(388)</span>
 									</div>
@@ -1523,7 +1523,7 @@
 								<div class="profile_section">
 									<div class="pro_profile">
 										<div class="user_profile_image profile_image">
-											<img src="img/soomgo/img_gosuprof_1.webp"/>
+											<img src="img/icon/img_gosuprof_1.webp"/>
 										</div>
 										<div class="pro_name">⭐고객평가1위스마트친절이사</div>
 									</div>
@@ -1533,7 +1533,7 @@
 								</div>
 								<div class="review_section">
 									<div class="pro_rate">
-										<div class="rate_icon"><img src="img/soomgo/img_icon_star_full.svg"></div>
+										<div class="rate_icon"><img src="img/icon/img_icon_star_full.svg"></div>
 										<span class="review_rate">5</span>
 										<span class="review_count">(388)</span>
 									</div>
@@ -1553,11 +1553,11 @@
 									<div class="reviewer_wrapper"">
 										<p class="reviewer_name">김**</p>
 										<ul class="star_rate">
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
 										</ul>
 									</div>
 									<div class="review_content"">
@@ -1571,11 +1571,11 @@
 									<div class="reviewer_wrapper"">
 										<p class="reviewer_name">김**</p>
 										<ul class="star_rate">
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
 										</ul>
 									</div>
 									<div class="review_content"">
@@ -1589,11 +1589,11 @@
 									<div class="reviewer_wrapper"">
 										<p class="reviewer_name">김**</p>
 										<ul class="star_rate">
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
-											<li><img src="img/soomgo/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
+											<li><img src="img/icon/img_icon_star_full.svg"></li>
 										</ul>
 									</div>
 									<div class="review_content"">

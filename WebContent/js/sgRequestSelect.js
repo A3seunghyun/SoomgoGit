@@ -98,10 +98,10 @@ $(function(){
 
 			if(isActive) {	// 이미 클릭 상태
 				$checkboxLabel.removeClass("active");
-				$checkboxLabel.find("img.box_icon").attr("src", "img/soomgo/img_icon_checkbox_none.PNG");
+				$checkboxLabel.find("img.box_icon").attr("src", "img/icon/img_icon_checkbox_none.PNG");
 			} else {	// 미클릭 상태 
 				$checkboxLabel.addClass("active");
-      	 		$checkboxLabel.find("img.box_icon").attr("src", "img/soomgo/img_icon_checkbox_check.PNG");
+      	 		$checkboxLabel.find("img.box_icon").attr("src", "img/icon/img_icon_checkbox_check.PNG");
 			}
 			ButtonState();
 		});
@@ -112,8 +112,8 @@ $(function(){
 			const isActive = $(this).hasClass("active");
 			if(!isActive) {	// 미클릭 상태 : 다른 버튼 비활성화, 누른 버튼 활성화
 				$qSection.find(".circle_label").removeClass("active");
-				$qSection.find(".circle_icon").attr("src", "img/soomgo/img_icon_radio_none.PNG");
-				$circleLabel.find("img.circle_icon").attr("src", "img/soomgo/img_icon_radio_check.PNG");
+				$qSection.find(".circle_icon").attr("src", "img/icon/img_icon_radio_none.PNG");
+				$circleLabel.find("img.circle_icon").attr("src", "img/icon/img_icon_radio_check.PNG");
 				$circleLabel.addClass("active");
 			}
 			ButtonState();
