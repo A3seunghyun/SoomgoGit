@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import dto.CommuGosuKnowhowPostListDto;
+import dto.CommuGosuKnowhowPostLisMaintDto;
 import dto.CommuMainPostActionDto;
 import dto.CommuMainRandomGosuDto;
 import dto.CommuMainpostListDto;
@@ -16,7 +16,10 @@ public class MainPageDao {
 	public static Connection getConnection() throws Exception {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "soomgo";	//	 오라클 계정
+//		String url = "jdbc:oracle:thin:@192.168.0.22:1521:xe";
+//		String id = "soomgo1";	//	 오라클 계정
+//		String pw = "pass1234";
+		String id = "soomgo";	//"hr";	 오라클 계정
 		String pw = "soomgo";
 		
 		Class.forName(driver);
@@ -28,15 +31,10 @@ public class MainPageDao {
 	
 	
 // 	메인페이지에서 고수노하우 게시글 리스트를 불러오는 메서드
-	public ArrayList<CommuGosuKnowhowPostListDto> getGkhPostList() throws Exception {
+	public ArrayList<CommuGosuKnowhowPostLisMaintDto> getMainGkhPostList() throws Exception {
 		Connection conn = getConnection();
 		
-		ArrayList<CommuGosuKnowhowPostListDto> gList = new ArrayList<CommuGosuKnowhowPostListDto>();
-//		String sql = "SELECT p.post_idx, gkh.img , gkh.title , gi.name" + 
-//				" FROM gosu_know_how gkh " + 
-//				" JOIN gosu_infor gi ON gkh.users_idx = gi.users_idx " + 
-//				" JOIN post p ON p.post_idx = gkh.post_idx " + 
-//				" JOIN community c ON c.commu_idx = p.commu_idx";
+		ArrayList<CommuGosuKnowhowPostLisMaintDto> gList = new ArrayList<CommuGosuKnowhowPostLisMaintDto>();
 		
 		// 위에거 수정 (메인에서 리스트 뿌려주기위해 수정, 최근게시글 2개만 나와야함)
 		String sql = "SELECT * " + 
@@ -61,7 +59,7 @@ public class MainPageDao {
 			String postTitle = rs.getString(4);			// 게시글 제목
 			String userName = rs.getString(5);			// 고수 명
 			
-			CommuGosuKnowhowPostListDto dto = new CommuGosuKnowhowPostListDto(postIdx, serviceTitle, postImg, postTitle, userName);
+			CommuGosuKnowhowPostLisMaintDto dto = new CommuGosuKnowhowPostLisMaintDto(postIdx, serviceTitle, postImg, postTitle, userName);
 			gList.add(dto);
 		}
 		rs.close();
