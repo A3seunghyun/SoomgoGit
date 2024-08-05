@@ -18,7 +18,7 @@
     
     
  <%
-         	//헤더 jquery
+         	//  	영현이 헤더 jquery
           	int users_idx = 0;
          /*
          	String users_idx_param = request.getParameter("users_idx");
@@ -27,7 +27,7 @@
          	        users_idx = Integer.parseInt(users_idx_param);
          	    } catch (NumberFormatException e) {
          	        // 예외 처리: 잘못된 형식의 숫자가 들어온 경우 기본값 0을 사용
-         	        users_idx = 
+         	        users_idx = 0;
          	    }
          	}
          */
@@ -75,7 +75,7 @@
 	MainPageDao mDao = new MainPageDao();
 
 	//메인페이지 고수노하우 최근작성 순 상위 2개 포스트 뿌리기
-	ArrayList<CommuGosuKnowhowPostLisMaintDto> mainList = mDao.getMainGkhPostList(); 
+	ArrayList<CommuGosuKnowhowPostLisMaintDto> mainList = mDao.getMainGkhPostList();
 	
 	// 메인페이지 게시글 최근작성 순 상위 3개 포스트 뿌리기
 	ArrayList<CommuMainpostListDto> mainPostList = mDao.getMainPostList(); 
@@ -277,13 +277,13 @@
 			$("#div_message").append("<p class='chat'>" + e.data + "</p>");
 		}
 		function func_on_open(e) {
- 			//alert("websocket connected.");
+ 			alert("websocket connected.");
 		}
 		function func_on_error(e) {
-			//alert("Error!");
+			alert("Error!");
 		}
 		/* ws://localhost:9095/YJsoomgoProject/broadcast_notice */
-		let webSocket = new WebSocket("ws://localhost:9095/SoomgoGit/broadcast_notice");
+		let webSocket = new WebSocket("ws://localhost:9095/YJsoomgoProject/broadcast_notice");
 		webSocket.onmessage = func_on_message;
 		webSocket.onopen = func_on_open;
 		webSocket.onerror = func_on_error;
@@ -402,9 +402,9 @@
 				  $("#search").val(""); // 검색 입력창을 지움.
 		    	  $(".search-title > strong").text(""); // 검색 제목의 내용지움.
 			  });
-			  $("#search").focusout(function(){
-				 $(".input-search-box").hide();
-			  });
+// 			  $("#search").focusout(function(){
+// 				 $(".input-search-box").hide();
+// 			  });
 			  
 			  $("#search").keyup(function() {
 				 let search_text = $(this).val(); 
@@ -436,12 +436,20 @@
 					}
 				 });
 			  });
-			  
-// 			$(document).on("click", ".list .item .service", function() {
-// 				let serviceIdx = $(this).attr("service_idx");
-// 				alert("aaa");
-// 				location.href="EstimateRequestSelectServlet?serviceIdx=" + serviceIdx;
-// 			});
+//  			$(document).on("click", ".list .item .service", function() {
+//  				let serviceIdx = $(this).attr("service_idx");
+//  				alert("aaa");
+//  				location.href="EstimateRequestSelectServlet?serviceIdx=" + serviceIdx;
+//  			});
+
+			  $(document).on("click", ".list .item .service", function() {
+			        let serviceIdx = $(this).attr("service_idx");
+			        if (serviceIdx) {
+			            location.href = "EstimateRequestSelectServlet?serviceIdx=" + serviceIdx;
+			        } else {
+			            console.error("service_idx attribute is missing.");
+			        }
+			    });
 		});	// function 마지막 중괄호	
 </script>
 </head>
@@ -458,7 +466,7 @@
                     <nav class = "header-nav">
                         <ul class = "header-nav-ul">
                             <li class = "header-nav-li">
-                                <a href = "sgRequestMain.jsp">
+                                <a href = "Seach.profile.jsp">
                                     <span class = "header-nav-li-span">견적요청</span>
                                 </a>
                             </li>
@@ -470,7 +478,7 @@
                             </li>
 
                             <li class = "header-nav-li1">
-                                <a href = "soomgo_market.jsp?category_idx=1">
+                                <a href = "">
                                     <span class = "header-nav-li-span">마켓</span>
                                 </a>
                             </li>
@@ -516,14 +524,14 @@
               <div class = "header-div1">
                   <div class = "header-div1-1">
                       <div class = "header-div1-1-logo">
-                          <a href = "soomgo_main.jsp">
+                          <a href = "https://soomgo.com/">
                               <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                           </a>
                       </div>
                       <nav class = "header-nav">
                           <ul class = "header-nav-ul">
                               <li class = "header-nav-li">
-                                  <a href = "sgRequestMain.jsp">
+                                  <a href = "">
                                       <span class = "header-nav-li-span">견적요청</span>
                                   </a>
                               </li>
@@ -535,7 +543,7 @@
                               </li>
 
                               <li class = "header-nav-li1">
-                                  <a href = "soomgo_market.jsp?category_idx=1">
+                                  <a href = "">
                                       <span class = "header-nav-li-span">마켓</span>
                                   </a>
                               </li>
@@ -647,14 +655,14 @@
             <div class = "header-div1">
                 <div class = "header-div1-1">
                     <div class = "header-div1-1-logo">
-                        <a href = "soomgo_main.jsp">
+                        <a href = "https://soomgo.com/">
                             <img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
                         </a>
                     </div>
                     <nav class = "header-nav">
                         <ul class = "header-nav-ul">
                             <li class = "header-nav-li">
-                                <a href = "sgRequestMain.jsp">
+                                <a href = "">
                                     <span class = "header-nav-li-span">견적요청</span>
                                 </a>
                             </li>
@@ -666,7 +674,7 @@
                             </li>
 
                             <li class = "header-nav-li1">
-                                <a href = "soomgo_market.jsp?category_idx=1">
+                                <a href = "">
                                     <span class = "header-nav-li-span">마켓</span>
                                 </a>
                             </li>
