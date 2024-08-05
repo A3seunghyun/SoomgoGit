@@ -621,7 +621,7 @@
                                </li>
 
                                <li class = "usermenu-dropdown-li">
-                                   <a href = "">
+                                   <a href = "soomgo_Mypage.jsp">
                                        <div class = "usermenu-dropdown-li-font">마이페이지</div>
                                    </a>
                                </li>

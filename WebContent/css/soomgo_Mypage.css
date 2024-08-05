@@ -1,0 +1,399 @@
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+  body{font-family: Noto Sans KR, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  		margin:0 auto;
+      }
+  .border {
+      border: 1px solid red;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  p12{
+      margin: 0;
+      letter-spacing: -2px;
+      font-size: 12px;
+  }
+  p14{
+  	 margin: 0;
+      letter-spacing: -2px;
+      font-size: 14px;
+  }
+  a {
+      text-decoration-line: none;
+      }
+.fl{float: left;}
+.fr{float: right;}
+.
+h h1 h2 h3{margin: 0;}
+		
+  #div_layout {
+	width: 1060px;
+	min-height: 100%;
+	margin:0 auto;
+ }
+  #total-header{
+    position: fixed;
+    top: 0;
+    width :1903px;
+    height:72px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-color : rgb(242, 242, 242);
+    border-bottom-style : solid;
+    border-bottom-width : 1px;
+  }
+  #soomgo-header{
+      width: 100%;
+      width : 972px;
+      height : 72px;
+      margin-left : 464px;
+      margin-right : 466.5px;
+      background-color: rgb(255, 255, 255);
+      border-bottom-color : rgb(242, 242, 242);
+      border-bottom-style : solid;
+      border-bottom-width : 1px;
+  }
+  #soomgo-header1{
+      width : 79.5px;
+      height : 27px;
+      float : left;
+      margin-top : 22.5px;
+      margin-left : 2.5px 
+  }
+  #soomgo-menu1{
+      width : 264.13px;
+      height : 28.16px;
+      float : left; 
+      margin-top : 26.5px;
+      margin-left : 29.5px;
+  }
+  #soomgo-request{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      line-height: 120%;
+  }
+  #soomgo-serch{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-market{
+      width : 33.45px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-community{
+      width : 60.89px;
+      height : 24px;
+      float : left;
+      margin-left : 14px;
+      line-height: 120%;
+  }
+  #soomgo-header-serch{
+      background-color : rgb(242, 242, 242);
+        width: 280px;
+        height :40px;
+        float :left;
+        margin-left : 55.5px;
+        margin-top : 15.5px;
+        border-radius: 6px
+  }
+  #reading-glasses-img{
+        width:24px;
+        height :40px;
+        float:left;
+        padding-top :9px;
+        padding-bottom: 8px;
+        margin-left: 12px;
+  }
+  #serch-input-outter{
+    background-color : rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    float:left;
+    margin-left: 5px;
+    margin-top : 3px;
+  }
+  .serch-input{
+    background-color :rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    border: none;
+    font-size:.875rem;
+  }
+  #soomgo-menu2{
+      width : 202.17px;
+      height : 36px;
+      float : right;
+      margin-top : 16px;
+      margin-left: 20px;
+  }
+  #soomgo-login{
+      width : 40.64px;
+      height : 20px;
+      float : left;
+      margin-top : 11px;
+      margin-left : 0.5px;
+      line-height: 100%; 
+  }
+  #soomgo-join{
+      width : 60.53px;
+      height : 20px;
+      float : left;
+      margin-left : 13.8px;
+      margin-top : 11px;
+      line-height: 100%;
+  }
+  #soomgo-gosu-join{
+      width : 80px;
+      height : 36px;
+      float : right;
+      margin-top : 2px;
+      line-height: 35px;
+      background-color:#00c7ae;
+      border-radius: 6px;
+      text-align : center;
+  }
+  
+  /* -----------------------------헤더---------------------------------- */
+#container {
+    width: 630px;
+    min-height: 900px;
+    padding: 0px 15px;
+    margin: 72px auto;
+}
+.pointer {
+	cursor: pointer;
+}
+#container > .mypage_title {
+	width: 600px;
+	font-size: 34px;
+	font-weight: 500;
+	letter-spacing: -0.7px;
+	line-height: 48px;
+	padding: 50px 0;
+}
+.user_profile {
+    width: 100%;
+    padding: 16px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(242, 242, 242);
+    display: flex;
+    align-items: center;
+}
+.user_img {
+    width: 70px;
+    height: 70px;
+    background-image: url("https://static.cdn.soomgo.com/upload/profile-default/soomgo_82.jpg?w=100&q=75");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 20px;
+} 	
+.user_details {
+    flex-grow: 1;
+}
+.user_name {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+}	
+.user_id {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #737373;
+    margin: 0;
+}
+.button {
+    width: 70px;
+    height: 26px;
+    color: #737373;
+    background: #F2F2F2;
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-size: 12px;
+    border: none;
+    text-align: center;
+    line-height: 18px;
+}  	
+.soomgo_box{
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgb(242,242,242);
+}
+.soomgo_bold_text {
+	width: 600px;
+	height: 51px;
+	padding: 12px 0px;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 27px;
+	position: relative;
+}
+.soomgo_bold_text > a{
+	font-size: 14px;
+	font-weight: 500;
+	color: #00c7ae;
+    border-radius: 4px;
+    float: right;
+}
+.soomgo_bold_text > img {
+	margin: 3px 0px 0px 3px;
+	position: absolute;
+	cursor: pointer;
+}
+.soomgo_text {
+	padding: 16px 0px;
+	line-height: 24px;
+	font-size: 16px;
+	font-weight: 500;
+	position: relative;
+}  	
+.soomgo_text::after {
+	content: '';
+    top: 20px; /* 필요에 따라 조정 */
+    width: 18px; /* 이미지 너비 */
+    height: 18px; /* 이미지 높이 */
+    background-image: url("https://assets.cdn.soomgo.com/icons/icon-mypage-list-arrow.svg");
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right:0;
+}  
+.soomgo_text_no_arrow::after {
+	/* 특정 클래스에만 after 없애기 위함 */
+    content: none;
+}
+.soomgo_text > a {
+	width: 100%;
+	display: block; 
+	font-size: 16px;
+	font-weight: 400;
+	color: rgb(181,181,181);
+	line-height: 24px;
+	margin-top: 6px;
+	float: left;
+}  
+.soomgo_store_cash{
+	width: 55px;
+	height: 27px;
+	padding: 3px 10px;
+	margin-right: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 21px;
+	color: white;
+	background-color: rgb(0, 199, 174);
+	border-radius: 13px;
+	float: right;
+}  	
+.sub_menu_list {
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+.sub_content {
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.switch_off {
+	width: 51px;
+	height: 31px;
+	background: #E1E1E1;
+	border-radius: 16px;
+	display: inline-block;
+	position: relative;
+}
+.switch_off::before {
+  	position: absolute;
+    content: "";
+    height: 27px;
+    width: 27px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+.switch_on{
+	width: 51px;
+	height: 31px;
+	background-color: rgb(0, 199,174);
+	border-radius: 16px;
+	position: relative;
+}
+.switch_on::after {
+  	position: absolute;
+    content: "";
+    height: 27px;
+    width: 27px;
+    right: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+.tooltip {
+	padding: 6px 10px;
+     --arrowPositionLeft: 16%;
+    --positionLeft: 16%;
+    transform: none;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    padding: .375rem .625rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    color: #fff;
+    letter-spacing: -.025rem;
+    white-space: nowrap;
+    background: #5080fa;
+    border: .0625rem solid #5080fa;
+    border-radius: 4px;
+}
+.tooltip::before {
+	/* 파란박스 화살표 */
+	content: '';
+    position: absolute;
+    top: -10px; /* 화살표 높이 조정 */
+    left: var(--arrowPositionLeft);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #5080fa transparent;
+}
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
