@@ -297,6 +297,7 @@
 		
 		let page_num = <%=pageNum%>;
 		let category_idx = <%=categoryIdx%>;
+		
 		function draw_new_board_list(page) {
 			$.ajax({
 				type: 'get',
