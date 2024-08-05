@@ -18,7 +18,7 @@
     
     
  <%
-         	//  	영현이 헤더 jquery
+         	//헤더 jquery
           	int users_idx = 0;
          /*
          	String users_idx_param = request.getParameter("users_idx");
@@ -27,7 +27,7 @@
          	        users_idx = Integer.parseInt(users_idx_param);
          	    } catch (NumberFormatException e) {
          	        // 예외 처리: 잘못된 형식의 숫자가 들어온 경우 기본값 0을 사용
-         	        users_idx = 0;
+         	        users_idx = 
          	    }
          	}
          */
@@ -458,7 +458,7 @@
                     <nav class = "header-nav">
                         <ul class = "header-nav-ul">
                             <li class = "header-nav-li">
-                                <a href = "Seach.profile.jsp">
+                                <a href = "sgRequestMain.jsp">
                                     <span class = "header-nav-li-span">견적요청</span>
                                 </a>
                             </li>
