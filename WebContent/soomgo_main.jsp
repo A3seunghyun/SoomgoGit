@@ -17,7 +17,7 @@
     pageEncoding="UTF-8"%>
     
     
- <%
+ 		<%
          	//  	영현이 헤더 jquery
           	int users_idx = 0;
          /*
