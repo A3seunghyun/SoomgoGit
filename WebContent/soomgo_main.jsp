@@ -280,7 +280,7 @@
  			alert("websocket connected.");
 		}
 		function func_on_error(e) {
-			alert("Error!");
+// 			alert("Error!");
 		}
 		/* ws://localhost:9095/YJsoomgoProject/broadcast_notice */
 		let webSocket = new WebSocket("ws://localhost:9095/YJsoomgoProject/broadcast_notice");
