@@ -277,7 +277,7 @@
 			$("#div_message").append("<p class='chat'>" + e.data + "</p>");
 		}
 		function func_on_open(e) {
- 			alert("websocket connected.");
+ 			//alert("websocket connected.");
 		}
 		function func_on_error(e) {
 			//alert("Error!");
