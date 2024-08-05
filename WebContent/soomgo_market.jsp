@@ -1027,6 +1027,7 @@
 					} else {
 						console.log("채팅 내용 없음 성공");
 						$(".chat-body").attr("idx", res.roomIdx);
+						$(".chat-body").html("");
 					}
 				},
 				error: function (r, s, e) {

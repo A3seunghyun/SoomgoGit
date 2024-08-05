@@ -394,8 +394,8 @@
 /* 	================아래부터 알림css================ */
 	.notification-overlay {
 	    position: absolute;
-	    top: 38px;
-	    right: -88px;
+	    top: 0px;
+	    right:225px;
 	    width: 350px;
 	    height: 702px;
 	    background: #fff;
@@ -406,6 +406,7 @@
 	    overflow: visible;
 	    cursor: pointer;
 	    display: none;
+	    z-index: 1000;
 	}
 	.notification-overlay::before {
 	    content: "";
