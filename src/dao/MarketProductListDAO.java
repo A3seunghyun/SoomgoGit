@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import dto.MarketProductListCountDTO;
 import dto.MarketProductListDTO;
 
 
@@ -147,6 +148,35 @@ public class MarketProductListDAO {
 		conn.close();
 		
 		return mplist;
+	}
+	
+	public ArrayList<MarketProductListCountDTO> marketProductCount(int categoryIdx) throws Exception {
+		Connection conn = getConnection();
+		
+		String sql = "SELECT count(*) "+
+				"FROM market m, category c, service s "+
+				"WHERE m.service_idx = s.service_idx "+
+				"AND s.category_idx = c.category_idx "+
+				"AND c.category_idx = ? "+
+				"GROUP BY s.category_idx";		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setInt(1, categoryIdx);
+		
+		ResultSet rs = pstmt.executeQuery();
+
+		ArrayList<MarketProductListCountDTO> mplCount = new ArrayList<MarketProductListCountDTO>();
+
+		while (rs.next()) {
+			MarketProductListCountDTO dto = new MarketProductListCountDTO(rs.getInt(1));
+			mplCount.add(dto);
+		}
+		
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return mplCount;
 	}
 	
 }

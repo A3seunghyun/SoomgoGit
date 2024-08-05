@@ -1,3 +1,4 @@
+<%@page import="dto.MarketProductListCountDTO"%>
 <%@page import="dto.Soomgo_header2Dto"%>
 <%@page import="dto.Soomgo_headerDto"%>
 <%@page import="dao.Soomgo_headerDao"%>
@@ -56,7 +57,7 @@
 		
 		if (isgosu == null) {	
 		// 고수일때 실행할 메서드
-		isgosu = 2; // 기본값 2
+			isgosu = 2; // 기본값 2
 		}//else{
 		// 고수아닐때 일반회원일때 실행할 메서드
 		// }
@@ -65,6 +66,7 @@
     <%
     	int categoryIdx = 1;
     	int pageNum = 1;
+    	
     	try {
 	    	categoryIdx = Integer.parseInt(request.getParameter("category_idx"));
 	    	pageNum = Integer.parseInt(request.getParameter("page"));
@@ -74,6 +76,7 @@
     	int lastPageNum;
     	
     	MarketProductListDAO mplDao = new MarketProductListDAO();
+    	ArrayList<MarketProductListCountDTO> mplCount = mplDao.marketProductCount(categoryIdx);
     	ArrayList<MarketProductListDTO> mpl = mplDao.marketList(categoryIdx, pageNum);
     	
     	CategoryDAO cateDao = new CategoryDAO();
@@ -84,16 +87,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>숨고 마켓 메인페이지 -승현</title>
+<meta charset="UTF-8">
+<title>숨고 마켓 메인페이지 -승현</title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css"> <!-- clear css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/> <!-- clear3 css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/soomgo_market.css">
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css"> <!-- 헤더 css 꼭 추가하기 -->
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 	
@@ -227,8 +229,9 @@
 			
 			
 			$("#title-filter > ul > li:nth-child(<%=categoryIdx%>)").addClass("active");
+			
 			if(<%=categoryIdx%> >=9 && <%=categoryIdx%> <=11){
-				swal("준비중입니다.");
+				swal.fire( '준비중입니다.' );
 			}
 			
 			$("#title-filter ul li").click(function () {
@@ -241,7 +244,7 @@
 
 			$(".category").click(function () {
 				let idx = $(this).attr("idx");
-				location.href = "/SoomgoGit/SoomgoMarketServlet?category_idx="+idx;
+				location.href = "SoomgoMarketServlet?category_idx="+idx;
 			
 			})
 
@@ -274,7 +277,7 @@
 			})
 			
 			$(window).scroll(function() {
-				if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				if($(window).scrollTop() + $(window).height() === $(document).height()) {
 					console.log("페이지 맨아래 도달! 무한스크롤 실행!");
 					draw_new_board_list(++page_num);
 				}
@@ -734,8 +737,9 @@
 					<div id="product-total-count">
 					<%
 					int count = 0;
-					for(MarketProductListDTO dto : mpl) {
-						count++;			
+					
+					for(MarketProductListCountDTO dto : mplCount) {
+						count = dto.getmProductCnt();
 					}
 					%>
 						<strong><%=count %></strong><span>개 서비스</span>
@@ -908,11 +912,10 @@
 		
 <!-- 마켓 채팅 문의하기 시작 -->
 	<%
-		int usersIdx = 21;
 	
 		MarketChatBotDAO mDao = new MarketChatBotDAO();
 	
-		ArrayList<MarketChatRoomListDTO> roomList = mDao.getMarketChatRoomList(usersIdx);
+		ArrayList<MarketChatRoomListDTO> roomList = mDao.getMarketChatRoomList(users_idx);
 		ArrayList<MarketChatContentsDTO> contentsList = new ArrayList<MarketChatContentsDTO>();
 	%>
 	
@@ -948,8 +951,8 @@
 	                timer: 1500,
  	                timerProgressBar: true,
 	                didOpen: (toast) => {
-	                    toast.addEventListener('mouseenter', Swal.stopTimer)
-	                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+	                	toast.addEventListener('mouseenter', Swal.stopTimer)
+						toast.addEventListener('mouseleave', Swal.resumeTimer)
 	                }
 	            })
 	            
@@ -963,7 +966,7 @@
 				alert("Error!");
 			}
 			
-			let webSocket = new WebSocket("ws://localhost:9095/SoomgoGit/marketBroadcasting");
+			let webSocket = new WebSocket("ws://localhost:9095/SHProject/marketBroadcasting");
 			
 			webSocket.onmessage = func_on_message;
 			webSocket.onerror = func_on_error;
@@ -973,7 +976,7 @@
 				if(key.keyCode == 13){
 					let content = $(this).val();
 					let roomIdx = $(".chat-body").attr("idx");
-					let data = {"roomIdx":roomIdx, "usersIdx":<%=usersIdx%>, "content":content};
+					let data = {"roomIdx":roomIdx, "usersIdx":<%=users_idx%>, "content":content};
 					
 					webSocket.send(JSON.stringify(data));	// 배열을 JSON 문자열로 변환하여 전송
 					
@@ -1012,7 +1015,7 @@
 			             	let me = "<div class=\"message user\">" +
 			                 			"<div class=\"text\">"+res[i].contents+"</div>" +
 			             			"</div>";
-							if(res[i].usersIdx != <%=usersIdx%>){
+							if(res[i].usersIdx != <%=users_idx%>){
 								$(".chat-body").append(you);
 							} else {
 								$(".chat-body").append(me);
@@ -1047,7 +1050,7 @@
 	            <span>채팅방 목록</span>
 	            <button id="closeChatListButton" class="closeButton">X</button>
 	        </div>
-			<!--채팅방 idx-->
+	        <!--채팅방 idx-->
 			<%for(MarketChatRoomListDTO mcrlDto : roomList) { %>
 		        <div class="chat-room" onclick="openChat(<%=mcrlDto.getChatRoomIdx()%>)">
 			        <% if(mcrlDto.getGosuFimg().equals("기본이미지")){%>
