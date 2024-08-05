@@ -162,10 +162,10 @@ h h1 h2 h3{margin: 0;}
 			margin:0 auto;
  		}
   		.div_layout > .div_community {
-			width: 970px;
-			min-height: 900px;
-			margin: 72px 44.5px 0PX;
-			padding: 0px 0px 80px;
+			width: 100%;
+/* 			min-height: 900px; */
+			margin: 0px 44.5px 0PX;
+/* 			padding: 0px 0px 80px; */
 		}
 		.div_layout > .div_community > .div_header {
 			width: 100%;
