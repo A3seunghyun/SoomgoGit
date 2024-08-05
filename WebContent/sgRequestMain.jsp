@@ -10,8 +10,8 @@
 <%@page import="dao.EstimateCategoryDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-//영현이 헤더 jquery
-int users_idx = 0;
+	// 헤더 jquery
+	int users_idx = 0;
 	String users_idx_param = request.getParameter("users_idx");
 	
 	if (users_idx_param != null && !users_idx_param.trim().isEmpty()) {

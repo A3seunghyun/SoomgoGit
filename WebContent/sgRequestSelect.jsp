@@ -1,3 +1,6 @@
+<%@page import="dto.Soomgo_header2Dto"%>
+<%@page import="dao.Soomgo_headerDao"%>
+<%@page import="dto.Soomgo_headerDto"%>
 <%@page import="dao.EstimateOptionContentDao"%>
 <%@page import="dto.EstimateOptionContentDto"%>
 <%@page import="dao.EstimateQuestionDao"%>
@@ -8,7 +11,46 @@
 <%@page import="dto.EstimateServiceDto"%>
 <%@page import="dao.EstimateServiceDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	// 헤더 jquery
+	int users_idx = 0;
+	String users_idx_param = request.getParameter("users_idx");
+	
+	if (users_idx_param != null && !users_idx_param.trim().isEmpty()) {
+	    try {
+	        users_idx = Integer.parseInt(users_idx_param);
+	    } catch (NumberFormatException e) {
+	        // 예외 처리: 잘못된 형식의 숫자가 들어온 경우 기본값 0을 사용
+	        users_idx = 0;
+	    }
+	}
+	
+	ArrayList<Soomgo_headerDto> SoomgoHeader = new ArrayList<>(); // 초기화
+	ArrayList<Soomgo_header2Dto> SoomgoHeader2 = new ArrayList<>(); // 초기화
+	
+	HttpSession hs = request.getSession();
+	
+	try{
+		users_idx =	 Integer.parseInt(hs.getAttribute("L_users_idx").toString());
+		
+		Soomgo_headerDao shdao = new Soomgo_headerDao();
+		SoomgoHeader = shdao.getSoomgoHeader(users_idx);
+		SoomgoHeader2 = shdao.getSoomgoHeader2(users_idx);
+		
+		}catch(Exception e){
+			
+		}
 
+	    // 세션에서 isgosu를 가져옴, 존재하지 않으면 기본값 2 설정
+	    Integer isgosu = (Integer) hs.getAttribute("isgosu");
+	    if (isgosu == null) {	
+	    	// 고수일때 실행할 메서드
+	    	isgosu = 2; // 기본값 2
+	    }//else{
+	    	// 고수아닐때 일반회원일때 실행할 메서드
+	    	// }
+
+%>
 <%	
 	int serviceIdx = 19;
 	try{
@@ -447,15 +489,33 @@
 				<!-- 1번답변 end-->
 				<!-- 2번질문 -->
 				<li id="question_1" class="questions message_wrapper">
+<!-- 					<div class="message"> -->
+<!-- 						<p class="content"> -->
+<!-- 							<span class="title">이사 날짜를 선택해주세요.</span> -->
+<!-- 						</p> -->
+<!-- 						<div class="answer_sheet"> -->
+<!-- 							<div class=answer_wrapper> -->
+<!-- 								<div class="button_wrapper"> -->
+<!-- 									<button class="btn button btn_primary">날짜 선택하기</button> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="message">
 						<p class="content">
-							<span class="title">이사 날짜를 선택해주세요.</span>
+							<span class="title">이사 날짜를 입력해주세요.</span>
 						</p>
-						<div class="answer_sheet">
-							<div class=answer_wrapper>
-								<div class="button_wrapper">
-									<button class="btn button btn_primary">날짜 선택하기</button>
+						<div class="answer_sheet text_field">
+							<div class="answer_wrapper">
+								<div class="text_wrapper text_field_wrapper">
+									<textarea placeholder="ex.10층" maxlength="255" class="textarea_field text_length" name="floor_depart"></textarea>
+									<p class="validation">
+										<span class="input_length">0</span>/255자
+									</p>
 								</div>
+							</div>
+							<div class="button_wrapper">
+								<button class="btn button btn_submit btn_primary disable">다음</button>
 							</div>
 						</div>
 					</div>
@@ -475,15 +535,33 @@
 				<!-- 2번답변 end -->
 				<!-- 3번질문 -->
 				<li id="question_2" class="questions message_wrapper">
+<!-- 					<div class="message"> -->
+<!-- 						<p class="content"> -->
+<!-- 							<span class="title">출발 지역을 선택해주세요.</span> -->
+<!-- 						</p> -->
+<!-- 						<div class="answer_sheet"> -->
+<!-- 							<div class=answer_wrapper> -->
+<!-- 								<div class="button_wrapper"> -->
+<!-- 									<button class="btn button btn_primary">지역 선택</button> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="message">
 						<p class="content">
-							<span class="title">출발 지역을 선택해주세요.</span>
+							<span class="title">출발 지역을 입력해주세요.</span>
 						</p>
-						<div class="answer_sheet">
-							<div class=answer_wrapper>
-								<div class="button_wrapper">
-									<button class="btn button btn_primary">지역 선택</button>
+						<div class="answer_sheet text_field">
+							<div class="answer_wrapper">
+								<div class="text_wrapper text_field_wrapper">
+									<textarea placeholder="ex.10층" maxlength="255" class="textarea_field text_length" name="floor_depart"></textarea>
+									<p class="validation">
+										<span class="input_length">0</span>/255자
+									</p>
 								</div>
+							</div>
+							<div class="button_wrapper">
+								<button class="btn button btn_submit btn_primary disable">다음</button>
 							</div>
 						</div>
 					</div>
@@ -1145,15 +1223,33 @@
 				<!-- 8번답변 end -->
 				<!-- 9번질문 -->
 				<li id="question_8" class="questions message_wrapper">
+<!-- 					<div class="message"> -->
+<!-- 						<p class="content"> -->
+<!-- 							<span class="title">도착 지역을 선택해주세요.</span> -->
+<!-- 						</p> -->
+<!-- 						<div class="answer_sheet"> -->
+<!-- 							<div class=answer_wrapper> -->
+<!-- 								<div class="button_wrapper"> -->
+<!-- 									<button class="btn button btn_primary">지역 선택</button> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="message">
 						<p class="content">
-							<span class="title">도착 지역을 선택해주세요.</span>
+							<span class="title">도착 지역을 입력해주세요.</span>
 						</p>
-						<div class="answer_sheet">
-							<div class=answer_wrapper>
-								<div class="button_wrapper">
-									<button class="btn button btn_primary">지역 선택</button>
+						<div class="answer_sheet text_field">
+							<div class="answer_wrapper">
+								<div class="text_wrapper text_field_wrapper">
+									<textarea placeholder="ex.10층" maxlength="255" class="textarea_field text_length" name="floor_depart"></textarea>
+									<p class="validation">
+										<span class="input_length">0</span>/255자
+									</p>
 								</div>
+							</div>
+							<div class="button_wrapper">
+								<button class="btn button btn_submit btn_primary disable">다음</button>
 							</div>
 						</div>
 					</div>
@@ -1302,7 +1398,6 @@
 					</div>
 				</li>
 				<!-- 12번답변 end -->
-				<!-- 13번질문 -->
 				<li id="question_12" class="questions message_wrapper">
 					<div class="message">
 						<p class="content">
@@ -1310,9 +1405,7 @@
 						</p>
 						<div class="answer_sheet">
 							<div class=answer_wrapper>
-								<!--선택지 영역-->
 								<ul class="pick_answer">
-									<!-- 선택지 1 -->
 									<li id="radio_wrapper_0" class="answer radio_answer">
 										<div class="radio_wrapper">
 											<input id="radio_0" type="radio" class="input_radio" value="네"/>
@@ -1329,7 +1422,6 @@
 											</label>
 										</div>
 									</li>				
-									<!-- 선택지 2 -->					
 									<li id="radio_wrapper_1" class="answer radio_answer">
 										<input id="radio_1" type="radio" class="input_radio" value="아니오"/>
 										<label for="radio_1" class="circle_label">
@@ -1358,43 +1450,29 @@
 						</div>
 					</div>
 				</li>
-				<!-- 13번질문 end -->
-				<!-- 13번답변 -->
 				<li id="answer_12" class="message_wrapper my_answer answers">
 					<div class="answer_message message">
 						<p class="content">
-							<span class="title answer_text"> <!-- 답변입력--> </span>
+							<span class="title answer_text"> 답변입력 </span>
 						</p>
 					</div>
 					<div class="edit_wrapper">
 						<button class="btn edit btn_none answer_12">수정</button>
 					</div>
 				</li>
-				<!-- 13번답변 end -->
-				<!-- (마지막 질문)로그인박스-->
-				<li id="last_login">
+				<!-- 12번 답변 end -->
+				<li id="last_login" class="questions message_wrapper">
 					<div class="message">
 						<p class="content">
-							<span class="title">로그인하고 무료견적을 받아보세요!</span>
+							<span class="title">고수에게 견적이 요청되었습니다!</span>
 						</p>
-						<div class="answer_sheet">
-							<div class=answer_wrapper>
-								<div class="button_wrapper login_btn">
-									<button class="btn btn_kakao btn_social">
-										<img src="/SoomgoGit/img/icon/img_icon_kakao.svg">
-										<span>카카오로 시작하기</span>
-									</button>
-									<button class="btn btn_naver btn_social">
-										<img src="/SoomgoGit/img/icon/img_icon_naver_white.svg">
-										<span>네이버로 시작하기</span>
-									</button>
-									<button class="btn btn_sg">이메일로 시작하기</button>
-								</div>
+						<div class="answer_sheet text_field">
+							<div class="button_wrapper">
+								<button class="btn button btn_submit btn_primary" onClick="location.href='soomgo_main.jsp'">메인으로 이동</button>
 							</div>
 						</div>
 					</div>
 				</li>
-				<!--로그인박스 end-->
 			</ul>
 		</div>
 		<!-- 견적요청 end -->
