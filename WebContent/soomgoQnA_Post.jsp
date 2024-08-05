@@ -216,7 +216,7 @@
 			alert("Error!");
 		}
 		
-		let webSocket = new WebSocket("ws://localhost:9095/YJsoomgoProject/broadcast_notice");
+		let webSocket = new WebSocket("ws://localhost:9095/SoomgoGit/broadcast_notice");
 		webSocket.onmessage = func_on_message;
 		webSocket.onopen = func_on_open;
 		webSocket.onerror = func_on_error;
