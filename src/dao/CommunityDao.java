@@ -23,11 +23,13 @@ import dto.CommuPostWritePowerDto;
 import dto.CommuServiceTitleDto;
 import dto.CommunityDto;
 import dto.CommunityGosuDto;
+import dto.GosuKnowHowListDto;
 
 public class CommunityDao {
 	public static Connection getConnection() throws Exception{
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String url = "jdbc:oracle:thin:@192.168.0.22:1521:xe";
 		String id = "soomgo";	//"hr";	 오라클 계정
 		String pw = "soomgo";
 		
@@ -39,13 +41,15 @@ public class CommunityDao {
 	
 	
 //	고수, 유저에 따라 글쓰기 권한이 다름
-	public static ArrayList<CommuPostWritePowerDto> postWritePowerSelect() throws Exception {
+	// isGosu : 0 유저 , 1 고수
+	public static ArrayList<CommuPostWritePowerDto> postWritePowerSelect(int isGosu) throws Exception {
 		Connection conn = getConnection();
 		String sql = "SELECT c.commu_idx ci, c.title t" + 
 					" FROM    community c" + 
-					" WHERE  commu_power = 1";
+					" WHERE  commu_power = ?";
 				// (?) 유저, 고수에 따라 글 쓸 수 있는 커뮤니티 카테고리가 다름. 1유저 2 고수
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, isGosu+1);	
 		
 		ArrayList<CommuPostWritePowerDto> pwList = new ArrayList<CommuPostWritePowerDto>();
 		
@@ -504,15 +508,14 @@ public class CommunityDao {
 	public int postWrite(int usersIdx, String title, String content, Integer serviceIdx, Integer townIdx, int commuIdx) throws Exception {
 		Connection conn = getConnection();
 		
-		String sql = "INSERT INTO post (post_idx, users_idx, title,contents, service_idx, town_idx" + 
-				"                    , p_date, commu_idx )" + 
-				" VALUES (?, ?, ?, ?, ?, ?, sysdate, ? )";
+		String sql = "INSERT INTO post (post_idx, users_idx, title, contents, service_idx, town_idx, p_date, commu_idx )" + 
+				" VALUES (seq_post_idx.nextval, ?, ?, ?, ?, ?, sysdate, ? )";
 		
 		String[] colNamesPk = { "post_idx" };
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql, colNamesPk);
 		
-		pstmt.setInt(1, usersIdx);				 // users_idx
+		pstmt.setInt(1, usersIdx);
 		pstmt.setString(2, title);	 // 제목
 		pstmt.setString(3, content); // 내용
 		
@@ -577,7 +580,7 @@ public class CommunityDao {
 	}
 	
 //	고수 노하우 쓰기  상세정보insert
-	public int gosuKnowhowWritePlus(int mainIdx, int postIdx, String headerPost, String contents, String img1, String img2, String img3) throws Exception {
+	public int gosuKnowhowWritePlus(int postIdx, String headerPost, String contents, String img1, String img2, String img3) throws Exception {
 		Connection conn = getConnection();
 		
 		String sql = "INSERT INTO main_text (main_idx, post_idx, header_post, contents, img1, img2, img3) " + 
@@ -643,7 +646,7 @@ public class CommunityDao {
 		return list;
 	}
 	
-
+	
 	// postIdx : 게시글 번호
 	// usersIdx : 댓글 작성자
 	// contents : 댓글 내용
@@ -653,7 +656,7 @@ public class CommunityDao {
 		Connection conn = getConnection();
 		
 		String sql = "INSERT INTO comments(comments_idx, post_idx, users_idx, contents, comment_date, parent_idx) " + 
-				" VALUES(?, ?, ?, ?, sysdate, ?)"; 
+				" VALUES(seq_comments_idx.nextval, ?, ?, ?, sysdate, ?)"; 
 		// 인서트 실행 후 pk값 반환 (=보통은 시퀀스에 의해 만들어진 값)
 		// 1) 문자열 배열 - pk로 지정된 컬럼의 이름(들) ---> 보통은 길이가 1 짜리인 배열임. 왜냐하면, pk가 (아마도) 하나일 테니까.
 		String[] arrKeyNames = {"comments_idx"};		
@@ -1130,7 +1133,7 @@ public class CommunityDao {
 		if(serviceIdx != null)
 			sql += " AND s.service_idx = " + serviceIdx;  // 1, 1, 170 궁금해요 글 목록
 
-		sql += "ORDER BY p.p_date DESC";
+		sql += " ORDER BY p.p_date DESC ";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		// 오라클 실행
@@ -1202,12 +1205,71 @@ public class CommunityDao {
 		return name;
 	}	
 	
+	public boolean isGosu(int usersIdx) throws Exception {
+		String sql = "SELECT isgosu FROM users WHERE users_idx = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, usersIdx);
+		ResultSet rs = pstmt.executeQuery();
+		int isGosu = 0;
+		if(rs.next()) {
+			isGosu = rs.getInt("isgosu");
+		}
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return isGosu == 1;
+	}
+	
+	public String getGosuAliasFromUsersIdx(int usersIdx) throws Exception {
+		String sql = "SELECT name FROM gosu_infor WHERE users_idx=?";
+
+		Connection conn = getConnection();
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, usersIdx);
+		ResultSet rs = pstmt.executeQuery();
+		String ret = "";
+		if(rs.next()) {
+			ret = rs.getString(1);
+		}
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return ret;
+	}
 	
 	
-	
-	
-	
-	
+	// 고수노하우 게시글리스트를 불러오는 메서드
+	public ArrayList<GosuKnowHowListDto> getGosuKnowHowList() throws Exception {
+		String sql = "SELECT gkh.img, gkh.post_idx, gkh.title, gi.name, gkh.start_post " + 
+				" FROM gosu_know_how gkh " + 
+				" INNER JOIN gosu_infor gi ON gi.users_idx = gkh.users_idx " + 
+				" INNER JOIN post p ON p.post_idx = gkh.post_idx " + 
+				" INNER JOIN community c ON c.commu_idx = p.commu_idx ";
+		
+		Connection conn = getConnection();
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		ResultSet rs = pstmt.executeQuery();
+		ArrayList<GosuKnowHowListDto> list = new ArrayList<GosuKnowHowListDto>();
+		while(rs.next()) {
+			String img = rs.getString("img");
+			int postIdx = rs.getInt("post_idx");
+			String title = rs.getString("title");
+			String name = rs.getString("name");
+			String startPost = rs.getString("start_post");
+			
+			list.add(new GosuKnowHowListDto(img, postIdx, title, name, startPost));
+		}
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return list;
+	}	
 	
 	
 	
@@ -1218,10 +1280,14 @@ public class CommunityDao {
 	public static void main(String[] args) {
 		CommunityDao dao = new CommunityDao();
 		try {
-			ArrayList<CommuPageNumDto> list = dao.getPostListByPageNum(1);
-			for(CommuPageNumDto dto : list) {
-				System.out.println(dto.getPostIdx() + " : " +  dto.getPostTitle());
-			}
+//			ArrayList<CommuPageNumDto> list = dao.getPostListByPageNum(1);
+//			for(CommuPageNumDto dto : list) {
+//				System.out.println(dto.getPostIdx() + " : " +  dto.getPostTitle());
+//			}
+			
+			System.out.println(dao.isGosu(2));
+			System.out.println(dao.getGosuAliasFromUsersIdx(20));
+			
 		} catch(Exception e) { e.printStackTrace(); }
 	}
 	

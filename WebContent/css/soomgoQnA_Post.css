@@ -1,4 +1,4 @@
-@charset "UTF-8";@charset "UTF-8";
+	@charset "UTF-8";@charset "UTF-8";
   body{font-family: Noto Sans KR, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
       }
   .border {
@@ -21,7 +21,7 @@
 h2 {
     margin: 0;
 }
-
+ul{padding: 0;}
  /* -------------------헤더-----------------------  */
   #total-header{
     position: sticky;
@@ -359,7 +359,7 @@ h2 {
 	position: absolute;
 	width: 160px;
 	transform: translate3d(-116px, 24px, 0px);
-	top: 41%;
+	top: 37%;
 	left: 68%;
 	will-change: transform;
 	padding: 18px 0px;

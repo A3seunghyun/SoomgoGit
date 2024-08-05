@@ -8,7 +8,9 @@
 	
 // 	out.println("여기로와");
 // 	로그인해서 댓글을 작성한 사람
-	int usersIdx = 22; // 21=YB. 22=최승현. 유저idx 일단 가정해서 (로그인되면 밑에 방식으로 바꾸기) -----> 댓글 작성자
+	//int usersIdx = 22; // 21=YB. 22=최승현. 유저idx 일단 가정해서 (로그인되면 밑에 방식으로 바꾸기) -----> 댓글 작성자
+	int usersIdx = (Integer)session.getAttribute("L_users_idx");
+	
  	int postIdx = Integer.parseInt(request.getParameter("post_idx"));
 	String contents = request.getParameter("contents");
 	

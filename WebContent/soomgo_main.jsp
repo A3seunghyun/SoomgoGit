@@ -75,7 +75,7 @@
 	MainPageDao mDao = new MainPageDao();
 
 	//메인페이지 고수노하우 최근작성 순 상위 2개 포스트 뿌리기
-	ArrayList<CommuGosuKnowhowPostLisMaintDto> mainList = mDao.getMainGkhPostList();
+	ArrayList<CommuGosuKnowhowPostLisMaintDto> mainList = mDao.getMainGkhPostList(); 
 	
 	// 메인페이지 게시글 최근작성 순 상위 3개 포스트 뿌리기
 	ArrayList<CommuMainpostListDto> mainPostList = mDao.getMainPostList(); 
