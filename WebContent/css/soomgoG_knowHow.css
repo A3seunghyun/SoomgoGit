@@ -1,0 +1,610 @@
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+  body{font-family: Noto Sans KR, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  		margin:0 auto;
+      }
+  .border {
+      border: 1px solid red;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  p12{
+      margin: 0;
+      letter-spacing: -2px;
+      font-size: 12px;
+  }
+  p14{
+  	 margin: 0;
+      letter-spacing: -2px;
+      font-size: 14px;
+  }
+  a {
+      text-decoration-line: none;
+      }
+.fl{float: left;}
+.fr{float: right;}
+.
+h h1 h2 h3{margin: 0;}
+		
+  #total-header{
+    position: fixed;
+    top: 0;
+    width :1903px;
+    height:72px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-color : rgb(242, 242, 242);
+    border-bottom-style : solid;
+    border-bottom-width : 1px;
+  }
+  #soomgo-header{
+      width: 100%;
+      width : 972px;
+      height : 72px;
+      margin-left : 464px;
+      margin-right : 466.5px;
+      background-color: rgb(255, 255, 255);
+      border-bottom-color : rgb(242, 242, 242);
+      border-bottom-style : solid;
+      border-bottom-width : 1px;
+  }
+  #soomgo-header1{
+      width : 79.5px;
+      height : 27px;
+      float : left;
+      margin-top : 22.5px;
+      margin-left : 2.5px 
+  }
+  #soomgo-menu1{
+      width : 264.13px;
+      height : 28.16px;
+      float : left; 
+      margin-top : 26.5px;
+      margin-left : 29.5px;
+  }
+  #soomgo-request{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      line-height: 120%;
+  }
+  #soomgo-serch{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-market{
+      width : 33.45px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-community{
+      width : 60.89px;
+      height : 24px;
+      float : left;
+      margin-left : 14px;
+      line-height: 120%;
+  }
+  #soomgo-header-serch{
+      background-color : rgb(242, 242, 242);
+        width: 280px;
+        height :40px;
+        float :left;
+        margin-left : 55.5px;
+        margin-top : 15.5px;
+        border-radius: 6px
+  }
+  #reading-glasses-img{
+        width:24px;
+        height :40px;
+        float:left;
+        padding-top :9px;
+        padding-bottom: 8px;
+        margin-left: 12px;
+  }
+  #serch-input-outter{
+    background-color : rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    float:left;
+    margin-left: 5px;
+    margin-top : 3px;
+  }
+  .serch-input{
+    background-color :rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    border: none;
+    font-size:.875rem;
+  }
+  #soomgo-menu2{
+      width : 202.17px;
+      height : 36px;
+      float : right;
+      margin-top : 16px;
+      margin-left: 20px;
+  }
+  #soomgo-login{
+      width : 40.64px;
+      height : 20px;
+      float : left;
+      margin-top : 11px;
+      margin-left : 0.5px;
+      line-height: 100%; 
+  }
+  #soomgo-join{
+      width : 60.53px;
+      height : 20px;
+      float : left;
+      margin-left : 13.8px;
+      margin-top : 11px;
+      line-height: 100%;
+  }
+  #soomgo-gosu-join{
+      width : 80px;
+      height : 36px;
+      float : right;
+      margin-top : 2px;
+      line-height: 35px;
+      background-color:#00c7ae;
+      border-radius: 6px;
+      text-align : center;
+  }
+  
+  /* -----------------------------여기까지 헤더---------------------------------- */
+	  	.div_layout {
+			width: 1060px;
+			min-height: 100%;
+			margin:0 auto;
+ 		}
+  		.div_layout > .div_community {
+			width: 970px;
+			min-height: 900px;
+			margin: 72px 44.5px 0PX;
+			padding: 0px 0px 80px;
+		}
+		.div_layout > .div_community > .div_header {
+			width: 100%;
+			height: 189px;
+		}
+		.div_layout > .div_community > .div_header  > .div_header_inner {
+			width: 970px;
+			height: 99px;
+			padding: 50px 0px;
+			margin: 0px 0px 40px 0px;
+			float: left;
+		}
+/* 		----- 헤더 글쓰기 이미지 -----커뮤 질.답 수정해ㅑ함 */
+		.div_layout > .div_community > .div_header  > .div_header_inner > .div_header_text {
+			width: 128px;
+			height: 49px;
+			font-size: 34px;
+			font-weight: 500;
+			line-height: normal;
+			float: left;
+		}
+		.div_layout > .div_community > .div_header  > .div_header_inner > .div_header_img {
+			width: 120px;
+			height: 44px;
+			padding: 11px 12px;
+			background: #00C7AE;
+			color: white;
+			font-size: 16px;
+			font-weight: 500;
+			float:right;
+			cursor: pointer;
+			border-radius: 6px;
+			border:none;
+			text-align : center;
+			margin-top: 5px;
+		}
+		.text {
+			margin:0px 24px 2px 0px;
+			
+		}
+		.inner_img {
+			float: right;
+			margin: -34px 15px 0px 0px;
+		}
+/* 		----- 헤더 글쓰기 이미지 ----- */
+		.div_layout > .div_community > .div_header > .div_category{
+			width: 970px;
+			height: 50px;
+			margin: 0px 0px 30px;
+			border-bottom: 1px solid rgb(244, 244, 244);
+			float: left;
+		}
+		.div_soomgo_text1 {
+			/* 숨고생활 */
+			width: 69px;
+			height: 49px;
+			padding: 10px 4px;
+			font-size: 16px;
+			float:left;
+			margin-right: 13px;
+			color: black; 
+			border-bottom: 2px solid black; 
+			cursor: pointer;
+		}
+		.div_soomgo_text2 {
+			/* 고수센터 */
+			width: 69px;
+			height: 49px;
+			padding: 10px 4px;
+			font-size: 16px;
+			color: #A9A9A9;
+			float:left;
+			margin-right: 13px;
+			cursor: pointer;
+		}
+		
+		.community_layout {
+			display: flex;
+			flex-direction: row;
+			
+		}
+		.soomgo_life_topic_layout {
+		/* 사이드 탭을 담을 div */
+			position: sticky;
+			top: 96px;
+			z-index: 10;
+			align-self: flex-start;
+			width: 200px;
+			height: 100%;
+			background: #fff;
+			line-height: 24px;
+			float: left;
+		}
+		.soomgo_life_topic_layout > ul {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			row-gap: 4px;
+			margin: 0;
+			padding: 0;
+		}
+		.soomgo_life_topic_layout > ul > li {
+			display: list-item;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			list-style-image: none;
+			list-style-position: outside;
+			list-style-type: none;
+			text-align: left;
+			
+		}
+		.topic_link_item {
+			display: flex;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 400;
+			height: 56px;
+			line-height: 21px;
+			padding: 0px 20px;
+			text-align: left;
+			align-items: center;
+			
+		}
+		.community_content_layout {
+			width: 600px;
+			margin-left: 85px;
+			padding: 0px;
+		}
+		.topic_guide {   
+			width: 600px;
+			height: 72px;
+			font-size: 16px;
+			font-weight: 400;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			line-height: 24px;
+			background-color: rgb(255, 240, 241);
+			margin: 0px 0px 32px;
+			padding: 16px 24px;
+			border-radius: 8px;
+		}
+		.guide_line {
+			font-size: 14px;
+			font-weight: 400;
+			color: rgb(98,98,98);
+			letter-spacing: -0.3px;
+			line-height: 20px;
+			text-align: left;
+			margin: 0;
+			flex: 1;
+		}
+		.guide_icon {
+			height: 40px;
+			width: 72px;
+			object-fit: cover; 
+			margin-left: 10px;
+		}
+		.knowhow_list {
+			width: 100%;
+			padding: 0;
+			border: none;
+		}
+		.knowhow_list > ul {
+			display: flex;
+			flex-wrap: wrap;
+   			grid-template-columns: repeat(3, 1fr);
+   			margin: -4px -8px -16px;
+   			line-height: 24px;
+   			list-style-type: disc;
+	    	list-style: none;
+	    	padding: 0;
+		}
+		.knowhow_list > ul > li {
+			display: list-item;
+			flex-basis: 33.33%;
+			flex-grow: 0;
+			flex-shrink: 1;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			text-align: left;
+		    list-style: none;
+	        text-align: -webkit-match-parent;
+    		unicode-bidi: isolate;
+		}
+		.item_wrapper {
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			padding: 16px 8px;
+			box-sizing: border-box;
+		}
+		.item_wrapper > a {
+			text-decoration: none;
+			color: #323232;
+			background-color: transparent;
+		}
+		.image_wrapper {
+			border-radius: 8px;
+			cursor: pointer;
+			display: block;
+			overflow: hidden;
+			padding: 0;
+			padding-bottom: 126.3px;
+			position: relative;
+			text-align: left;
+			width: 100%;
+			word-break: break-word;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			margin-bottom: 12px;
+			
+		}
+		.content_image {
+			line-height: 24px;
+			overflow-clip-margin: content-box;
+			overflow: clip;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit : cover;
+			cursor: pointer;
+		}
+		.content_title {
+			display: -webkit-box;
+			max-height: 48px;
+			overflow: hidden;
+			text-align: left;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			maring-bottom: 4px;
+			line-height: 24px;
+			list-style-image: none;
+			letter-spacing: -0.3px;
+			font-size: 16px;
+			font-weight: 500;
+			cursor: pointer;
+		}
+		h3{margin:0;}
+		.content_writer	{
+			color: rgb(115,115,115);
+			cursor: pointer;
+			display: -webkit-box;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 24px;
+			list-style-image: none;
+			max-height: 21px;
+			overflow: hidden;
+			text-align: left;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		#div_community_layout {
+			width: 970px;
+			min-height: 900px; 
+			margin-top: 30px;
+			margin-right: 30px;
+		}
+		#div_community_layout > div:nth-child(1) {
+		/* 사이드 탭을 담을 div */
+			width: 200px;
+			float: left;
+			cursor: pointer;
+		}
+		#div_community_layout > div:nth-child(1) > .topic_item {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		.selected {
+			/* 사이드 탭  카테고리 목록 마우스 올렸을떄 색상 변경 */
+			background-color: #eafaf9;
+   			 font-weight: bold !important;
+		}
+		
+		#div_community_layout > div > div > .div_town.active {
+		    background-color: #eafaf9;		/* 사이드 탭  카테고리 목록  마우스 클릭했을때 색상 변경 */
+		    font-weight: 700;				/* 눌렀을때 색상 및 글씨 굵기 변화 */
+ 		}
+		#div_community_layout > div:nth-child(2) {
+			width: 612px;
+			min-height: 800px;
+			margin-left: 283px;
+   			margin-right: 85px;
+		}
+	
+  		#div_topic > p {	/*  커뮤 질문답변 카테고리의 헤더  text */
+  			width: 325px;
+  			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: -0.3px;
+			line-height: 30.02px;
+			text-align: left;
+			margin-top: 6px;
+			float:left;
+			color: rgb(98, 98, 98);
+  		}
+  		#div_topic > img {		/*  커뮤 질문답변 카테고리의 헤더  img */
+  			width: 72px;
+  			height: 42px;
+  			object-fit: cover;   /* 이미지 비율 유지 */
+  			float: right;
+  		}
+  		#div_service_town {
+  			width: 600px;
+  			height: 54px;
+  			padding: 8px;
+  			float: left;
+  			margin-top: -2px;
+  		}
+  		#div_service_town > #div_service {
+  			width: 97px;
+  			height: 38px;
+  			margin: 0px 8px 0px 0px;
+  			padding: 6px 15px;
+  			float: left;
+  			border-radius: 19px;
+  			color: #737373;
+  			border: .0625rem solid #e1e1e1;
+  		}
+  		#div_service_town > #div_town {
+  			width: 82px;
+  			height: 38px;
+  			padding: 6px 15px;
+  			float: left;	
+  			border-radius: 19px;
+  		    color: #737373;
+  		    border: .0625rem solid #e1e1e1;
+  		}
+  		span {
+  			font-size: 16px;
+  			line-height: 24px;
+  			font-weight: 400;
+  			color: #2d2d2d;
+  			margin:0;
+  		}
+  		#div_service_town > img {
+  			width: 16px;
+  		}
+  		#div_service_town > div { /*  div 안에 이미지 가운데 정렬 */
+  			text-align:center;
+  		}
+  	
+  	/* ---------------- 여기서부터 커뮤니티 게시글목록 --------------------- */
+  	.div_community_layout > div:nth-child(2) > .div_post_item_list {
+  		font-size: 16px;
+  		font-weight: 400;
+  		line-height: 24px;
+  		float: left;
+  	}
+  	.div_post_item_list > .div_post_item {
+  		width: 204px;
+  		height: 245px;
+  		padding: 16px 0px;
+  		margin-right: -3px;
+  		margin-left: 2px;
+  		float: left;
+  		cursor: pointer;
+  	}
+  	.div_post_item  > .div_img_box {  /* post 이미지 담을 div */
+  		width: 189.4px;
+  		height: 128.3px;
+  		margin: 0px 0px 12px;
+  		padding: 0px 0px 126.3px;
+  		border-radius: 8px;
+  	}
+  	.p_img {
+  		width: 187.2px;
+  		height: 128px;
+  		object-fit: cover;  /* 이미지 비율 유지 */
+  		cursor: pointer;
+  		border-radius: 8px;
+  		margin-top: -7px;
+  		margin-left: 2px;
+  	}
+.div_title_box {
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: -0.5px;
+	line-height: 24px;
+	overflow: hidden;
+	margin-block-end: 4px;
+	margin-top: -7px;
+	margin-left: 2px;
+}
+.div_post_writer {
+	width: 189.4px;
+	height: 21px;
+	color: #737373;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-top: -3px;
+	margin-left: 2px;
+}
+  	
+  	/* ---------------- 여기까지 커뮤니티 게시글목록 --------------------- */
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	

@@ -163,15 +163,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>숨고 마켓 상품 상세페이지 -승현</title>
-<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/soomgo_market_list.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<meta charset="UTF-8">
+	<title>숨고 마켓 상품 상세페이지 -승현</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/soomgo_market_list.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 	<script> <!--헤더 jquery 시작 -->
 		$(function(){
 			$(".usermenu-dropdown").hide();
@@ -460,7 +463,10 @@
 			})
 			
 			$(".modal_btn, #soomgo-guarantee-banner, #inquiry-btn").click(function () {
-				swal("준비중입니다.");
+				swal.fire({
+						html:
+							"<p style='font-size: 20px;'>준비중입니다.</p>"
+				});
 			})
 			
 			let year = now.getFullYear();
@@ -796,7 +802,7 @@
 									</button>
 								</div>
 								<div class = "usermenu3-dropdown-div3">
-									<a href = "Seach.profile2.jsp">
+									<a href = "soomgo_main.jsp">
 										<button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
 									</a>
 								</div>

@@ -30,6 +30,7 @@
 	// Dao 객체 생성 및 메소드 호출
 	Search_profile_1Dao sp1Dao = new Search_profile_1Dao();
 	ArrayList<Search_profile_1Dto> SearchProfile1 = sp1Dao.getSeachprofile();
+	ArrayList<Search_profile_1Dto> SearchProfile3 = sp1Dao.getSeachprofileRandom();
 
 	Search_profile_2Dao sp2Dao = new Search_profile_2Dao();
 	ArrayList<Search_profile_2Dto> SearchProfile2 = sp2Dao.getSeachprofile();
@@ -329,10 +330,13 @@
                     });
                 }
             });
-             
-            /* $("#serarch_profile").click(function(){
-            	location.href = "Seach.profile.jsp";
-            }); */
+            $(document).on("click", ".gosu-profile-outter", function(){			
+                //$(".gosu-profile-outter1").click(function(){
+                	 //let idx = $(this).find(".gosu-profile-outter1").attr("idx");
+                	 let idx = $(this).attr("idx");
+                	location.href = "Gosu.profile.p.jsp?users_idx=" + idx;
+                	//alert(idx);
+                });
 		});
   </script>
 </head>
@@ -368,7 +372,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -432,7 +436,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -564,7 +568,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -669,7 +673,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                	<a href = "/Web/Seach.profile2.jsp">
+                                	<a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                     </a>
                                 </div>
@@ -819,9 +823,10 @@
                             <div id = "item-top-title-outter" class = "center">
                                 <span class = "item-title">숨고와 함께하는 소상공인 고수</span>
                             </div>
-                                <div class = "gosu-profile-outter" >
+                            <% for(Search_profile_1Dto sp11dto : SearchProfile3 ){ %>
+                                <div class = "gosu-profile-outter" idx = "<%=sp11dto.getUsers_idx()%>">
                                     <div id = "gosu-profile-name-outter" class = "center">
-                                        <h5 class = "profile-title">조덕호아카이브</h5>
+                                        <h5 class = "profile-title"><%=sp11dto.getName() %></h5>
                                     </div>
                                     <div id = "gosu-profile-second-outter" class = "center">
                                         <div id = "gosu-profile-secont-1" class = "center">
@@ -829,21 +834,22 @@
     											<path d="m7.496 1.596 1.407 2.742 3.145.44c.91.127 1.275 1.204.615 1.822l-2.276 2.134.538 3.015c.155.872-.797 1.538-1.612 1.126L6.5 11.452l-2.813 1.423c-.815.412-1.767-.254-1.612-1.126l.538-3.015L.337 6.6c-.66-.618-.296-1.695.615-1.822l3.145-.44 1.407-2.742C5.912.8 7.088.8 7.496 1.596" fill="#FFCE21" fill-rule="evenodd"></path>
 												</svg>
 											</span>
-                                            <span class = "profile-review">5.0</span>
-                                            <span class = "profile-text1">(6) ·</span>
+                                            <span class = "profile-review"><%=sp11dto.getScore() %>.0</span>
+                                            <span class = "profile-text1">(<%=sp11dto.getC_review() %>) ·</span>
                                         </div>
-                                        <span class = "profile-text2">2회 고용 ·</span>
-                                        <span class = "profile-text2">경력 9년</span>
+                                        <span class = "profile-text2"><%=sp11dto.getC_transaction() %>회 고용 ·</span>
+                                        <span class = "profile-text2">경력 <%=sp11dto.getCareer() %>년</span>
                                     </div>
             
-                                    <div id = "profile-img1" class = "center">
+                                    <div id = "profile-img1" class = "center" style = "background-image: url(<%=sp11dto.getF_img() %>);">
                                     </div>
             
                                     <div id = "profile-intro-outter" class = "center">
-                                        <p class = "profile-intro">당신이 브랜드가 될 수 있도록 '초정밀 성장 아카이브'을 제공합니다.</p>
+                                        <p class = "profile-intro"><%=sp11dto.getIntro() %></p>
                                     </div>
                                 </div>
-                                <div class = "gosu-profile-outter">
+                                <% } %>
+                               <!--  <div class = "gosu-profile-outter">
                                     <div id = "gosu-profile-name-outter" class = "center">
                                         <h5 class = "profile-title">한빛난방관리</h5>
                                     </div>
@@ -865,7 +871,7 @@
                                     <div id = "profile-intro-outter" class = "center">
                                         <p class = "profile-intro">고수의 수도 관련 설치 및 수리, 보일러 설치 및 수리(지역난방 포함), 온수기 설치 및 수리, 누수 탐지 서비스</p>
                                     </div>
-                                </div>
+                                </div> -->
                             
             
                             <div id = "item-top-title1-outter" class = "center">
@@ -905,12 +911,10 @@
             </div>
             <div id = "gosu-zim-buttom-outter">
             
-                <!-- <a href = "/Web/Login.jsp"> -->
                     <button id = "gosu-zim-buttom" class = "gosu-zim-buttom">
                         <img src = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+SWNvbl9oZWFydDwvdGl0bGU+CiAgICA8ZyBpZD0i8J+UljEwNTct66Gk67CxLe2bhC3rs4Dqsr3rkJwtVUktKOywnO2VnOqzoOyImCkiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLslYTsnbTsvZhfQ1RBLeyVhOydtOy9mC3rs4Dqsr0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMy4wMDAwMDAsIC00MzEuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxnIGlkPSJJY29uX2hlYXJ0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMy4wMDAwMDAsIDQzMS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOS42MTIwMzE4LDUuNjg3OTY4MjIgQzE4LjcyMzc3MDIsNC43OTkyODk1NSAxNy41MTg3Nzg2LDQuMyAxNi4yNjIyOTIsNC4zIEMxNS4wMDU4MDU1LDQuMyAxMy44MDA4MTM4LDQuNzk5Mjg5NTUgMTIuOTEyNTUyMiw1LjY4Nzk2ODIyIEwxMS45OTk3Njk3LDYuNjAwNzUwNzggTDExLjA4Njk4NzEsNS42ODc5NjgyMiBDOS4yMzY5NzY5MywzLjgzNzk1ODA4IDYuMjM3NTE3ODEsMy44Mzc5NTgxIDQuMzg3NTA3NjQsNS42ODc5NjgyNyBDMi41Mzc0OTc0Nyw3LjUzNzk3ODQ0IDIuNTM3NDk3NDUsMTAuNTM3NDM3NiA0LjM4NzUwNzU5LDEyLjM4NzQ0NzggTDUuMzAwMjkwMTUsMTMuMzAwMjMwMyBMMTEuOTk5NzY5NywxOS45OTk3MDk4IEwxOC42OTkyNDkyLDEzLjMwMDIzMDMgTDE5LjYxMjAzMTgsMTIuMzg3NDQ3OCBDMjAuNTAwNzEwNCwxMS40OTkxODYyIDIxLDEwLjI5NDE5NDUgMjEsOS4wMzc3MDc5OSBDMjEsNy43ODEyMjE0NCAyMC41MDA3MTA0LDYuNTc2MjI5ODIgMTkuNjEyMDMxOCw1LjY4Nzk2ODIyIFoiIGlkPSJQYXRoIj48L3BhdGg+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==">
                         <span class = "gosu-zim-font">찜한 고수</span>
                     </button>
-                <!-- </a> -->
             </div>
             
             

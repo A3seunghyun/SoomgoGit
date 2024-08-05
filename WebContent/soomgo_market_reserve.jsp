@@ -8,6 +8,7 @@
     <%
 		// 영현이 헤더
 		int users_idx = 0;
+    
 		String users_idx_param = request.getParameter("users_idx");
 		
 		if (users_idx_param != null && !users_idx_param.trim().isEmpty()) {
@@ -31,7 +32,7 @@
 			SoomgoHeader = shdao.getSoomgoHeader(users_idx);
 			SoomgoHeader2 = shdao.getSoomgoHeader2(users_idx);
 			
-			} catch(Exception e){
+		} catch(Exception e){
 				
 		}
 	
@@ -40,7 +41,7 @@
 		
 		if (isgosu == null) {	
 		// 고수일때 실행할 메서드
-		isgosu = 2; // 기본값 2
+			isgosu = 2; // 기본값 2
 		}//else{
 		// 고수아닐때 일반회원일때 실행할 메서드
 		// }
@@ -64,14 +65,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>숨고 마켓 상품 예약하기 -승현</title>
 	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="https://assets.cdn.soomgo.com/icons/logo/favicon_logo.svg">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css"> <!-- clear css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/> <!-- clear3 css 꼭 추가하기 -->
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/soomgo_market_reserve.css"/>
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css"> <!-- 헤더 css 꼭 추가하기 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css">
 	<script> <!--헤더 jquery 시작 -->
 		$(function(){
 			$(".usermenu-dropdown").hide();
@@ -193,6 +196,7 @@
 		    let marketOption = data.marketOption;
 		    let reserveDate = data.reserveDate;
 		    let reserveTime = data.reserveTime;
+		    let usersIdx = <%=users_idx%>;
 	
 		    IMP.init('imp54682524'); // 아임포트 관리자 콘솔에서 확인한 '가맹점 식별코드' 입력
 	
@@ -204,12 +208,14 @@
 		        amount: marketPrice, // 금액
 		        buyer_email: "tkswk8093@naver.com",
 		        buyer_name: "장용준",
-		        buyer_tel: "01040968093"
+		        buyer_userIdx: usersIdx
 		    }, function (rsp) { // callback
 		        if (rsp.success) {
-		            alert("완료 -> imp_uid : " + rsp.imp_uid + " / merchant_uid(orderKey) : " + rsp.merchant_uid);
+		            alert("완료 -> 구매자명 : " + rsp.buyer_name + " / 구매자IDX : " + rsp.buyer_userIdx);
 		        } else {
-		            alert(rsp.error_msg);
+		            swal.fire({
+		            	html: "<p style='font-size: 22px;'>결제 취소</p>"
+		            })
 		        }
 		    });
 		}
@@ -231,9 +237,10 @@
 		        let marketPrice = $("#marketPrice").text();
 		        let reserveDate = $("#reserveDate").text();
 		        let reserveTime = $("#reserveTime").text();
-		        swal({
+		        
+		        swal.fire({
 		            title: "결제 정보 확인\n\n",
-		            text: "상품명 : " + marketTitle + "\n\n상품 옵션 : " + marketOption + "\n\n상품 가격 : " + marketPrice + "\n\n예약 날짜 : " + reserveDate + "\n\n예약 시간 : " + reserveTime + "\n\n결제 수단 : Kakao Pay 카카오페이",
+		            html: "<h3>상품명 : " + marketTitle + "<br/><br/>상품 옵션 : " + marketOption + "<br/><br/>상품 가격 : " + marketPrice + "<br/><br/>예약 날짜 : " + reserveDate + "<br/><br/>예약 시간 : " + reserveTime + "<br/><br/>결제 수단 : Kakao Pay 카카오페이</h3><br/>",
 		            icon: "info",
 		            buttons: true,
 		            dangerMode: true,
@@ -253,24 +260,27 @@
 		    });
 	
 		    $(".informationPrivacy").click(function () {
-		        swal("숨고 회원 계정으로 마켓 상품을 구매하는 경우, 주식회사 브레이브모바일(이하 “회사”)은 사이트 이용을 위해 필요한 최소한의 범위로 개인정보를 수집합니다. 회사는 이용자의 사전 동의 없이는 이용자의 개인 정보를 공개하지 않으며, 다음과 같은 목적을 위하여 개인정보를 수집하고 이용합니다.\n\n" +
-		            "1. 개인정보의 수집 및 이용 목적 : 상품 구매 중개, 구매 및 요금 결제, 상담 및 불만 처리, 상품 구매에 따른 혜택 제공\n\n" +
-		            "2. 수집하는 개인정보 항목 : 상품 구매정보, 결제수단\n\n" +
-		            "3. 개인정보의 보유 및 이용기간 : 개인정보 이용목적 달성 시까지 보관하며, 관계 법령의 규정에 의하여 일정 기간 보존이 필요한 경우에는 해당 기간만큼 보관 후 파기합니다.\n\n" +
-		            "전자상거래 등에서 소비자 보호에 관한 법률\n\n" +
-		            "1) 계약 또는 청약철회 등에 관한 기록 \n: 5년 보관\n\n" +
-		            "2) 대금결제 및 재화 등의 공급에 관한 기록 \n: 5년 보관\n\n" +
-		            "3) 소비자의 불만 또는 분쟁처리에 관한 기록 \n: 3년 보관\n\n" +
-		            "사용자는 개인정보 수집 및 이용에 대한 동의를 거부할 수 있으며, 동의 거부 시 마켓 상품 구매가 제한됩니다. 그밖의 내용은 회사의 이용약관 및 개인정보처리방침에 따릅니다.");
+		        swal.fire({
+		        	html: "<p style='font-size: 17px;'>숨고 회원 계정으로 마켓 상품을 구매하는 경우, 주식회사 브레이브모바일(이하 “회사”)은 사이트 이용을 위해 필요한 최소한의 범위로 개인정보를 수집합니다. 회사는 이용자의 사전 동의 없이는 이용자의 개인 정보를 공개하지 않으며, 다음과 같은 목적을 위하여 개인정보를 수집하고 이용합니다.<br/><br/>" +
+		            "1. 개인정보의 수집 및 이용 목적 : 상품 구매 중개, 구매 및 요금 결제, 상담 및 불만 처리, 상품 구매에 따른 혜택 제공<br/><br/>" +
+		            "2. 수집하는 개인정보 항목 : 상품 구매정보, 결제수단<br/><br/>" +
+		            "3. 개인정보의 보유 및 이용기간 : 개인정보 이용목적 달성 시까지 보관하며, 관계 법령의 규정에 의하여 일정 기간 보존이 필요한 경우에는 해당 기간만큼 보관 후 파기합니다.<br/><br/>" +
+		            "전자상거래 등에서 소비자 보호에 관한 법률<br/><br/>" +
+		            "1) 계약 또는 청약철회 등에 관한 기록 <br/>: 5년 보관<br/><br/>" +
+		            "2) 대금결제 및 재화 등의 공급에 관한 기록 <br/>: 5년 보관<br/><br/>" +
+		            "3) 소비자의 불만 또는 분쟁처리에 관한 기록 <br/>: 3년 보관<br/><br/>" +
+		            "사용자는 개인정보 수집 및 이용에 대한 동의를 거부할 수 있으며, 동의 거부 시 마켓 상품 구매가 제한됩니다. 그밖의 내용은 회사의 이용약관 및 개인정보처리방침에 따릅니다.</p>"
+		            });
 		    });
 	
 		    $(".informationThird").click(function () {
-		        swal("숨고 회원 계정으로 마켓 상품을 구매하는 경우, 주식회사 브레이브모바일(이하 “회사”)은 거래 당사자 간 원활한 의사소통, 상담, 서비스 제공 등 거래 이행을 위하여 필요한 최소한의 개인정보를 아래와 같이 제공합니다.\n\n" +
-		            "1. 개인정보를 제공받는 자 : 마켓 상품 판매자\n\n" +
-		            "2. 제공하는 개인정보 항목 : 이름, 상품 구매정보, 결제수단\n\n" +
-		            "3. 개인정보를 제공받는 자의 이용 목적 : 판매자와 구매자 간의 원활한 거래 진행, 본인의사의 확인, 상담 및 불만 처리, 서비스 제공, 상품 구매에 따른 혜택 제공\n\n" +
-		            "4. 개인정보를 제공받는 자의 개인정보 보유 및 이용기간 : 개인정보 이용목적 달성 시까지 보관하며, 관계 법령의 규정에 의하여 일정 기간 보존이 필요한 경우에는 해당 기간만큼 보관 후 파기합니다.\n\n" +
-		            "사용자는 개인정보 제공에 대한 동의를 거부할 수 있으며, 동의 거부 시 마켓 상품 구매가 제한됩니다. 그밖의 내용은 회사의 이용약관 및 개인정보처리방침에 따릅니다.");
+		        swal.fire({
+		        	html: "<p style='font-size: 17px;'>숨고 회원 계정으로 마켓 상품을 구매하는 경우, 주식회사 브레이브모바일(이하 “회사”)은 거래 당사자 간 원활한 의사소통, 상담, 서비스 제공 등 거래 이행을 위하여 필요한 최소한의 개인정보를 아래와 같이 제공합니다.<br/><br/>" +
+		           		 "1. 개인정보를 제공받는 자 : 마켓 상품 판매자<br/><br/>" +
+		          		  "2. 제공하는 개인정보 항목 : 이름, 상품 구매정보, 결제수단<br/><br/>" +
+		          		  "3. 개인정보를 제공받는 자의 이용 목적 : 판매자와 구매자 간의 원활한 거래 진행, 본인의사의 확인, 상담 및 불만 처리, 서비스 제공, 상품 구매에 따른 혜택 제공<br/><br/>" +
+		          		  "4. 개인정보를 제공받는 자의 개인정보 보유 및 이용기간 : 개인정보 이용목적 달성 시까지 보관하며, 관계 법령의 규정에 의하여 일정 기간 보존이 필요한 경우에는 해당 기간만큼 보관 후 파기합니다.<br/><br/>" +
+		          		  "사용자는 개인정보 제공에 대한 동의를 거부할 수 있으며, 동의 거부 시 마켓 상품 구매가 제한됩니다. 그밖의 내용은 회사의 이용약관 및 개인정보처리방침에 따릅니다.</p>"});
 		    });
 		});
 	</script>
@@ -583,7 +593,7 @@
 									</button>
 								</div>
 								<div class = "usermenu3-dropdown-div3">
-									<a href = "Seach.profile2.jsp">
+									<a href = "soomgo_main.jsp">
 										<button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
 									</a>
 								</div>

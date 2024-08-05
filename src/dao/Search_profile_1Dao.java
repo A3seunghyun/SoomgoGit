@@ -124,6 +124,61 @@ public class Search_profile_1Dao {
 				return listRet;
 	
 			}
+			public ArrayList<Search_profile_1Dto> getSeachprofileRandom() throws Exception{
+				ArrayList<Search_profile_1Dto> listRet = new ArrayList<Search_profile_1Dto>();
+				
+				String sql = "SELECT *\r\n" + 
+						"FROM (\r\n" + 
+						"    SELECT\r\n" + 
+						"        gi.users_idx,\r\n" + 
+						"        gi.name,\r\n" + 
+						"        gi.career,\r\n" + 
+						"        gi.f_img,\r\n" + 
+						"        gs.intro,\r\n" + 
+						"        ROUND(AVG(r.score), 1) AS avg_score_review,\r\n" + 
+						"        COUNT(r.g_users_idx) AS count_reviews,\r\n" + 
+						"        (SELECT COUNT(*) FROM transaction t WHERE t.g_users_idx = gi.users_idx) AS count_transactions,\r\n" + 
+						"        ROW_NUMBER() OVER (ORDER BY DBMS_RANDOM.VALUE) AS 랜덤조회\r\n" + 
+						"    FROM\r\n" + 
+						"        gosu_infor gi\r\n" + 
+						"    JOIN\r\n" + 
+						"        gosu_service gs ON gi.users_idx = gs.users_idx\r\n" + 
+						"    LEFT JOIN\r\n" + 
+						"        review r ON gs.users_idx = r.g_users_idx\r\n" + 
+						"    GROUP BY\r\n" + 
+						"        gi.users_idx,\r\n" + 
+						"        gi.name,\r\n" + 
+						"        gi.career,\r\n" + 
+						"        gi.f_img,\r\n" + 
+						"        gs.intro\r\n" + 
+						"    ORDER BY\r\n" + 
+						"        avg_score_review DESC\r\n" + 
+						")\r\n" + 
+						"WHERE 랜덤조회 <= 2";
+				Connection conn = getConnection();
+				
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				ResultSet rs = pstmt.executeQuery();
+				while(rs.next()) {
+					int users_idx = rs.getInt(1);
+					String name = rs.getString(2);
+					int career = rs.getInt(3);
+					String f_img = rs.getString(4);
+					String intro = rs.getString(5);
+					int score = rs.getInt(6);
+					int c_review = rs.getInt(7);
+					int c_transaction = rs.getInt(8);
+					
+					Search_profile_1Dto dto = new Search_profile_1Dto(users_idx, name, career, f_img, intro, score, c_review, c_transaction);
+					listRet.add(dto);
+				}
+				rs.close();
+				pstmt.close();
+				conn.close();
+				
+				return listRet;
+	
+			}
 			
 			// ArrayList<BoardDto> 객체의 참조값을 리턴하는 메서드.
 						public ArrayList<Search_profile_3Dto> getSeachprofilePageNum(int pageNum) throws Exception{

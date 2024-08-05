@@ -340,7 +340,7 @@
             	        console.log("users_idx가 0입니다. AJAX 요청이 실행되지 않습니다.");
             	        $(".heart-button").hide();
             	        alert("로그인이 필요합니다.");
-            	        location.href = "/Web/Login.jsp";
+            	        location.href = "Login.jsp";
             	        return; // users_idx가 0이면 AJAX 요청을 실행하지 않음
             	    }
 
@@ -349,10 +349,11 @@
             	        type: 'post',
             	        data: { login_idx: login_idx, users_idx: users_idx },
             	        dataType: "json",
-            	        url: "/Web/GosuZimInsertServlet",
+            	        url: "GosuZimInsertServlet",
             	        success: function(res) {
             	            if (res.status === "success") {
             	                console.log("성공:", res);
+            	                alert("찜 목록에 추가되었습니다.");
             	            } else {
             	                console.error("오류:", res.message);
             	            }
@@ -603,7 +604,7 @@
             	// AJAX 요청으로 idx 값 저장
             	$.ajax({
         			type : 'post',
-        			url : '/Web/GosuprofilePortServlet',
+        			url : 'GosuprofilePortServlet',
         			data : {p_idx : p_idx},
         			success : function(response){
         				//alert(response);
@@ -668,6 +669,14 @@
             	alert("준비중입니다.");
             });
             
+            
+            $(document).on("click", ".reservation-li", function(){			
+                //$(".gosu-profile-outter1").click(function(){
+                	 //let idx = $(this).find(".gosu-profile-outter1").attr("idx");
+                	 let idx = $(this).attr("idx");
+                	location.href = "soomgo_market_detail.jsp?market_idx=" + idx;
+                	//alert(idx);
+                });
         });
   </script>
 </head>
@@ -703,7 +712,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span"  style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -727,7 +736,7 @@
                                 </li>
                             </ul>
                         </nav>
-                        <a href = "/Web/Gosu_join.jsp">
+                        <a href = "Gosu_join.jsp">
                         <button type = "button" class = "btn-signup">
                             <a href = "Gosu_join.jsp" class = "btn-a">고수가입</a>
                         </button>
@@ -769,7 +778,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span"  style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -850,7 +859,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu-dropdown-div3">
-                                	<a = href= "Seach.profile.jsp">
+                                	<a = href= "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                     </a>
                                 </div>
@@ -894,7 +903,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span"  style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -996,7 +1005,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                	<a = href= "Search.profile.jsp">
+                                	<a = href= "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                     </a>
                                 </div>
@@ -1591,10 +1600,11 @@
                                 <p class = "right-aside-font1"><%=hidto.getName()%> 고수에게 원하는 서비스의 견적을 받아보세요</p>
                             <%} %>
                             </div>
-
-                            <div class = "right-aside-button-outter">
-                                <button type = "button" class = "right-aside-button">견적 요청</button>
-                            </div>
+							<a href = "sgRequestMain.jsp">
+	                            <div class = "right-aside-button-outter">
+	                                <button type = "button" class = "right-aside-button">견적 요청</button>
+	                            </div>
+                            </a>
                             <div class = "response-time">
                                 평균
                                 <span class = "response-time-font">2시간 내</span>
@@ -1758,15 +1768,8 @@
 </body>
 
 <body>
-
-	<%-- <%
-	int p_idx = Integer.parseInt(request.getParameter("portfolio_idx"));
-	Gosu_profile_portfolio_innerDao bDao = new Gosu_profile_portfolio_innerDao();
-	Gosu_profile_portfolio_innerDto dto = bDao.getGosuprofilePortfolioInner(23);
-	%> --%>
 <form>
     <div class = "pp-app">
-    
         <div class = "pp-app-body">
             <div class = "pp-body">
                 <div class = "pp-body-inner">
@@ -1786,7 +1789,6 @@
                                 </div>
                             </div>
                         </div>
-						
                         <div class = "pp-body-right-inner">
                             <div class = "pp-body-right-inner-button-outter">
                                 <button class = "pp-body-right-inner-button" type = "button"></button>
@@ -1831,7 +1833,6 @@
                                 <button type = "button" class = "pp-body-main-inner-button"></button>
                             </div>
                             <%} %>
-                            
                             <div class = "pp-body-main-button-outter">
                                 <button class = "pp-body-main-button" type = "button">
                                     견적 요청하기
@@ -1849,7 +1850,6 @@
                                 <h3 class= "pp-body-main-under-font1">작업년도</h3>
                                 <span class = "pp-body-main-under-sub-font4"></span>
                             </div>
-
                             <div class = "pp-body-main-under-text-outter"></div>
                         </div>
                    </div> 

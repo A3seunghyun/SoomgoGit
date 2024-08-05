@@ -169,14 +169,14 @@
 					<div class = "header-div1">
 						<div class = "header-div1-1">
 							<div class = "header-div1-1-logo">
-								<a href = "https://soomgo.com/">
+								<a href = "soomgo_main.jsp">
 									<img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
 								</a>
 							</div>
 							<nav class = "header-nav">
 								<ul class = "header-nav-ul">
 									<li class = "header-nav-li">
-										<a href = "Seach.profile.jsp">
+										<a href = "sgRequestMain.jsp">
 											<span class = "header-nav-li-span">견적요청</span>
 										</a>
 									</li>
@@ -191,7 +191,7 @@
 										</a>
 									</li>
 									<li class = "header-nav-li1">
-										<a href = "">
+										<a href = "soomgoCommu.jsp">
 											<span class = "header-nav-li-span">커뮤니티</span>
 										</a>
 									</li>
@@ -227,14 +227,14 @@
 					<div class = "header-div1">
 						<div class = "header-div1-1">
 							<div class = "header-div1-1-logo">
-								<a href = "https://soomgo.com/">
+								<a href = "soomgo_main.jsp">
 									<img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
 								</a>
 							</div>
 							<nav class = "header-nav">
 								<ul class = "header-nav-ul">
 									<li class = "header-nav-li">
-										<a href = "">
+										<a href = "sgRequestMain.jsp">
 											<span class = "header-nav-li-span">견적요청</span>
 										</a>
 									</li>
@@ -249,7 +249,7 @@
 										</a>
 									</li>
 									<li class = "header-nav-li1">
-										<a href = "">
+										<a href = "soomgoCommu.jsp">
 											<span class = "header-nav-li-span">커뮤니티</span>
 										</a>
 									</li>
@@ -350,14 +350,14 @@
 					<div class = "header-div1">
 						<div class = "header-div1-1">
 							<div class = "header-div1-1-logo">
-								<a href = "https://soomgo.com/">
+								<a href = "soomgo_main.jsp">
 									<img class = "header-logo"src = "https://assets.cdn.soomgo.com/icons/logo/navigation_logo.svg">
 								</a>
 							</div>
 							<nav class = "header-nav">
 								<ul class = "header-nav-ul">
 									<li class = "header-nav-li">
-										<a href = "">
+										<a href = "sgRequestMain.jsp">
 											<span class = "header-nav-li-span">견적요청</span>
 										</a>
 									</li>
@@ -372,7 +372,7 @@
 										</a>
 									</li>
 									<li class = "header-nav-li1">
-										<a href = "">
+										<a href = "soomgoCommu.jsp">
 											<span class = "header-nav-li-span">커뮤니티</span>
 										</a>
 									</li>
@@ -470,7 +470,7 @@
 										</button>
 									</div>
 									<div class = "usermenu3-dropdown-div3">
-										<a href = "Seach.profile2.jsp">
+										<a href = "soomgo_main.jsp">
 											<button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
 										</a>
 									</div>

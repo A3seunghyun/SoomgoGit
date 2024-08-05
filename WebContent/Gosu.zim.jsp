@@ -301,7 +301,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -365,7 +365,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -445,7 +445,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu-dropdown-div3">
-                                <a href = "/Web/Seach.profile.jsp">
+                                <a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                 </a>
                                 </div>
@@ -489,7 +489,7 @@
                                 </li>
 
                                 <li class = "header-nav-li1">
-                                    <a href = "">
+                                    <a href = "soomgoCommu.jsp">
                                         <span class = "header-nav-li-span" style = "color : black;">커뮤니티</span>
                                     </a>
                                 </li>
@@ -589,7 +589,7 @@
                                     </button>
                                 </div>
                                 <div class = "usermenu3-dropdown-div3">
-                                <a href = "/Web/Seach.profile.jsp">
+                                <a href = "soomgo_main.jsp">
                                     <button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
                                 </a>
                                 </div>

@@ -1,0 +1,1026 @@
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+  body{font-family: Noto Sans KR, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  		margin:0 auto;
+      }
+  .border {
+      border: 1px solid red;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  p12{
+      margin: 0;
+      letter-spacing: -2px;
+      font-size: 12px;
+  }
+  p14{
+  	 margin: 0;
+      letter-spacing: -2px;
+      font-size: 14px;
+  }
+  a {
+      text-decoration-line: none;
+      }
+.fl{float: left;}
+.fr{float: right;}
+.
+h h1 h2 h3{margin: 0;}
+		
+  #div_layout {
+	width: 1060px;
+	min-height: 100%;
+	margin:0 auto;
+ }
+  #total-header{
+    position: fixed;
+    top: 0;
+    width :1903px;
+    height:72px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-color : rgb(242, 242, 242);
+    border-bottom-style : solid;
+    border-bottom-width : 1px;
+  }
+  #soomgo-header{
+      width: 100%;
+      width : 972px;
+      height : 72px;
+      margin-left : 464px;
+      margin-right : 466.5px;
+      background-color: rgb(255, 255, 255);
+      border-bottom-color : rgb(242, 242, 242);
+      border-bottom-style : solid;
+      border-bottom-width : 1px;
+  }
+  #soomgo-header1{
+      width : 79.5px;
+      height : 27px;
+      float : left;
+      margin-top : 22.5px;
+      margin-left : 2.5px 
+  }
+  #soomgo-menu1{
+      width : 264.13px;
+      height : 28.16px;
+      float : left; 
+      margin-top : 26.5px;
+      margin-left : 29.5px;
+  }
+  #soomgo-request{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      line-height: 120%;
+  }
+  #soomgo-serch{
+      width : 63.89px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-market{
+      width : 33.45px;
+      height : 24px;
+      float : left;
+      margin-left : 13px;
+      line-height: 120%;
+  }
+  #soomgo-community{
+      width : 60.89px;
+      height : 24px;
+      float : left;
+      margin-left : 14px;
+      line-height: 120%;
+  }
+  #soomgo-header-serch{
+      background-color : rgb(242, 242, 242);
+        width: 280px;
+        height :40px;
+        float :left;
+        margin-left : 55.5px;
+        margin-top : 15.5px;
+        border-radius: 6px
+  }
+  #reading-glasses-img{
+        width:24px;
+        height :40px;
+        float:left;
+        padding-top :9px;
+        padding-bottom: 8px;
+        margin-left: 12px;
+  }
+  #serch-input-outter{
+    background-color : rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    float:left;
+    margin-left: 5px;
+    margin-top : 3px;
+  }
+  .serch-input{
+    background-color :rgb(242, 242, 242);
+    width:224px;
+    height :38px;
+    border: none;
+    font-size:.875rem;
+  }
+  #soomgo-menu2{
+      width : 202.17px;
+      height : 36px;
+      float : right;
+      margin-top : 16px;
+      margin-left: 20px;
+  }
+  #soomgo-login{
+      width : 40.64px;
+      height : 20px;
+      float : left;
+      margin-top : 11px;
+      margin-left : 0.5px;
+      line-height: 100%; 
+  }
+  #soomgo-join{
+      width : 60.53px;
+      height : 20px;
+      float : left;
+      margin-left : 13.8px;
+      margin-top : 11px;
+      line-height: 100%;
+  }
+  #soomgo-gosu-join{
+      width : 80px;
+      height : 36px;
+      float : right;
+      margin-top : 2px;
+      line-height: 35px;
+      background-color:#00c7ae;
+      border-radius: 6px;
+      text-align : center;
+  }
+  
+  /* -----------------------------헤더---------------------------------- */
+  	
+  		#div_layout > #div_community {
+			width: 970px;
+			min-height: 900px;
+			margin: 72px 44.5px 0PX;
+			padding: 0px 0px 80px;
+		}
+		#div_layout > #div_community > #div_header {
+			width: 100%;
+			height: 189px;
+		}
+		#div_layout > #div_community > #div_header  > #div_header_inner {
+			width: 970px;
+			height: 99px;
+			padding: 50px 0px;
+			margin: 0px 0px 40px 0px;
+		}
+				#div_layout > #div_community > #div_header  > #div_header_inner > #div_header_text {
+			width: 128px;
+			height: 49px;
+			font-size: 34px;
+			font-weight: 500;
+			line-height: normal;
+			float: left;
+		}
+		#div_layout > #div_community > #div_header  > #div_header_inner > #div_header_img {
+			width: 120px;
+			height: 44px;
+			padding: 11px 12px;
+			background: #00C7AE;
+			color: white;
+			font-size: 16px;
+			font-weight: 500;
+			float:right;
+			cursor: pointer;
+			border-radius: 6px;
+			border:none;
+			text-align : center;
+			margin-top: 5px;
+		}
+		.text {
+			margin:0px 24px 2px 0px;
+			
+		}
+		.inner_img {
+			float: right;
+			margin: -34px 15px 0px 0px;
+		}
+		#div_layout > #div_community > #div_header > #div_category{
+			width: 970px;
+			height: 50px;
+			margin: 0px 0px 30px;
+			border-bottom: 1px solid rgb(244, 244, 244);
+			float: left;
+		}
+		.div_soomgo_text1 {
+			width: 69px;
+			height: 49px;
+			padding: 10px 4px;
+			font-size: 16px;
+			float:left;
+			margin-right: 13px;
+			cursor: pointer;
+			color: black;					 /*  클릭했을때 글씨 색상변경 */
+			border-bottom: 2px solid black;   /* 클릭했을때 밑줄생김 */
+		}
+		.div_soomgo_text2 {
+			width: 69px;
+/* 			height: 49px; */
+			padding: 10px 4px;
+			font-size: 16px;
+			 color: #A9A9A9; 
+			float:left;
+			margin-right: 13px;
+			cursor: pointer;
+			/* color: black; */						 /*  클릭했을때 글씨 색상변경 */
+			/* border-bottom: 2px solid black; */  /* 클릭했을때 밑줄생김 */
+		}
+		#div_community_layout {
+			width: 970px;
+			min-height: 900px; 
+			margin-top: 30px;
+			margin-right: 30px;
+		}
+		#div_community_layout > div:nth-child(1) {
+			width: 200px;
+			height: 236px;
+			float: left;
+			cursor: pointer;
+		}
+		#div_community_layout > div:nth-child(2) {
+			width: 600px;
+			min-height: 3000px;
+			margin-left: 283px;
+   			margin-right: 85px;
+		}
+		#div_community_layout > div:nth-child(1) > div { 	 
+		/* 커뮤니티 카테고리 박스 값 */
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		 }
+		#div_community_layout > div:nth-child(1) > div:nth-child(1){
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		.selected {
+			background-color: #eafaf9;
+			font-weight: bold !important;  /* !important 스타일의 우선순위 */
+		}
+		#div_community_layout > div:nth-child(1) > div:nth-child(2)  {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		#div_community_layout > div:nth-child(1) > div:nth-child(3) {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		#div_community_layout > div:nth-child(1) > div:nth-child(4) {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		#div_community_layout > div:nth-child(1) > div:nth-child(5) {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		#div_community_layout > div:nth-child(1) > div:nth-child(6)  {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+		#div_community_layout > div:nth-child(1) > div:nth-child(7) {
+			width: 100%;
+			height: 56px;
+			padding: 0px 20px;
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			font-weight: 400;
+		 	margin-bottom: 4px;
+		 	border-radius: 8px;
+		}
+	
+		#div_topic {   /*  커뮤 질문답변 카테고리의 헤더 */
+			width: 600px;
+			height: 72px;
+			background: rgb(236, 250, 241);
+			margin: 0px 0px 32px;
+			padding: 16px 24px;
+			border-radius: 8px;
+			float:left;
+		}
+  		#div_topic > p {
+  			width: 300px;
+  			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: -0.3px;
+			line-height: 20.02px;
+			text-align: left;
+			margin-top: 8px;
+			float:left;
+  		}
+  		#div_topic > img {
+  			width: 72px;
+  			height: 42px;
+  			object-fit: cover;   /* 이미지 비율 유지 */
+  			float: right;
+  		}
+  		#div_service_town {
+  			/* 서비스, 지역 버튼을 담을 div */
+  			width: 600px;
+  			height: 54px;
+  			padding: 8px;
+  			float: left;
+  			margin-top: -2px;
+  		}
+  		#div_service_town > .service_btn {
+  			/* 서비스 버튼 */
+  			width: 97px;
+  			height: 38px;
+  			margin: 0px 8px 0px 0px;
+  			padding: 6px 15px;
+  			border-radius: 19px;
+  			color: #737373;
+  			border: .0625rem solid #e1e1e1;
+  			background: none;
+  			cursor: pointer;
+  		}
+  		#div_service_town > .town_btn {
+  			/* 지역 버튼 */
+  			width: 82px;
+  			height: 38px;
+  			padding: 6px 15px;
+  			border-radius: 19px;
+  		    color: #737373;
+  		    border: .0625rem solid #e1e1e1;
+  		    background: none;
+  		    cursor: pointer;
+  		    margin-right: 5px;
+  		}
+  		 #div_service_town > .btn_init {
+  			/* 초기화 버튼 */
+  			width: 96px;
+		    height: 38px;
+		    padding: 6px 15px;
+		    border-radius: 19px;
+		    color: #737373;
+		    border: .0625rem solid #e1e1e1;
+		    background: none;
+		    cursor: pointer;
+		    margin-right: 5px;
+		    position: relative;
+    		padding-right: 26px;
+    		display: none; 
+  		}
+  		#div_service_town > .btn_init::after{
+  			/* 초기화 버튼 이미지 */
+  			content: "";
+   			background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNLTQ1MS02NDdINzE5Vjk4NUgtNDUxeiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0tNjYtMjBoNjAwdjU0SC02NnoiLz48cGF0aCBkPSJNNy4yMDEgMS4yNWMuMDIzLjAzNy4wMzUuMDguMDM1LjEyNFYyLjQzYzIuNDY4LjEzIDQuNDMgMi4yNzcgNC40MyA0LjkwNyAwIDIuNzEzLTIuMDg5IDQuOTEyLTQuNjY2IDQuOTEyLTIuNTc3IDAtNC42NjctMi4yLTQuNjY3LTQuOTEyIDAtLjM0LjI2Mi0uNjE0LjU4NC0uNjE0LjMyMiAwIC41ODMuMjc1LjU4My42MTQgMCAyLjAzNCAxLjU2NyAzLjY4NCAzLjUgMy42ODRzMy41LTEuNjUgMy41LTMuNjg0YzAtMS45NTItMS40NC0zLjU0OC0zLjI2NC0zLjY3NnYxLjAyMmEuMjQzLjI0MyAwIDAxLS4zNjguMjA5bC0yLjc4MS0xLjY1YS4yNDMuMjQzIDAgMDEwLS40MThsMi43ODEtMS42NmEuMjQzLjI0MyAwIDAxLjMzMy4wODV6IiBmaWxsPSIjMkQyRDJEIi8+PHBhdGggZD0iTTExLTExLjVjNS4xMDkgMCA5LjczNCAyLjA3IDEzLjA4MSA1LjQxOUExOC40NDIgMTguNDQyIDAgMDEyOS41IDdjMCA1LjEwOS0yLjA3IDkuNzM0LTUuNDE5IDEzLjA4MUExOC40NDIgMTguNDQyIDAgMDExMSAyNS41aC01MGMtNS4xMDkgMC05LjczNC0yLjA3LTEzLjA4MS01LjQxOUExOC40NDIgMTguNDQyIDAgMDEtNTcuNSA3YzAtNS4xMDkgMi4wNy05LjczNCA1LjQxOS0xMy4wODFBMTguNDQyIDE4LjQ0MiAwIDAxLTM5LTExLjV6IiBzdHJva2U9IiNFMUUxRTEiLz48L2c+PC9zdmc+);
+    		background-size: contain;
+    		width: 16px;
+		    height: 16px;
+		    margin-left: 4px;
+		    display: inline-block;
+		    position: absolute;
+		    top: 11px;
+		    right: 8px;
+  		}
+  		#div_service_town > .selected_names {
+  			color: white;
+  			font-size: 16px;
+  			padding: 6px 30px 6px 15px;
+  			font-weight: 400;
+  			background-color: #525252;
+  			border: 1px solid #525252;
+  			margin-right: 5px;
+  			height: 38px;
+  			border-radius: 19px;
+  			cursor: pointer;
+  			position: relative;
+  		}
+  		#div_service_town > .selected_names > .close_x {
+  			color: white;
+  			font-size: 20px;
+  			position: absolute;
+  			top: 50%;
+  			right: 5px;
+  			transform: translate(0, -50%);
+  		}
+  		span {
+  			/* 서비스, 지역 버튼 안에 text */
+  			font-size: 16px;
+  			line-height: 24px;
+  			font-weight: 400;
+  			color: #2d2d2d;
+  			margin:0;
+  		}
+  		#div_service_town > img {
+  			width: 16px;
+  		}
+  		#div_service_town > div { /*  div 안에 이미지 가운데 정렬 */
+  			text-align:center;
+  		}
+  		
+  		
+  		  /* ----------여기부터 서비스 필터------------ */
+ button, input {
+     font-family: inherit;
+ }  
+#div_service_town_layout {display: none;}  		  
+#div_service_town_layout {
+	/* 서비스 / 지역의 큰 div */
+	width: 418px;
+	height: 680px;
+	margin: 0 auto;
+	overflow-y: scroll;
+    overflow-x: hidden;   /* 가로 스크롤 숨기기 */
+    background-color: white;
+    z-index: 999;
+    position: absolute;
+    /* position: relative; */
+    border: none;
+    top: 17%;  /* position을 썻을때는 top으로 조정 서비스 필터 열었을때 위치 */
+}
+#div_service_town_layout.active {
+    display: block; /* 활성화되면 보이도록 설정 */
+}
+#div_service_town_layout> #div_service_town_header {
+	/* 서비스 지역  헤ㅔ더 */
+	width: 418px;
+	height: 60px;
+	padding: 10px 16px;
+	background-color: #fff;
+	position: absolute;    /* 스크롤바 가로줄 없애는데 사용 */
+	z-index: 100;
+}
+
+
+
+#div_service_town_layout> #div_service_town_header > #div_service {
+	/* 서비스 텍스트 div */
+	width: 58px;
+	height: 40px;
+	padding: 6px;
+	font-weight: 500;
+	line-height: 1.75;
+	letter-spacing: -.01688rem;
+	font-size: 16px;
+	margin-right: 10px;
+	float: left;
+}
+#div_service.active {
+    color:  #00c7ae; /* 원하는 색상으로 변경 */
+    position: relative;
+}
+#div_service.active::after {
+    content: '';
+    position: absolute;
+    width: 43.36px; /* 밑줄 길이 */
+    height: 2px; /* 밑줄 높이 */
+    background-color: #00c7ae; /* 밑줄 색상 */
+    left: 7px; /* 왼쪽 정렬 */
+    bottom: -2px; /* 텍스트 아래에 위치 */
+}
+
+#div_service_town_layout > #div_service_town_header > #div_town {
+	/* 지역 div */
+	width: 43px;
+	height: 40px;
+	font-size: 16px;
+	padding: 6px;
+	font-weight: 500;
+	line-height: 1.75;
+	letter-spacing: -.01688rem;
+	float: left;
+	cursor: pointer;
+}
+#div_town:hover {
+    color:  #00c7ae; /* 원하는 색상으로 변경 */
+    position: relative;
+}
+#div_town.active {
+    color:  #00c7ae; /* 원하는 색상으로 변경 */
+    position: relative;
+}
+#div_town.active::after {
+    content: '';
+    position: absolute;
+    width: 43.36px; /* 밑줄 길이 */
+    height: 2px; /* 밑줄 높이 */
+    background-color: #00c7ae; /* 밑줄 색상 */
+    left: 1px; /* 왼쪽 정렬 */
+    bottom: -2px; /* 텍스트 아래에 위치 */
+}
+#div_service_town_header > .x {
+	width: 16px;
+	height: 16px;
+	display: block;
+	margin: 14px 14px;
+	float: right;
+	cursor: pointer;
+}
+
+#div_service_town_layout > #div_search_service {
+	/* 서비스 소주제와 검색창 를 담을 div */
+    overflow-y: scroll;
+    overflow-x: hidden;   /* 가로 스크롤 숨기기 */
+   	width: 417px;
+	height: 573px;
+	line-height: 24px;
+	position: relative;
+	margin-top: 65px;
+}
+#div_service_town_layout > #div_search_service > #div_bottom_line {
+	width: 400px;
+	height: 65px;
+	border-bottom: 1px solid #f2f2f2;
+	
+}
+#div_service_town_layout > #div_search_service > #div_bottom_line > #div_input {
+	/* 검색창 input을 div */
+	width:371px;
+	height: 44px;
+	margin: 5px 16px 16px;
+	padding:12px 12px 12px 34px;
+	background-color: #fafafa;
+	border-radius: 8px;
+	border:none;
+}
+#div_service_town_layout > #div_search_service > #div_bottom_line > #div_input > input{
+	/* 검색창 */
+	width:100%;
+	height: 100%;
+	margin-top: -40px;
+	font-size: 14px;
+	font-stretch: 100%;
+	font-weight: 400;
+	line-height: 40px;
+	background-color: #fafafa;
+	border:none;
+	outline: none;
+}
+.img {
+	/* 돋보기img */
+	position: absolute;
+	width: 22px;
+	top: 20px;
+	left: 15px;
+	color: rgb(250, 250, 250);
+	margin-left: 16px;
+}
+#div_service_town_layout > #div_search_service > .div_category {
+	/* 소주제 text 담을 div */
+	width: 403px;
+	height: 44px;
+	color: #323232;
+	padding: 12px 16px;
+	font-size: 14px;
+	font-weight: 400;
+	position:relative;
+	/* background-color: rgb(242, 242, 242);    클릭했을때 변하는 색상*/
+}
+.div_town.level1 {
+	display: none;
+}
+.div_category.level1 {
+	padding-left:32px  !important;
+	display: none;
+}
+.div_category.level2 {
+	padding-left:48px !important;
+	display: none;
+}
+
+
+
+
+.div_category:hover {
+	background-color: #f2f2f2;
+}
+.div_category::after {
+    content: '';
+    position: absolute;
+    width: 371px; /* 밑줄 길이를 조절*/
+    height: 2px; /* 밑줄 두께를 조절*/
+    background-color: #fafafa; /* 밑줄 색상을 조절 */
+    left: 16px; /* padding-left 값과 동일하게 맞춤 */
+    bottom: -2px; /* 밑줄 위치를 조절 */
+}
+.div_category .arrow-down{
+    position: absolute;
+    right: 16px; /* 오른쪽 끝에서 16px 떨어진 위치에 배치 */
+    top: 50%;
+    transform: translateY(-50%);
+	width: 14px;
+	height: 24px;
+	background-size: 14px;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0iI0I1QjVCNSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTYuMTA3IDUuMjU3bC43MDcuNzA3LTcuNzc5IDcuNzc5LS43MDctLjcwN3oiLz48cGF0aCBkPSJNMS4yNTcgNS45NjRsLjcwNy0uNzA3IDcuNzc5IDcuNzc5LS43MDcuNzA3eiIvPjwvZz48L3N2Zz4=");
+	background-position-x: -2px;
+	background-position-y: 8px;  
+}
+.div_category .arrow-up {
+    position: absolute;
+    right: 16px;
+    top: 47%;
+    transform: rotate(180deg);
+    width: 14px;
+    height: 26px;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0iI0I1QjVCNSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTYuMTA3IDUuMjU3bC43MDcuNzA3LTcuNzc5IDcuNzc5LS43MDctLjcwN3oiLz48cGF0aCBkPSJNMS4yNTcgNS45NjRsLjcwNy0uNzA3IDcuNzc5IDcuNzc5LS43MDcuNzA3eiIvPjwvZz48L3N2Zz4=);
+    background-position-x: 1px;
+    background-position-y: 16px;
+}
+
+
+
+
+
+
+/* ----------여기까지 서비스 필터------------ */
+
+  /* ----------여기부터 지역 필터------------ */
+#div_town_layout {
+	/* 서비스 / 지역의 큰 div */
+	width: 420px;
+	height: 680px;
+	margin: 0 auto;
+	height: 42.5rem;
+	overflow-y: scroll;
+	overflow-x: hidden;  /* 가로 스크롤바 없애기 */
+	display: block;
+    position: absolute;
+    top: 17%;
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+    display: none;
+}
+#div_town_header {
+	/* 서비스 지역  헤ㅔ더 */
+	width: 418px;
+	height: 60px;
+	padding: 10px 16px;
+	/* position:ab; */
+	background-color: #fff;  /* 백그라운드 흰색으로해서 스크롤바 가리기 */
+	position: fixed;   			 /* 스크롤바 가로줄 없애는데 사용 */
+	z-index: 100;
+}
+
+ #div_town_header > #div_service2 {
+	/* 서비스 텍스트 div */
+	width: 58px;
+	height: 40px;
+	padding: 6px;
+	font-weight: 500;
+	line-height: 1.75;
+	letter-spacing: -.01688rem;
+	font-size: 16px;
+	margin-right: 10px;
+	float: left;
+} 
+#div_service2:hover {
+    color:  #00c7ae; /* 원하는 색상으로 변경 */
+    position: relative;
+    cursor: pointer;
+}
+
+#div_town_header > #div_town2 {
+	/* 지역 div */
+	width: 43px;
+	height: 40px;
+	font-size: 16px;
+	padding: 6px;
+	font-weight: 500;
+	line-height: 1.75;
+	letter-spacing: -.01688rem;
+	float: left;
+}
+#div_town2.active {
+    color:  #00c7ae; /* 원하는 색상으로 변경 */
+    position: relative;
+}
+#div_town2.active::after {
+  	content: '';
+    position: absolute;
+    width: 40.36px;
+    height: 2px;
+    background-color: #00c7ae;
+    left: 2px;
+    bottom: -2px;
+}
+ .x {
+	width: 16px;
+	height: 16px;
+	display: block;
+	margin: 14px 0px;
+	float: right;
+	cursor: pointer;
+} 
+
+#div_town_box{
+	/* 지역리스트를 담을 div */
+	width: 403px;
+	height: 865px;
+	padding: 16px 16px 22px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	position: relative;
+	margin-top: 50px;
+}
+.scroll  {
+	height: 42.5rem;
+	overflow-y: scroll;
+	overflow-x: hidden;  /* 가로 스크롤바 없애기 */
+}
+.town_text_color {
+	color: #00c7ae;   /*클릭했을때 변하는 색상*/
+}
+.div_town {
+	/* 지역명 담을 div */
+	width: 380px;
+	height: 46px;
+	cursor: pointer;
+	color: black;
+	line-height: 21px;
+	padding: 12px 0px;
+	font-size: 14px;
+	font-weight: 400;
+	position:relative;
+	
+}
+.img {
+	width:18px;
+	background-color: rgb(181, 181, 181);
+	object-fit: cover;
+	line-height: 21px;
+	margin-left: 10px;
+}
+.div_town:hover {
+	/* 마우스 올렸을떄 색상 변경 */
+	background-color: #f2f2f2;
+}
+.div_town.active {
+	/* 마우스 클릭했을때 색상 변경 */
+    background-color: #f2f2f2;
+    color: rgb(0, 199, 174);
+ }
+.div_town::after {
+	/* 밑줄 만들기 div */
+    content: '';
+    position: absolute;
+    width: 370px; /* 밑줄 길이를 조절*/
+    height: 2px; /* 밑줄 두께를 조절*/
+    background-color: rgb(244, 244, 244); /* 밑줄 색상을 조절 */
+    left: 2px; /* padding-left 값과 동일하게 맞춤 */
+    bottom: -2px; /* 밑줄 위치를 조절 */
+}
+  .div_town .arrow-down {
+ position: absolute;
+    right: 16px; /* 오른쪽 끝에서 16px 떨어진 위치에 배치 */
+    top: 50%;
+    transform: translateY(-50%);
+	width: 14px;
+	height: 24px;
+	background-size: 19px;
+	background-repeat: no-repeat;
+	    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0iI0I1QjVCNSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTYuMTA3IDUuMjU3bC43MDcuNzA3LTcuNzc5IDcuNzc5LS43MDctLjcwN3oiLz48cGF0aCBkPSJNMS4yNTcgNS45NjRsLjcwNy0uNzA3IDcuNzc5IDcuNzc5LS43MDcuNzA3eiIvPjwvZz48L3N2Zz4=);
+	background-position-x: -3px;   
+	background-position-y: 8px;  
+	background-color: none;
+  }
+  .div_town .arrow-up {
+    position: absolute;
+    right: 16px;
+    top: 47%;
+    transform: rotate(180deg);
+    width: 14px;
+    height: 24px;
+    background-size: 19px;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0iI0I1QjVCNSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTYuMTA3IDUuMjU3bC43MDcuNzA3LTcuNzc5IDcuNzc5LS43MDctLjcwN3oiLz48cGF0aCBkPSJNMS4yNTcgNS45NjRsLjcwNy0uNzA3IDcuNzc5IDcuNzc5LS43MDcuNzA3eiIvPjwvZz48L3N2Zz4=);
+    background-position-x: -3px;
+    background-position-y: 13px;
+    background-color: none;
+}
+
+/* ----------여기까지 지역 필터------------ */
+
+
+
+#greyscreen_filter {display: none;}
+#greyscreen_filter {
+ /* 버튼 클릭시 바뀌는 뒷배경 색상  */
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+	background-color: rgba(0,0,0,0.5);
+	z-index: 10;
+}
+  	
+  	/* ---------------- 여기서부터 커뮤니티 게시글목록 --------------------- */
+  	
+		#div_feed_item {		/* 게시글을 담을  큰div */
+			width: 600px;
+			min-height: 198px;
+			padding: 20px 8px;
+			float: left;
+			border-bottom: .0625rem solid #f4f4f4;
+			cursor: pointer;
+		}
+		#div_feed_item > div:nth-child(1) {  /* 커뮤니티 카테고리, 소주제 */
+			width: 584px;
+			height: 18px;
+			font-size: 12px;
+			margin: 0px 0px 8px;
+			font-size: 12px;
+			font-weight: 400;
+			color: rgb(136, 136, 136);
+		}
+		#div_feed_item  > #div_feed_item_inner {	/* 게시글 제목, 내용을 담을ㅇ div */
+			width: 100%;
+			height: 101px;
+			padding: 0px 16px 0px 0px;
+		}
+		#div_feed_item  > #div_feed_item_inner > div:nth-child(1) { /* 게시글 제목 */
+			width: 488px;
+			height: 22px;
+			margin: 0px 0px 4px;
+			font-size: 14px;
+		}
+		#div_feed_item > #div_feed_item_inner > div:nth-child(2) { /* 게시글 내용.. */
+			width: 488px;
+			height: 44px;
+			margin: 0px 0px 10px;
+			font-size: 14px;
+			text-overflow: ellipsis;
+   			overflow: hidden;
+   			word-break: break-word;
+  			display: -webkit-box;
+		    -webkit-line-clamp: 2; /* 원하는 라인수 */
+		    -webkit-box-orient: vertical;
+		    color: rgb(136, 136, 136);
+		}
+		#div_feed_item > #div_feed_item_inner > #div_no_image { /* 사진없는 게시글 내용.. */
+			width: 100%;
+			height: 44px;
+			margin: 0px 0px 10px;
+			font-size: 14px;
+			text-overflow: ellipsis;
+   			overflow: hidden;
+   			word-break: break-word;
+  			display: -webkit-box;
+		    -webkit-line-clamp: 2; /* 원하는 라인수 */
+		    -webkit-box-orient: vertical;
+		    color: rgb(136, 136, 136);
+		}
+		#div_feed_item > div:nth-child(2) { /*  게시글 이미지 div */
+			width: 80px;
+			height: 80px;
+			float: right;
+		}
+		.post_img {							/* 게시글 이미지 값 */
+			width: 80px;
+			border: .0625rem solid #f4f4f4;
+  			border-radius: 8px;
+  			float: right;
+		}
+		.div_town_info {					/* 지역div */
+			width: 488px;
+			height: 21px;
+			color: #888888;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: -0.2px;
+			line-height: 21px;
+			margin-bottom: 12px;
+		}
+		#div_feed_footer {               /* 좋아요, 댓글수, 등록일시 div */
+			width: 585px;
+			height: 18px;
+			display: flex;
+			justify-content: space-between;
+		}
+		#div_feed_footer_inner {
+			width: 70px;
+			height: 18px;
+			display:flex;
+			justify-content: space-between;
+		}
+		#div_feed_footer > #div_feed_footer_inner > #div_like {              
+			width: 30px;
+			height: 18px;
+			font-size:12px;
+			color: rgb(197, 197, 197);
+			font-weight: 400;
+			letter-spacing: -0.2px;
+			display:flex;
+			justify-content: space-between;
+			
+		}
+		#div_feed_footer > #div_feed_footer_inner > #div_comment {              
+			width: 30px;
+			height: 18px;
+			font-size:12px;
+			color: rgb(197, 197, 197);
+			letter-spacing: -0.2px;
+			font-weight: 400;
+			display:flex;
+			justify-content: space-between;  /* div_comment 안에 있는 요소?들을 일정한 간격으로 정렬 */
+		}
+		#div_feed_footer > #div_date {
+			width: 50px;
+			height: 18px;
+			font-size:12px;
+			color: rgb(197, 197, 197);
+			letter-spacing: -0.2px;
+			font-weight: 400;
+			text-align: right;		/* text 오른쪽정렬 */
+		}
+		.like_comment_img {
+			width: 20px;
+			height: 18px;
+		}
+ <!-- -------------------------------------여기까지게시글 목록---------------------------- -->
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	

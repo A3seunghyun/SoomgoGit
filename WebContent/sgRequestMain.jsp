@@ -248,7 +248,7 @@ int users_idx = 0;
 									</a>
 								</li>
 								<li class = "header-nav-li1">
-									<a href = "">
+									<a href = "soomgoCommu.jsp">
 										<span class = "header-nav-li-span">커뮤니티</span>
 									</a>
 								</li>
@@ -306,7 +306,7 @@ int users_idx = 0;
 									</a>
 								</li>
 								<li class = "header-nav-li1">
-									<a href = "">
+									<a href = "soomgoCommu.jsp">
 										<span class = "header-nav-li-span">커뮤니티</span>
 									</a>
 								</li>
@@ -429,7 +429,7 @@ int users_idx = 0;
 									</a>
 								</li>
 								<li class = "header-nav-li1">
-									<a href = "">
+									<a href = "soomgoCommu.jsp">
 										<span class = "header-nav-li-span">커뮤니티</span>
 									</a>
 								</li>
@@ -527,7 +527,7 @@ int users_idx = 0;
 									</button>
 								</div>
 								<div class = "usermenu3-dropdown-div3">
-									<a href = "Seach.profile2.jsp">
+									<a href = "soomgo_main.jsp">
 										<button type = "button" class = "usermenu-dropdown-div3-button">로그아웃</button>
 									</a>
 								</div>

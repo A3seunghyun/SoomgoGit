@@ -29,7 +29,7 @@ public class GosuZimInsertServlet extends HttpServlet {
 	        JSONObject jsonResponse = new JSONObject();
 
 	        try {
-	            int users_idx1 = Integer.parseInt(request.getParameter("users_idx1"));
+	            int users_idx1 = Integer.parseInt(request.getParameter("login_idx"));
 	            int users_idx = Integer.parseInt(request.getParameter("users_idx"));
 
 	            System.out.println("서버에 들어온 데이터 users_idx1: " + users_idx1);
@@ -44,6 +44,7 @@ public class GosuZimInsertServlet extends HttpServlet {
 	                dao.GosuZimInsert(users_idx1, users_idx);
 	                jsonResponse.put("status", "success");
 	                response.setStatus(HttpServletResponse.SC_OK);
+	                jsonResponse.put("message", "완료되었습니다.");
 	            }
 	        } catch (Exception e) {
 	            e.printStackTrace();

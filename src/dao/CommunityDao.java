@@ -506,7 +506,7 @@ public class CommunityDao {
 		
 		String sql = "INSERT INTO post (post_idx, users_idx, title,contents, service_idx, town_idx" + 
 				"                    , p_date, commu_idx )" + 
-				" VALUES (seq_post.nextval, ?, ?, ?, ?, ?, sysdate, ? )";
+				" VALUES (?, ?, ?, ?, ?, ?, sysdate, ? )";
 		
 		String[] colNamesPk = { "post_idx" };
 		
@@ -548,7 +548,7 @@ public class CommunityDao {
 		Connection conn = getConnection();
 		
 		String sql = "INSERT INTO gosu_know_how(post_idx, users_idx, img, service_idx, title, start_post) " + 
-				" VALUES (seq_post_idx.nextval, ?, ?, ?, ?, ?)";
+				" VALUES (?, ?, ?, ?, ?, ?)";
 		
 		String[] colNamesPk = { "post_idx" };
 		
@@ -581,7 +581,7 @@ public class CommunityDao {
 		Connection conn = getConnection();
 		
 		String sql = "INSERT INTO main_text (main_idx, post_idx, header_post, contents, img1, img2, img3) " + 
-				" VALUES (SEQ_GKH_MAIN_IDX.nextval, ?, ?, ?, ?, ?, ?)";
+				" VALUES (?, ?, ?, ?, ?, ?, ?)";
 		
 		String[] colNamesPk = { "post_idx" };
 		
@@ -653,7 +653,7 @@ public class CommunityDao {
 		Connection conn = getConnection();
 		
 		String sql = "INSERT INTO comments(comments_idx, post_idx, users_idx, contents, comment_date, parent_idx) " + 
-				" VALUES(SEQ_COMMENTS_IDX.nextval, ?, ?, ?, sysdate, ?)"; 
+				" VALUES(?, ?, ?, ?, sysdate, ?)"; 
 		// 인서트 실행 후 pk값 반환 (=보통은 시퀀스에 의해 만들어진 값)
 		// 1) 문자열 배열 - pk로 지정된 컬럼의 이름(들) ---> 보통은 길이가 1 짜리인 배열임. 왜냐하면, pk가 (아마도) 하나일 테니까.
 		String[] arrKeyNames = {"comments_idx"};		

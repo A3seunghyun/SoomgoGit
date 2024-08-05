@@ -1859,8 +1859,8 @@ h2 {
     cursor: pointer;
   }
   #map-button-img{
-    width : 20px;
-    height: 20px;
+    width : 15px;
+    height: 17px;
     float:left;
   }
   #map-button-text{
@@ -1893,6 +1893,8 @@ h2 {
     padding-top: 16px;
     padding-bottom: 16px;
     border-bottom: .0625rem solid #f4f4f4;
+    cursor: pointer;
+    
   }
   .gosu-profile-outter3{
     width : auto;
@@ -1904,6 +1906,7 @@ h2 {
     padding-top: 16px;
     padding-bottom: 16px;
     border-bottom: .0625rem solid #f4f4f4;
+    cursor: pointer;
   }
   #gosu-profile-name-outter{
     width: 554px;
@@ -1998,7 +2001,6 @@ h2 {
     float:right;
     margin-top: -25px;
     border-radius: .75rem;
-    background-image: url(https://static.cdn.soomgo.com/upload/profile/0a9b89c2-449b-4b56-87cb-9ac7628dca1b.jpg?webp=1&h=320&w=320);
     background-size: 64px;
   }
   #profile-intro-outter{
