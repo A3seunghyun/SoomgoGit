@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div> 넘길 정보 아무거나 적어서 push 해주세요 </div>
+	<div> 넘길 정보적어서 push </div>
 	<p>
 	ALTER SEQUENCE SEQ_CHAT_CONTENTS INCREMENT BY 200;
 ALTER SEQUENCE SEQ_MARKET_DETAIL_IMG_IDX INCREMENT BY 200;
