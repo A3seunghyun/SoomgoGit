@@ -47,4 +47,22 @@ public class ChatRoomDAO {
 		
 		return chatContentsList;
 	}
+	
+	public void insertChatContents(int chatroomIdx, int usersIdx, String message) throws Exception {
+		// 특정 채팅방 채팅내용 저장
+		Connection conn = getConnection();
+		 
+		String sql = "INSERT INTO chat_contents(chatRoom_idx, users_idx, contents, con_date) VALUES (?, ?, ?, NOW())";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, chatroomIdx);
+        pstmt.setInt(2, usersIdx);
+        pstmt.setString(3, message);
+        pstmt.executeUpdate();
+
+	    System.out.println("메시지 저장 완료");
+	    
+		pstmt.close();
+		conn.close();
+	}
+	
 }
