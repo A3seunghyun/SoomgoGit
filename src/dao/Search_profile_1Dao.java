@@ -74,6 +74,60 @@ public class Search_profile_1Dao {
 				return listRet;
 	
 			}
+			//ArrayList<BoardDto> 객체의 참조값을 리턴하는 메서드. 아래 Dao 사용시 Dto 확인후 rnum값을 rs.getInt 해줘야함.
+			public ArrayList<Search_profile_1Dto> getSeachprofileKeypress(String Name) throws Exception{
+				ArrayList<Search_profile_1Dto> listRet = new ArrayList<Search_profile_1Dto>();
+				
+				String sql = " SELECT  \r\n" + 
+						"    gi.users_idx, \r\n" + 
+						"    gi.name, \r\n" + 
+						"    gi.career, \r\n" + 
+						"    gi.f_img, \r\n" + 
+						"    gs.intro, \r\n" + 
+						"    ROUND(AVG(r.score), 1) AS avg_score_review, \r\n" + 
+						"    COUNT(r.g_users_idx) AS count_reviews, \r\n" + 
+						"    (SELECT COUNT(*) FROM transaction t WHERE t.g_users_idx = gi.users_idx) AS count_transactions \r\n" + 
+						"FROM  \r\n" + 
+						"    gosu_infor gi\r\n" + 
+						"JOIN  \r\n" + 
+						"    gosu_service gs ON gi.users_idx = gs.users_idx \r\n" + 
+						"LEFT JOIN  \r\n" + 
+						"    review r ON gs.users_idx = r.g_users_idx\r\n" + 
+						"WHERE \r\n" + 
+						"    gi.name LIKE %?%\r\n" + 
+						"GROUP BY  \r\n" + 
+						"    gi.users_idx, \r\n" + 
+						"    gi.name, \r\n" + 
+						"    gi.career, \r\n" + 
+						"    gi.f_img, \r\n" + 
+						"    gs.intro";
+				Connection conn = getConnection();
+				
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, Name);
+				
+				ResultSet rs = pstmt.executeQuery();
+				while(rs.next()) {
+					int users_idx = rs.getInt(1);
+					String name = rs.getString(2);
+					int career = rs.getInt(3);
+					String f_img = rs.getString(4);
+					String intro = rs.getString(5);
+					int score = rs.getInt(6);
+					int c_review = rs.getInt(7);
+					int c_transaction = rs.getInt(8);
+					
+					Search_profile_1Dto dto = new Search_profile_1Dto(users_idx, name, career, f_img, intro, score, c_review, c_transaction);
+					listRet.add(dto);
+				}
+				rs.close();
+				pstmt.close();
+				conn.close();
+				
+				return listRet;
+	
+			}
+
 			public ArrayList<Search_profile_1Dto> getSeachprofileReviewDESC() throws Exception{
 				ArrayList<Search_profile_1Dto> listRet = new ArrayList<Search_profile_1Dto>();
 				
