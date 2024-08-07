@@ -26,14 +26,11 @@ public class ChatRoomDAO {
 		// 특정 채팅방--  채팅내용
 		Connection conn = getConnection();
 		
-		String sql = "SELECT *" +
-				" FROM chat_contents" +
-				" WHERE chatroom_idx = ?";
+		String sql = "SELECT * FROM chat_contents WHERE chatroom_idx = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		ResultSet rs = pstmt.executeQuery();
-		
 		pstmt.setInt(1, chatIdx);
-
+		
+		ResultSet rs = pstmt.executeQuery();
 		ArrayList<ChatContentsDTO> chatContentsList = new ArrayList<ChatContentsDTO>();
 
 		while (rs.next()) {
@@ -52,7 +49,7 @@ public class ChatRoomDAO {
 		// 특정 채팅방 채팅내용 저장
 		Connection conn = getConnection();
 		 
-		String sql = "INSERT INTO chat_contents(chatRoom_idx, users_idx, contents, con_date) VALUES (?, ?, ?, NOW())";
+		String sql = "INSERT INTO chat_contents(chat_idx, chatRoom_idx, users_idx, contents, con_date) VALUES (SEQ_ESCHAT_IDX.NEXTVAL, ?, ?, ?, SYSDATE)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, chatroomIdx);
         pstmt.setInt(2, usersIdx);

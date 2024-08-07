@@ -363,6 +363,7 @@
 										<ul>
 											<!-- 일반 메시지 출력 -->
 											<%
+												System.out.println("챗룸idx:"+ chatroom_idx);
 												ChatRoomDAO crDAO = new ChatRoomDAO();
 												ArrayList<ChatContentsDTO> crDTO = crDAO.getChatContentsByChatRoom(chatroom_idx);
 												String con_date = crDTO.get(0).getCon_date();
@@ -418,7 +419,7 @@
 																	String chat_time = ccDTO.getCon_date().split(" ")[1];
 																	String hourMinute = chat_time.substring(0, 5);
 																	int time_hour = Integer.parseInt(hourMinute.split(":")[0]);
-																	int time_min = Integer.parseInt(hourMinute.split(":")[0]);
+																	int time_min = Integer.parseInt(hourMinute.split(":")[1]);
 																	if(time_hour < 12){
 																%>
 																<span>오전 <%= hourMinute %></span>

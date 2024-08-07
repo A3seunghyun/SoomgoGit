@@ -23,10 +23,9 @@ public class SaveChatServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		String message = request.getParameter("my_chatting");
-		/*
-		String file = request.getParameter("file")
-		*/
 		
 		try {
 			int chatRoomIdx= Integer.parseInt(request.getParameter("chatroom_idx").toString());

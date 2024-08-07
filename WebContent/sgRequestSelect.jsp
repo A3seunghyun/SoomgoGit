@@ -55,8 +55,6 @@
 	int serviceIdx = 19;
 	try{
 		serviceIdx = Integer.parseInt(request.getParameter("serviceIdx"));
-		
-	
 	} catch(Exception e){
 		
 	}
@@ -76,8 +74,10 @@
 <head>
 <meta charset="UTF-8">
 <title>sgRequest</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/HeaderUnder.css"/>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/esclear.css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear.css"> <!-- clear css 꼭 추가하기 -->
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/clear3.css"/> <!-- clear3 css 꼭 추가하기 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/sgRequestSelect.css"/>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="<%=request.getContextPath()%>/js/sgRequestSelect.js"></script>
@@ -574,10 +574,10 @@
 							                                    </div>
 							                                    <div class="text_area">
 							                                        <div class="text">
-							                                            <%= ocContent[0] %>
+							                                            <%= ocContent[0].trim() %>
 							                                            <span style="display: none;">(고수 미제공)</span>
 							                                        </div>
-							                                        <div class="text_comment"><%= ocContent[1].replaceAll("\\)", "") %></div>
+							                                        <div class="text_comment"><%= ocContent[1].replace(")", "").trim() %></div>
 							                                    </div>
 							                                </label>
 							                            </div>
