@@ -156,7 +156,7 @@
   }
 	
 	#app-body{
-		width: 1903px;
+/* 		width: 100%; */
 		display: block;
 	}
 	#app-body > #app-body2{
