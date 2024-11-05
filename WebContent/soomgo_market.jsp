@@ -977,7 +977,7 @@
 				alert("Error!");
 			}
 			
-			let webSocket = new WebSocket("ws://localhost:9095/SHProject/marketBroadcasting");
+			let webSocket = new WebSocket("ws://localhost:9096/SHProject/marketBroadcasting");
 			
 			webSocket.onmessage = func_on_message;
 			webSocket.onerror = func_on_error;
